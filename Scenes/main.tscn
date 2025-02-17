@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://8h6o8ab5voav"]
+
+[ext_resource type="Texture2D" uid="uid://cyb6pl8frj11h" path="res://Assets/Backgrounds/town center.png" id="1_u46oh"]
+[ext_resource type="PackedScene" uid="uid://cc2jf1cym8j6j" path="res://Scenes/Player.tscn" id="2_6lg03"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_u46oh")
+stretch_mode = 6
+
+[node name="Player" parent="." instance=ExtResource("2_6lg03")]

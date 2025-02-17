@@ -1,0 +1,16 @@
+# Godot-specific files
+.import/
+.export/
+.cache/
+*.translation
+.godot/shader_cache/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Binary files (optional)
+*.exe
+*.log
+*.pck
+*.zip

@@ -1,0 +1,8 @@
+TextureRect
+Control
+CollisionShape2D
+Sprite2D
+AnimatedSprite2D
+Camera2D
+CharacterBody2D
+TileMap

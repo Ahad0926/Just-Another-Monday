@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://cc2jf1cym8j6j"]
+
+[ext_resource type="Script" path="res://Scripts/PlayerMovement.gd" id="1_5g2p3"]
+[ext_resource type="Texture2D" uid="uid://bc1rsokwwsfaw" path="res://Assets/critters/wolf/wolf-idle.png" id="2_upo5b"]
+[ext_resource type="Texture2D" uid="uid://b2360op8n50p5" path="res://Assets/critters/wolf/wolf-run.png" id="3_bq6a2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8v7v"]
+atlas = ExtResource("2_upo5b")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgct1"]
+atlas = ExtResource("3_bq6a2")
+region = Rect2(0, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p6pp4"]
+atlas = ExtResource("3_bq6a2")
+region = Rect2(128, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1olr"]
+atlas = ExtResource("3_bq6a2")
+region = Rect2(256, 64, 128, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8w4ef"]
+atlas = ExtResource("3_bq6a2")
+region = Rect2(384, 64, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lay7f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8v7v")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgct1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p6pp4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1olr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8w4ef")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0u0vw"]
+size = Vector2(53, 51)
+
+[node name="Player" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_5g2p3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+sprite_frames = SubResource("SpriteFrames_lay7f")
+animation = &"run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(-1, 2)
+shape = SubResource("RectangleShape2D_0u0vw")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
