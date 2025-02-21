@@ -17,6 +17,7 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 [autoload]
 
 Global="*res://Scripts/global.gd"
+PlayerStats="*res://Scripts/player_stats.gd"
 
 [editor]
 

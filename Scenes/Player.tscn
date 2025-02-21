@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://e0mdfdeoao8d"]
+[gd_scene load_steps=20 format=3 uid="uid://e0mdfdeoao8d"]
 
 [ext_resource type="Texture2D" uid="uid://ceuqy6giy56b3" path="res://Assets/16x16-RPG-characters/chibi-layered2.png" id="1_dqvpc"]
 [ext_resource type="Script" path="res://Scripts/player_movement.gd" id="1_v87ta"]
+[ext_resource type="Script" path="res://Scripts/player_stats.gd" id="3_0f36j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3tff3"]
 atlas = ExtResource("1_dqvpc")
@@ -185,6 +186,9 @@ size = Vector2(6, 6.5)
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(385, 433)
 script = ExtResource("1_v87ta")
+
+[node name="PlayerStats" type="Node" parent="."]
+script = ExtResource("3_0f36j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

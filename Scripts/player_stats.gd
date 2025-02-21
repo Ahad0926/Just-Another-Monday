@@ -15,12 +15,11 @@ signal stats_changed(new_sanity, new_stamina)
 func _process(delta):
 	# Decrease stamina as the day progresses (time passing, for example)
 	if stamina > 0:
-		stamina -= stamina_decrease_rate * delta  # Decrease stamina over time
+		#stamina -= stamina_decrease_rate * delta  # Decrease stamina over time
 		stamina = max(stamina, 0)  # Ensure stamina doesn't go below 0
 	
 	# Decrease sanity based on player actions (investigating clues, skipping work, etc.)
 	if sanity > 0:
-		sanity -= sanity_decrease_rate * delta  # Decrease sanity over time
 		sanity = max(sanity, 0)  # Ensure sanity doesn't go below 0
 
 	# Emit a signal whenever stats change
@@ -37,6 +36,7 @@ func modify_stats(sanity_change: float, stamina_change: float):
 	
 	# Emit a signal whenever stats are modified
 	emit_signal("stats_changed", sanity, stamina)
+	print("(", sanity, ", ", stamina, ")")
 
 # To check current sanity and stamina
 func get_sanity() -> int:

@@ -1,5 +1,5 @@
-CharacterBody2D
 Node
+CharacterBody2D
 Label
 TextureRect
 Control

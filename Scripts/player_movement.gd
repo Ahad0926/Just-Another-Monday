@@ -1,11 +1,19 @@
 extends CharacterBody2D
 
 @export var speed: float = 80.0
+var player_stats = PlayerStats
+@onready var animated_sprite = $AnimatedSprite2D
 
-func _physics_process(delta):
-	var direction = Vector2.ZERO
+func _process(delta: float) -> void:
+	_handle_input()
 
-	# Detect Input (use separate if-statements to allow diagonal movement)
+func _physics_process(delta: float) -> void:
+	_update_movement()
+
+# Detect player input
+func _handle_input() -> void:
+	var direction := Vector2.ZERO
+
 	if Input.is_action_pressed("player_right"):
 		direction.x += 1
 	if Input.is_action_pressed("player_left"):
@@ -15,27 +23,36 @@ func _physics_process(delta):
 	if Input.is_action_pressed("player_up"):
 		direction.y -= 1
 
-	# Normalize for smooth diagonal movement
 	if direction.length() > 0:
 		direction = direction.normalized()
-
-		# Update animation based on direction
-		if direction.x > 0:
-			$AnimatedSprite2D.play("walk_right")
-		elif direction.x < 0:
-			$AnimatedSprite2D.play("walk_left")
-		elif direction.y > 0:
-			$AnimatedSprite2D.play("walk_down")
-		elif direction.y < 0:
-			$AnimatedSprite2D.play("walk_up")
+		_update_animation(direction)
 	else:
-		# Play idle animation based on last movement
-		match $AnimatedSprite2D.animation:
-			"walk_right": $AnimatedSprite2D.play("idle_right")
-			"walk_left": $AnimatedSprite2D.play("idle_left")
-			"walk_down": $AnimatedSprite2D.play("idle_down")
-			"walk_up": $AnimatedSprite2D.play("idle_up")
+		_set_idle_animation()  # NEW: Set idle animation if no input detected
 
-	# Apply velocity and movement
 	velocity = direction * speed
+
+# Move the player
+func _update_movement() -> void:
+	velocity = velocity.normalized() * speed
 	move_and_slide()
+
+# Update animation based on movement direction
+func _update_animation(direction: Vector2) -> void:
+	if direction.x > 0:
+		animated_sprite.play("walk_right")
+	elif direction.x < 0:
+		animated_sprite.play("walk_left")
+	elif direction.y > 0:
+		animated_sprite.play("walk_down")
+	elif direction.y < 0:
+		animated_sprite.play("walk_up")
+
+	# Reduce stamina when moving
+	player_stats.modify_stats(0, -0.1)
+
+func _set_idle_animation() -> void:
+	match animated_sprite.animation:
+		"walk_right": animated_sprite.play("idle_right")
+		"walk_left": animated_sprite.play("idle_left")
+		"walk_down": animated_sprite.play("idle_down")
+		"walk_up": animated_sprite.play("idle_up")
