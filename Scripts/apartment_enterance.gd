@@ -10,6 +10,6 @@ func _on_body_exited(body: Node2D) -> void:
 
 func _process(delta: float) -> void:
 	if entered == true:
-		if Input.is_action_pressed("player_input"):
+		if Input.is_action_pressed("player_interact"):
 			print("Player enters the apartment!")
 			get_tree().change_scene_to_file("res://Scenes/apartment.tscn")

@@ -11,4 +11,4 @@ func _on_body_exited(body: Node2D) -> void:
 func _process(delta: float) -> void:
 	if entered == true:
 		print("Player exits the apartment!")
-		get_tree().change_scene_to_file("res://Scenes/hallway.tscn")
+		get_tree().change_scene_to_file("res://Scenes/hallway.tscn")  # Call scene loader in Main

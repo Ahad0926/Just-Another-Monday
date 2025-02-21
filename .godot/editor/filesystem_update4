@@ -1,5 +1,10 @@
-res://Scripts/player_stats.gd
-res://Scenes/player.tscn
-res://Scripts/player_movement.gd
+res://Scenes/main.tscn
+res://Scripts/main.gd
 res://Scenes/apartment.tscn
 res://Scenes/hallway.tscn
+res://Scripts/apartment_exit.gd
+res://Scenes/HUD.tscn
+res://Scenes/npc.tscn
+res://Scripts/npc.gd
+res://Scripts/dialogue_manager.gd
+res://Scripts/apartment_enterance.gd

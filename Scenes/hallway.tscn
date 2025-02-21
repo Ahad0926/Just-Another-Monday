@@ -1,9 +1,12 @@
-[gd_scene load_steps=9 format=4 uid="uid://b2yixx8204rsy"]
+[gd_scene load_steps=15 format=4 uid="uid://b2yixx8204rsy"]
 
 [ext_resource type="Texture2D" uid="uid://bv7vxbmytoelj" path="res://Assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png" id="1_1q6so"]
 [ext_resource type="Texture2D" uid="uid://djkew57mn4bf1" path="res://Assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="2_6mh2r"]
 [ext_resource type="Script" path="res://Scripts/apartment_enterance.gd" id="3_yfopd"]
 [ext_resource type="PackedScene" uid="uid://e0mdfdeoao8d" path="res://Scenes/player.tscn" id="4_xf0mu"]
+[ext_resource type="PackedScene" uid="uid://chinvs8bp3ahi" path="res://Scenes/HUD.tscn" id="5_rv7iu"]
+[ext_resource type="PackedScene" uid="uid://bis3p80sfognf" path="res://Scenes/npc.tscn" id="6_d1y6b"]
+[ext_resource type="Texture2D" uid="uid://ceuqy6giy56b3" path="res://Assets/16x16-RPG-characters/chibi-layered2.png" id="7_s7was"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k7cq1"]
 texture = ExtResource("1_1q6so")
@@ -181,6 +184,44 @@ sources/1 = SubResource("TileSetAtlasSource_5w0d8")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_440fx"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_hd8uc"]
+atlas = ExtResource("7_s7was")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibxxc"]
+atlas = ExtResource("7_s7was")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7wshd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hd8uc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibxxc")
+}],
+"loop": true,
+"name": &"all",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hd8uc")
+}],
+"loop": true,
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibxxc")
+}],
+"loop": true,
+"name": &"idle_up",
+"speed": 5.0
+}]
+
 [node name="Hallway" type="Node2D"]
 
 [node name="ground" type="TileMapLayer" parent="."]
@@ -212,6 +253,15 @@ shape = SubResource("RectangleShape2D_440fx")
 [node name="Player" parent="." instance=ExtResource("4_xf0mu")]
 position = Vector2(856, 226)
 scale = Vector2(2, 2)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hud" parent="CanvasLayer" instance=ExtResource("5_rv7iu")]
+
+[node name="Npc" parent="." instance=ExtResource("6_d1y6b")]
+position = Vector2(714, 209)
+npc_name = "Neighbour"
+animations = SubResource("SpriteFrames_7wshd")
 
 [connection signal="body_entered" from="enterance" to="enterance" method="_on_body_entered"]
 [connection signal="body_exited" from="enterance" to="enterance" method="_on_body_exited"]

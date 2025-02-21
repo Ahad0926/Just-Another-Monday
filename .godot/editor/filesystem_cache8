@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1740099472
+::res://::1740113104
 phoneUI.tscn::PackedScene::4404940885165326691::1740086525::0::1::::<><>::uid://dyghfpv8jxe0k::::res://Assets/Smart Phone Asset by PogoNR/PNGs/Phone_2.png<>res://phone_clock.gd
 phone_clock.gd::GDScript::-1::1740086525::0::1::::<>Control<>::
 README.md::TextFile::-1::1739829483::0::1::::<><>::
@@ -10,7 +10,7 @@ plugin.cfg::TextFile::-1::1739829781::0::1::::<><>::
 THIRDPARTY.md::TextFile::-1::1739829781::0::1::::<><>::
 ::res://addons/godot-git-plugin/linux/::1739829781
 ::res://addons/godot-git-plugin/macos/::1739829781
-::res://addons/godot-git-plugin/win64/::1740099464
+::res://addons/godot-git-plugin/win64/::1740113098
 ::res://Assets/::1740085394
 ::res://Assets/16x16-RPG-characters/::1739933790
 chibi-layered2-export.png::CompressedTexture2D::8725632079985261396::1739924742::1739924885::1::::<><>::
@@ -33,13 +33,17 @@ TopDownHouse_FloorsAndWalls_OpenDoors.png::CompressedTexture2D::3413669740755731
 TopDownHouse_FurnitureState1.png::CompressedTexture2D::4058012339050250705::1739923184::1739923359::1::::<><>::
 TopDownHouse_FurnitureState2.png::CompressedTexture2D::6275062897222439730::1739923184::1739923359::1::::<><>::
 TopDownHouse_SmallItems.png::CompressedTexture2D::1580956565217962937::1739923184::1739923359::1::::<><>::
-::res://Scenes/::1740099403
-apartment.tscn::PackedScene::2728534642029012588::1740099403::0::1::::<><>::uid://bv7vxbmytoelj::::res://Assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png<>uid://bx2y4ud5gqyib::::res://Assets/Top-Down_Retro_Interior/TopDownHouse_FurnitureState1.png<>uid://djkew57mn4bf1::::res://Assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png<>uid://e0mdfdeoao8d::::res://Scenes/player.tscn<>res://Scripts/apartment_exit.gd
-hallway.tscn::PackedScene::4331592597496278360::1740084354::0::1::::<><>::uid://bv7vxbmytoelj::::res://Assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png<>uid://djkew57mn4bf1::::res://Assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png<>res://Scripts/apartment_enterance.gd<>uid://e0mdfdeoao8d::::res://Scenes/player.tscn
-main.tscn::PackedScene::2332591445580837877::1740017737::0::1::::<><>::uid://bv7vxbmytoelj::::res://Assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png<>uid://djkew57mn4bf1::::res://Assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png<>uid://bovuv3ayrpyuq::::res://Assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls_OpenDoors.png<>uid://bx2y4ud5gqyib::::res://Assets/Top-Down_Retro_Interior/TopDownHouse_FurnitureState1.png<>uid://cvnxmsx4enetu::::res://Assets/Top-Down_Retro_Interior/TopDownHouse_FurnitureState2.png<>uid://wr3eg6462a5v::::res://Assets/Top-Down_Retro_Interior/TopDownHouse_SmallItems.png<>uid://e0mdfdeoao8d::::res://Scenes/player.tscn
-player.tscn::PackedScene::333099047150167869::1740084354::0::1::::<><>::res://Scripts/player_movement.gd<>uid://ceuqy6giy56b3::::res://Assets/16x16-RPG-characters/chibi-layered2.png
-::res://Scripts/::1740083968
+::res://Scenes/::1740109934
+apartment.tscn::PackedScene::2728534642029012588::1740109215::0::1::::<><>::uid://bv7vxbmytoelj::::res://Assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png<>uid://bx2y4ud5gqyib::::res://Assets/Top-Down_Retro_Interior/TopDownHouse_FurnitureState1.png<>uid://djkew57mn4bf1::::res://Assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png<>uid://e0mdfdeoao8d::::res://Scenes/player.tscn<>res://Scripts/apartment_exit.gd<>uid://chinvs8bp3ahi::::res://Scenes/HUD.tscn
+hallway.tscn::PackedScene::4331592597496278360::1740109215::0::1::::<><>::uid://bv7vxbmytoelj::::res://Assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png<>uid://djkew57mn4bf1::::res://Assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png<>res://Scripts/apartment_enterance.gd<>uid://e0mdfdeoao8d::::res://Scenes/player.tscn
+HUD.tscn::PackedScene::5281506113928303398::1740109216::0::1::::<><>::res://Scripts/hud.gd
+main.tscn::PackedScene::2332591445580837877::1740109934::0::1::::<><>::res://Scripts/main.gd<>uid://chinvs8bp3ahi::::res://Scenes/HUD.tscn<>uid://e0mdfdeoao8d::::res://Scenes/player.tscn
+player.tscn::PackedScene::333099047150167869::1740109216::0::1::::<><>::uid://ceuqy6giy56b3::::res://Assets/16x16-RPG-characters/chibi-layered2.png<>res://Scripts/player_movement.gd<>res://Scripts/player_stats.gd
+::res://Scripts/::1740109934
 apartment_enterance.gd::GDScript::-1::1740083968::0::1::::<>Area2D<>::
-apartment_exit.gd::GDScript::-1::1740082314::0::1::::<>Area2D<>::
+apartment_exit.gd::GDScript::-1::1740109934::0::1::::<>Area2D<>::
 global.gd::GDScript::-1::1740080783::0::1::::<>Node<>::
-player_movement.gd::GDScript::-1::1739979449::0::1::::<>CharacterBody2D<>::
+hud.gd::GDScript::-1::1740108534::0::1::::<>Control<>::
+main.gd::GDScript::-1::1740109889::0::1::::<>Node2D<>::
+player_movement.gd::GDScript::-1::1740108108::0::1::::<>CharacterBody2D<>::
+player_stats.gd::GDScript::-1::1740107696::0::1::::<>Node<>::

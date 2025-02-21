@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=4 uid="uid://be4ytjl3wwd5u"]
+[gd_scene load_steps=12 format=4 uid="uid://be4ytjl3wwd5u"]
 
 [ext_resource type="Texture2D" uid="uid://bv7vxbmytoelj" path="res://Assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png" id="1_vj6c6"]
 [ext_resource type="Texture2D" uid="uid://bx2y4ud5gqyib" path="res://Assets/Top-Down_Retro_Interior/TopDownHouse_FurnitureState1.png" id="2_r7gmj"]
 [ext_resource type="Texture2D" uid="uid://djkew57mn4bf1" path="res://Assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="3_1r6au"]
 [ext_resource type="PackedScene" uid="uid://e0mdfdeoao8d" path="res://Scenes/player.tscn" id="4_m8xsa"]
 [ext_resource type="Script" path="res://Scripts/apartment_exit.gd" id="5_y5uyl"]
+[ext_resource type="PackedScene" uid="uid://chinvs8bp3ahi" path="res://Scenes/HUD.tscn" id="6_7vu1d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mqkc7"]
 texture = ExtResource("1_vj6c6")
@@ -322,6 +323,10 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_xh0t5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hud" parent="CanvasLayer" instance=ExtResource("6_7vu1d")]
 
 [connection signal="body_entered" from="Exit" to="Exit" method="_on_body_entered"]
 [connection signal="body_exited" from="Exit" to="Exit" method="_on_body_exited"]
