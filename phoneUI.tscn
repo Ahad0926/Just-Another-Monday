@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://b301y6ekyrkwh"]
+
+[ext_resource type="Texture2D" uid="uid://dyghfpv8jxe0k" path="res://Assets/Smart Phone Asset by PogoNR/PNGs/Phone_2.png" id="1_x4mkj"]
+[ext_resource type="Script" path="res://phone_clock.gd" id="2_j7jvu"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 819.0
+offset_top = 491.0
+offset_right = 1148.0
+offset_bottom = 1089.0
+texture = ExtResource("1_x4mkj")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 854.0
+offset_top = 546.0
+offset_right = 1112.0
+offset_bottom = 647.0
+script = ExtResource("2_j7jvu")
