@@ -8,8 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bis3p80sfognf" path="res://Scenes/npc.tscn" id="6_d1y6b"]
 [ext_resource type="PackedScene" uid="uid://qfpt8cwd6hrl" path="res://Scenes/dialogue_ui.tscn" id="7_ejji8"]
 [ext_resource type="Texture2D" uid="uid://ceuqy6giy56b3" path="res://Assets/16x16-RPG-characters/chibi-layered2.png" id="7_s7was"]
+[ext_resource type="Script" path="res://Scripts/scene_transition.gd" id="9_i83oj"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k7cq1"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mmxkf"]
 texture = ExtResource("1_1q6so")
 0:0/0 = 0
 1:0/0 = 0
@@ -174,14 +175,14 @@ texture = ExtResource("1_1q6so")
 16:8/0 = 0
 17:8/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5w0d8"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7vkgu"]
 texture = ExtResource("2_6mh2r")
 14:0/size_in_atlas = Vector2i(2, 3)
 14:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_e8wgx"]
-sources/0 = SubResource("TileSetAtlasSource_k7cq1")
-sources/1 = SubResource("TileSetAtlasSource_5w0d8")
+sources/0 = SubResource("TileSetAtlasSource_mmxkf")
+sources/1 = SubResource("TileSetAtlasSource_7vkgu")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_440fx"]
 
@@ -223,20 +224,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gdsg7"]
-atlas = ExtResource("7_s7was")
-region = Rect2(48, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_8exhj"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gdsg7")
-}],
-"loop": true,
-"name": &"idle_left",
-"speed": 5.0
-}]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bidyt"]
+size = Vector2(13, 48)
 
 [node name="Hallway" type="Node2D"]
 y_sort_enabled = true
@@ -259,12 +248,12 @@ position = Vector2(27, 119)
 tile_map_data = PackedByteArray("AAA1AAwAAQAOAAAAAAAyAAwAAQAOAAAAAAAvAAwAAQAOAAAAAAAsAAwAAQAOAAAAAAApAAwAAQAOAAAAAAA=")
 tile_set = SubResource("TileSet_e8wgx")
 
-[node name="enterance" type="Area2D" parent="."]
+[node name="entrance" type="Area2D" parent="."]
 position = Vector2(883, 333)
 script = ExtResource("3_yfopd")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="enterance"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="entrance"]
 shape = SubResource("RectangleShape2D_440fx")
 
 [node name="Player" parent="." instance=ExtResource("4_xf0mu")]
@@ -289,12 +278,17 @@ position = Vector2(791, 342)
 npc_name = "Neighbour"
 animations = SubResource("SpriteFrames_7wshd")
 
-[node name="Npc2" parent="." instance=ExtResource("6_d1y6b")]
-y_sort_enabled = false
-position = Vector2(669, 366)
-npc_name = "Neighbour 2"
-animations = SubResource("SpriteFrames_8exhj")
-default_dialogue = Array[String](["whats good", "yo"])
+[node name="HallwayExit" type="Area2D" parent="."]
+position = Vector2(661, 367)
+script = ExtResource("9_i83oj")
+target_scene = "res://Scenes/office.tscn"
+metadata/_edit_group_ = true
 
-[connection signal="body_entered" from="enterance" to="enterance" method="_on_body_entered"]
-[connection signal="body_exited" from="enterance" to="enterance" method="_on_body_exited"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HallwayExit"]
+position = Vector2(-3.5, -1)
+shape = SubResource("RectangleShape2D_bidyt")
+
+[connection signal="body_entered" from="entrance" to="entrance" method="_on_body_entered"]
+[connection signal="body_exited" from="entrance" to="entrance" method="_on_body_exited"]
+[connection signal="body_entered" from="HallwayExit" to="HallwayExit" method="_on_body_entered"]
+[connection signal="body_exited" from="HallwayExit" to="HallwayExit" method="_on_body_exited"]

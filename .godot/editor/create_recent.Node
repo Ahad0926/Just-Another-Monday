@@ -1,15 +1,14 @@
+CollisionShape2D
+Area2D
 RichTextLabel
 Label
 VBoxContainer
 Panel
 Control
 CanvasLayer
-CollisionShape2D
-Area2D
 AnimatedSprite2D
 CharacterBody2D
 Node2D
 Node
 TextureRect
 Sprite2D
-TabContainer
