@@ -36,7 +36,6 @@ func modify_stats(sanity_change: float, stamina_change: float):
 	
 	# Emit a signal whenever stats are modified
 	emit_signal("stats_changed", sanity, stamina)
-	print("(", sanity, ", ", stamina, ")")
 
 # To check current sanity and stamina
 func get_sanity() -> int:

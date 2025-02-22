@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://b2yixx8204rsy"]
+[gd_scene load_steps=18 format=4 uid="uid://b2yixx8204rsy"]
 
 [ext_resource type="Texture2D" uid="uid://bv7vxbmytoelj" path="res://Assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png" id="1_1q6so"]
 [ext_resource type="Texture2D" uid="uid://djkew57mn4bf1" path="res://Assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="2_6mh2r"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://e0mdfdeoao8d" path="res://Scenes/player.tscn" id="4_xf0mu"]
 [ext_resource type="PackedScene" uid="uid://chinvs8bp3ahi" path="res://Scenes/HUD.tscn" id="5_rv7iu"]
 [ext_resource type="PackedScene" uid="uid://bis3p80sfognf" path="res://Scenes/npc.tscn" id="6_d1y6b"]
+[ext_resource type="PackedScene" uid="uid://qfpt8cwd6hrl" path="res://Scenes/dialogue_ui.tscn" id="7_ejji8"]
 [ext_resource type="Texture2D" uid="uid://ceuqy6giy56b3" path="res://Assets/16x16-RPG-characters/chibi-layered2.png" id="7_s7was"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k7cq1"]
@@ -222,28 +223,44 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gdsg7"]
+atlas = ExtResource("7_s7was")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8exhj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gdsg7")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 5.0
+}]
+
 [node name="Hallway" type="Node2D"]
+y_sort_enabled = true
 
 [node name="ground" type="TileMapLayer" parent="."]
-y_sort_enabled = true
 texture_filter = 1
+position = Vector2(27, 119)
 tile_map_data = PackedByteArray("AAAnAA4AAAABAAUAAAAnAA8AAAABAAYAAAAnABAAAAABAAcAAAAoAA4AAAACAAUAAAAoAA8AAAACAAYAAAAoABAAAAACAAcAAAApAA4AAAADAAUAAAApAA8AAAADAAYAAAApABAAAAADAAcAAAAqAA4AAAACAAUAAAAqAA8AAAACAAYAAAAqABAAAAACAAcAAAArAA4AAAADAAUAAAArAA8AAAADAAYAAAArABAAAAADAAcAAAAsAA4AAAACAAUAAAAsAA8AAAACAAYAAAAsABAAAAACAAcAAAAtAA4AAAADAAUAAAAtAA8AAAADAAYAAAAtABAAAAADAAcAAAAuAA4AAAACAAUAAAAuAA8AAAACAAYAAAAuABAAAAACAAcAAAAvAA4AAAADAAUAAAAvAA8AAAADAAYAAAAvABAAAAADAAcAAAAwAA4AAAACAAUAAAAwAA8AAAACAAYAAAAwABAAAAACAAcAAAAxAA4AAAADAAUAAAAxAA8AAAADAAYAAAAxABAAAAADAAcAAAAyAA4AAAACAAUAAAAyAA8AAAACAAYAAAAyABAAAAACAAcAAAAzAA4AAAADAAUAAAAzAA8AAAADAAYAAAAzABAAAAADAAcAAAA0AA4AAAACAAUAAAA0AA8AAAACAAYAAAA0ABAAAAACAAcAAAA1AA4AAAACAAUAAAA1AA8AAAACAAYAAAA1ABAAAAACAAcAAAA2AA4AAAADAAUAAAA2AA8AAAADAAYAAAA2ABAAAAADAAcAAAA=")
 tile_set = SubResource("TileSet_e8wgx")
 
 [node name="walls" type="TileMapLayer" parent="."]
-y_sort_enabled = true
 texture_filter = 1
+position = Vector2(27, 119)
 tile_map_data = PackedByteArray("AAAzAA4AAAABAAUAAAAzAA8AAAABAAYAAAAzABAAAAABAAcAAAA0AA4AAAACAAUAAAA0AA8AAAACAAYAAAA0ABAAAAACAAcAAAA1AA4AAAADAAUAAAA1AA8AAAADAAYAAAA1ABAAAAADAAcAAAA2AA4AAAAEAAUAAAA2AA8AAAAEAAYAAAA2ABAAAAAEAAcAAAAvAA4AAAABAAUAAAAvAA8AAAABAAYAAAAvABAAAAABAAcAAAAwAA4AAAACAAUAAAAwAA8AAAACAAYAAAAwABAAAAACAAcAAAAxAA4AAAADAAUAAAAxAA8AAAADAAYAAAAxABAAAAADAAcAAAAyAA4AAAAEAAUAAAAyAA8AAAAEAAYAAAAyABAAAAAEAAcAAAArAA4AAAABAAUAAAArAA8AAAABAAYAAAArABAAAAABAAcAAAAsAA4AAAACAAUAAAAsAA8AAAACAAYAAAAsABAAAAACAAcAAAAtAA4AAAADAAUAAAAtAA8AAAADAAYAAAAtABAAAAADAAcAAAAuAA4AAAAEAAUAAAAuAA8AAAAEAAYAAAAuABAAAAAEAAcAAAAnAA4AAAABAAUAAAAnAA8AAAABAAYAAAAnABAAAAABAAcAAAAoAA4AAAACAAUAAAAoAA8AAAACAAYAAAAoABAAAAACAAcAAAApAA4AAAADAAUAAAApAA8AAAADAAYAAAApABAAAAADAAcAAAAqAA4AAAAEAAUAAAAqAA8AAAAEAAYAAAAqABAAAAAEAAcAAAAnAAoAAAAFAAEAAAAnAAsAAAAFAAIAAAAnAAwAAAAFAAMAAAAnAA0AAAAFAAQAAAAoAAoAAAAGAAEAAAAoAAsAAAAGAAIAAAAoAAwAAAAGAAMAAAAoAA0AAAAGAAQAAAApAAoAAAAHAAEAAAApAAsAAAAHAAIAAAApAAwAAAAHAAMAAAApAA0AAAAHAAQAAAAqAAoAAAAGAAEAAAAqAAsAAAAGAAIAAAAqAAwAAAAGAAMAAAAqAA0AAAAGAAQAAAArAAoAAAAGAAEAAAArAAsAAAAGAAIAAAArAAwAAAAGAAMAAAArAA0AAAAGAAQAAAAsAAoAAAAGAAEAAAAsAAsAAAAGAAIAAAAsAAwAAAAGAAMAAAAsAA0AAAAGAAQAAAAtAAoAAAAGAAEAAAAtAAsAAAAGAAIAAAAtAAwAAAAGAAMAAAAtAA0AAAAGAAQAAAAuAAoAAAAGAAEAAAAuAAsAAAAGAAIAAAAuAAwAAAAGAAMAAAAuAA0AAAAGAAQAAAA2AAoAAAAGAAEAAAA2AAsAAAAGAAIAAAA2AAwAAAAGAAMAAAA2AA0AAAAGAAQAAAA1AAoAAAAGAAEAAAA1AAsAAAAGAAIAAAA1AAwAAAAGAAMAAAA1AA0AAAAGAAQAAAAzAAoAAAAGAAEAAAAzAAsAAAAGAAIAAAAzAAwAAAAGAAMAAAAzAA0AAAAGAAQAAAA0AAoAAAAGAAEAAAA0AAsAAAAGAAIAAAA0AAwAAAAGAAMAAAA0AA0AAAAGAAQAAAAyAAoAAAAGAAEAAAAyAAsAAAAGAAIAAAAyAAwAAAAGAAMAAAAyAA0AAAAGAAQAAAAxAAoAAAAGAAEAAAAxAAsAAAAGAAIAAAAxAAwAAAAGAAMAAAAxAA0AAAAGAAQAAAAwAAoAAAAGAAEAAAAwAAsAAAAGAAIAAAAwAAwAAAAGAAMAAAAwAA0AAAAGAAQAAAAvAAoAAAAGAAEAAAAvAAsAAAAGAAIAAAAvAAwAAAAGAAMAAAAvAA0AAAAGAAQAAAA=")
 tile_set = SubResource("TileSet_e8wgx")
 
 [node name="doors" type="TileMapLayer" parent="."]
-y_sort_enabled = true
 texture_filter = 1
+position = Vector2(27, 119)
 tile_map_data = PackedByteArray("AAA1AAwAAQAOAAAAAAAyAAwAAQAOAAAAAAAvAAwAAQAOAAAAAAAsAAwAAQAOAAAAAAApAAwAAQAOAAAAAAA=")
 tile_set = SubResource("TileSet_e8wgx")
 
 [node name="enterance" type="Area2D" parent="."]
-position = Vector2(856, 214)
+position = Vector2(883, 333)
 script = ExtResource("3_yfopd")
 metadata/_edit_group_ = true
 
@@ -251,17 +268,33 @@ metadata/_edit_group_ = true
 shape = SubResource("RectangleShape2D_440fx")
 
 [node name="Player" parent="." instance=ExtResource("4_xf0mu")]
-position = Vector2(856, 226)
+y_sort_enabled = false
+position = Vector2(883, 345)
 scale = Vector2(2, 2)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Hud" parent="CanvasLayer" instance=ExtResource("5_rv7iu")]
+metadata/_edit_use_anchors_ = true
+
+[node name="TestDialogueUi" parent="CanvasLayer" instance=ExtResource("7_ejji8")]
+offset_left = -2.0
+offset_top = 8.784
+offset_right = -2.0
+offset_bottom = 8.784
 
 [node name="Npc" parent="." instance=ExtResource("6_d1y6b")]
-position = Vector2(714, 209)
+y_sort_enabled = false
+position = Vector2(791, 342)
 npc_name = "Neighbour"
 animations = SubResource("SpriteFrames_7wshd")
+
+[node name="Npc2" parent="." instance=ExtResource("6_d1y6b")]
+y_sort_enabled = false
+position = Vector2(669, 366)
+npc_name = "Neighbour 2"
+animations = SubResource("SpriteFrames_8exhj")
+default_dialogue = Array[String](["whats good", "yo"])
 
 [connection signal="body_entered" from="enterance" to="enterance" method="_on_body_entered"]
 [connection signal="body_exited" from="enterance" to="enterance" method="_on_body_exited"]

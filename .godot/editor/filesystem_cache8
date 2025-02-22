@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1740113104
+::res://::1740191145
 phoneUI.tscn::PackedScene::4404940885165326691::1740086525::0::1::::<><>::uid://dyghfpv8jxe0k::::res://Assets/Smart Phone Asset by PogoNR/PNGs/Phone_2.png<>res://phone_clock.gd
 phone_clock.gd::GDScript::-1::1740086525::0::1::::<>Control<>::
 README.md::TextFile::-1::1739829483::0::1::::<><>::
@@ -10,12 +10,151 @@ plugin.cfg::TextFile::-1::1739829781::0::1::::<><>::
 THIRDPARTY.md::TextFile::-1::1739829781::0::1::::<><>::
 ::res://addons/godot-git-plugin/linux/::1739829781
 ::res://addons/godot-git-plugin/macos/::1739829781
-::res://addons/godot-git-plugin/win64/::1740113098
-::res://Assets/::1740085394
+::res://addons/godot-git-plugin/win64/::1740191139
+::res://Assets/::1740178835
 ::res://Assets/16x16-RPG-characters/::1739933790
 chibi-layered2-export.png::CompressedTexture2D::8725632079985261396::1739924742::1739924885::1::::<><>::
 chibi-layered2.png::CompressedTexture2D::5095900265846959530::1739924709::1739933082::1::::<><>::
 chibi-layered.png::CompressedTexture2D::4655995554255372671::1739924188::1739933790::1::::<><>::
+::res://Assets/gb dialogue boxes/::1740179345
+::res://Assets/gb dialogue boxes/GBS frames Black/::1740179481
+Arrow pointer b.png::CompressedTexture2D::915464028775333886::1695131222::1740179480::1::::<><>::
+Buttons chunky thread b.png::CompressedTexture2D::7382198398744863256::1695131192::1740179480::1::::<><>::
+Buttons extra thread b.png::CompressedTexture2D::7293588705881029839::1695131171::1740179480::1::::<><>::
+checker 1b.png::CompressedTexture2D::8985089195854071176::1679949015::1740179480::1::::<><>::
+checker 2b.png::CompressedTexture2D::4381054208365679781::1679949021::1740179480::1::::<><>::
+checker 3b.png::CompressedTexture2D::8740622537281081442::1679949028::1740179480::1::::<><>::
+checker 4b.png::CompressedTexture2D::8137613202429584653::1679949037::1740179480::1::::<><>::
+Chunky 1b.png::CompressedTexture2D::6387709163792029228::1679947780::1740179480::1::::<><>::
+Chunky 2b.png::CompressedTexture2D::3313167795329142403::1679947789::1740179480::1::::<><>::
+Chunky 3b.png::CompressedTexture2D::4513663419842990719::1679947796::1740179480::1::::<><>::
+Chunky 4b.png::CompressedTexture2D::4061776104967499384::1679947804::1740179480::1::::<><>::
+Chunky 5b.png::CompressedTexture2D::4865391784733327071::1679947812::1740179480::1::::<><>::
+Chunky 6b.png::CompressedTexture2D::6641488087894710991::1679947825::1740179480::1::::<><>::
+Chunky b 1b.png::CompressedTexture2D::3552172388394726256::1679947914::1740179480::1::::<><>::
+Chunky b 2b.png::CompressedTexture2D::8835242543484129847::1679947920::1740179480::1::::<><>::
+Chunky b 3b.png::CompressedTexture2D::5869793721486969644::1679947928::1740179480::1::::<><>::
+Chunky b 4b.png::CompressedTexture2D::7684157695702457798::1679947934::1740179480::1::::<><>::
+Chunky b 5b.png::CompressedTexture2D::508986158201381666::1679947941::1740179479::1::::<><>::
+Chunky b 6b.png::CompressedTexture2D::5193685427320057564::1679947957::1740179479::1::::<><>::
+Chunky Block4bb.png::CompressedTexture2D::338876730268923681::1679948516::1740179479::1::::<><>::
+Chunky Block 1bb.png::CompressedTexture2D::8570985717182586878::1680215177::1740179479::1::::<><>::
+Chunky Block 2bb.png::CompressedTexture2D::3618909392057697548::1679948505::1740179479::1::::<><>::
+Chunky Block 3bb.png::CompressedTexture2D::4366132626221233287::1679948511::1740179479::1::::<><>::
+Chunky Block 5bb.png::CompressedTexture2D::2694287007834020404::1679948525::1740179479::1::::<><>::
+Chunky Block 6bb.png::CompressedTexture2D::8667187816092545541::1679948532::1740179479::1::::<><>::
+Chunky simple 1b.png::CompressedTexture2D::5694969761344208722::1679947853::1740179479::1::::<><>::
+Chunky simple 2b.png::CompressedTexture2D::7880611131154480409::1679947863::1740179479::1::::<><>::
+Chunky simple 3b.png::CompressedTexture2D::627356547894355261::1679947870::1740179479::1::::<><>::
+Chunky simple 4b.png::CompressedTexture2D::8915871605418341545::1679947887::1740179480::1::::<><>::
+Chunky simple 5b.png::CompressedTexture2D::4521493256644784513::1679947895::1740179480::1::::<><>::
+Chunky simple 6b.png::CompressedTexture2D::6992669862673056977::1679947905::1740179480::1::::<><>::
+Chunky white 1b.png::CompressedTexture2D::4938463708727664267::1679947729::1740179480::1::::<><>::
+Chunky white 2b.png::CompressedTexture2D::3529709573696384088::1679947736::1740179480::1::::<><>::
+Chunky white 3b.png::CompressedTexture2D::8354296684660636888::1679947745::1740179480::1::::<><>::
+Chunky white 4b.png::CompressedTexture2D::8428406125097586820::1679947753::1740179481::1::::<><>::
+Chunky white 5b.png::CompressedTexture2D::5971496747309861402::1679947766::1740179481::1::::<><>::
+Chunky white 6b.png::CompressedTexture2D::6011527130287704697::1679947773::1740179481::1::::<><>::
+Doilies b.png::CompressedTexture2D::6394537563146734540::1695131214::1740179481::1::::<><>::
+Dragons agreeable b.png::CompressedTexture2D::576843467688657317::1695131046::1740179481::1::::<><>::
+Dragons arguing b.png::CompressedTexture2D::3777057782448002446::1695131340::1740179481::1::::<><>::
+Fantasy 1.png::CompressedTexture2D::6626322111117250986::1680035389::1740179481::1::::<><>::
+Guts b.png::CompressedTexture2D::7768925085790574941::1695130977::1740179481::1::::<><>::
+Mechanical b.png::CompressedTexture2D::6098890962625926840::1695131018::1740179481::1::::<><>::
+Metal Bamboo b.png::CompressedTexture2D::3542506615378629349::1695131312::1740179481::1::::<><>::
+Oh Worm b.png::CompressedTexture2D::6355073119059956536::1695131010::1740179481::1::::<><>::
+Rope a dope b.png::CompressedTexture2D::5500280403734526385::1695131274::1740179481::1::::<><>::
+Sci fi 1.png::CompressedTexture2D::5818848578964917608::1680275428::1740179481::1::::<><>::
+Sci fi 1b.png::CompressedTexture2D::513738525457664368::1695131128::1740179481::1::::<><>::
+Sci fi 3b.png::CompressedTexture2D::5944047610736380698::1695131142::1740179481::1::::<><>::
+Simple band 1b.png::CompressedTexture2D::1140232314478543084::1679949152::1740179481::1::::<><>::
+Simple band 2b.png::CompressedTexture2D::412347885070156649::1679949163::1740179481::1::::<><>::
+Simple frame 1.png::CompressedTexture2D::7340926537881031795::1679947489::1740179480::1::::<><>::
+Simple frame 2.png::CompressedTexture2D::2927249915617974714::1679947496::1740179480::1::::<><>::
+Simple frame 3.png::CompressedTexture2D::652891521865895011::1679947503::1740179480::1::::<><>::
+Simple frame 4.png::CompressedTexture2D::3262742851664853621::1679947527::1740179480::1::::<><>::
+Simple frame 5.png::CompressedTexture2D::7843130776941398784::1680035353::1740179480::1::::<><>::
+Simple frame 6.png::CompressedTexture2D::536649260187160338::1679948538::1740179480::1::::<><>::
+Simple frame 7.png::CompressedTexture2D::7623777820692498490::1679947543::1740179480::1::::<><>::
+Simple frame 8.png::CompressedTexture2D::1664422957464436044::1679947550::1740179480::1::::<><>::
+Simple frame 9.png::CompressedTexture2D::1552942523686818365::1679947556::1740179481::1::::<><>::
+Simple frame 10.png::CompressedTexture2D::1405658935371960048::1679947566::1740179481::1::::<><>::
+Simple frame 11.png::CompressedTexture2D::6636205184222748428::1679947572::1740179481::1::::<><>::
+Simple frame 12.png::CompressedTexture2D::8908056867478430213::1679947578::1740179481::1::::<><>::
+Under the Sea b.png::CompressedTexture2D::4735371048139522995::1695131032::1740179481::1::::<><>::
+Wired Skulls b.png::CompressedTexture2D::2223624017149702412::1695131241::1740179481::1::::<><>::
+Wooden b.png::CompressedTexture2D::6559211036415178349::1679948780::1740179481::1::::<><>::
+Zig Zag perfect b.png::CompressedTexture2D::6818703220333172197::1679949134::1740179481::1::::<><>::
+Zig Zag wonky b.png::CompressedTexture2D::7524886568130650020::1679949127::1740179481::1::::<><>::
+::res://Assets/gb dialogue boxes/GBS frames White/::1740179479
+Arrow pointer.png::CompressedTexture2D::4431935808023373058::1695125852::1740179477::1::::<><>::
+Buttons chunky thread.png::CompressedTexture2D::3589186509275703115::1695126242::1740179478::1::::<><>::
+Buttons extra thread.png::CompressedTexture2D::4113724709748574399::1695125881::1740179478::1::::<><>::
+Candy Cane 1.png::CompressedTexture2D::7992635166823736007::1679948816::1740179478::1::::<><>::
+checker 1.png::CompressedTexture2D::1855885675560182765::1679948910::1740179478::1::::<><>::
+checker 2.png::CompressedTexture2D::5576003181446610951::1679948916::1740179478::1::::<><>::
+checker 3.png::CompressedTexture2D::7436968733102764167::1679948925::1740179478::1::::<><>::
+checker 4.png::CompressedTexture2D::3043445194047638478::1679948932::1740179478::1::::<><>::
+Chunky 1.png::CompressedTexture2D::1599811690541335089::1679947671::1740179478::1::::<><>::
+Chunky 2.png::CompressedTexture2D::1533786727808376395::1679947679::1740179478::1::::<><>::
+Chunky 3.png::CompressedTexture2D::8463074996619236910::1679947687::1740179478::1::::<><>::
+Chunky 4.png::CompressedTexture2D::5871080989873228446::1679947694::1740179478::1::::<><>::
+Chunky 5.png::CompressedTexture2D::387154433229405398::1679947704::1740179478::1::::<><>::
+Chunky 6.png::CompressedTexture2D::9065621102427921704::1679947711::1740179478::1::::<><>::
+Chunky simple 1.png::CompressedTexture2D::7021980164800364356::1679948344::1740179478::1::::<><>::
+Chunky simple 2.png::CompressedTexture2D::198151559647974257::1679948353::1740179478::1::::<><>::
+Chunky simple 3.png::CompressedTexture2D::698931931650739343::1679948359::1740179478::1::::<><>::
+Chunky simple 4.png::CompressedTexture2D::864375901242099903::1679948371::1740179477::1::::<><>::
+Chunky simple 5.png::CompressedTexture2D::2881862586455356067::1679948377::1740179477::1::::<><>::
+Chunky simple 6.png::CompressedTexture2D::1538786027428533800::1679948385::1740179477::1::::<><>::
+Chunky white 1.png::CompressedTexture2D::748515823806988868::1679947626::1740179477::1::::<><>::
+Chunky white 2.png::CompressedTexture2D::6696389053267534435::1679947633::1740179477::1::::<><>::
+Chunky white 3.png::CompressedTexture2D::4474481789337557636::1679947640::1740179477::1::::<><>::
+Chunky white 4.png::CompressedTexture2D::7078178152528894650::1679947647::1740179477::1::::<><>::
+Chunky white 5.png::CompressedTexture2D::3904626927211328845::1679947653::1740179477::1::::<><>::
+Chunky white 6.png::CompressedTexture2D::5513925599087642478::1679947661::1740179477::1::::<><>::
+Construction.png::CompressedTexture2D::6250198767367908223::1679948403::1740179477::1::::<><>::
+Doilies.png::CompressedTexture2D::6164206187286510835::1695126306::1740179477::1::::<><>::
+Dotty 1.png::CompressedTexture2D::6886079053660770295::1679948598::1740179477::1::::<><>::
+Dotty 2.png::CompressedTexture2D::4965491883046167427::1679948605::1740179477::1::::<><>::
+Dotty 3.png::CompressedTexture2D::2956683847885565503::1679948631::1740179477::1::::<><>::
+Dotty 4.png::CompressedTexture2D::4487686073013769001::1679948612::1740179477::1::::<><>::
+Dotty 5.png::CompressedTexture2D::8068971682680480196::1679948619::1740179477::1::::<><>::
+Dotty 6.png::CompressedTexture2D::1744171653166055998::1679948640::1740179477::1::::<><>::
+Dragons agreeable.png::CompressedTexture2D::4611761503957175984::1695125679::1740179479::1::::<><>::
+Dragons arguing.png::CompressedTexture2D::3932058063686585229::1695125672::1740179479::1::::<><>::
+Fantasy 1.png::CompressedTexture2D::5476254345655993091::1679948737::1740179479::1::::<><>::
+Guts.png::CompressedTexture2D::8422927004297594970::1695126051::1740179479::1::::<><>::
+Mechanical.png::CompressedTexture2D::350107210456051043::1695126032::1740179479::1::::<><>::
+Metal Bamboo.png::CompressedTexture2D::8379715358826949495::1695126000::1740179479::1::::<><>::
+Oh Worm.png::CompressedTexture2D::7783103314239591782::1695125829::1740179479::1::::<><>::
+Paper 2.png::CompressedTexture2D::2538756999032318519::1679948669::1740179479::1::::<><>::
+Paper.png::CompressedTexture2D::3768657548978747165::1679948660::1740179479::1::::<><>::
+Rope a dope.png::CompressedTexture2D::8804670711855073430::1695127550::1740179479::1::::<><>::
+Sci fi 1.png::CompressedTexture2D::1977377860895169267::1695126087::1740179479::1::::<><>::
+Sci fi 3.png::CompressedTexture2D::3111021432529518102::1695126100::1740179479::1::::<><>::
+Simple band 1.png::CompressedTexture2D::5678931616515973915::1679949104::1740179479::1::::<><>::
+Simple band 2.png::CompressedTexture2D::8662005192780946783::1679949112::1740179479::1::::<><>::
+Simple frame 1.png::CompressedTexture2D::7586143825781091245::1679947360::1740179479::1::::<><>::
+Simple frame 2.png::CompressedTexture2D::35609890742138757::1679947367::1740179479::1::::<><>::
+Simple frame 3.png::CompressedTexture2D::6213450630489632152::1679947374::1740179479::1::::<><>::
+Simple frame 4.png::CompressedTexture2D::3789726469065267648::1679947390::1740179478::1::::<><>::
+Simple frame 5.png::CompressedTexture2D::4129543270171769446::1679948728::1740179478::1::::<><>::
+Simple frame 6.png::CompressedTexture2D::6172083452497289821::1679947396::1740179478::1::::<><>::
+Simple frame 7.png::CompressedTexture2D::4171254135717645419::1679947403::1740179478::1::::<><>::
+Simple frame 8.png::CompressedTexture2D::2313608104459083421::1679947412::1740179478::1::::<><>::
+Simple frame 9.png::CompressedTexture2D::8052907671803922788::1679947419::1740179478::1::::<><>::
+Simple frame 10.png::CompressedTexture2D::8881458986766645893::1679947426::1740179478::1::::<><>::
+Simple frame 11.png::CompressedTexture2D::5666539555532695784::1679947432::1740179478::1::::<><>::
+Simple frame 12.png::CompressedTexture2D::2826805605791985708::1679947440::1740179478::1::::<><>::
+Speech bubble 1.png::CompressedTexture2D::2320773166438666243::1680275512::1740179478::1::::<><>::
+Speech bubble 2.png::CompressedTexture2D::4510979309874421063::1680275523::1740179478::1::::<><>::
+Speech bubble 3.png::CompressedTexture2D::736225013949685975::1680275499::1740179478::1::::<><>::
+Speech bubble 4.png::CompressedTexture2D::2685339510836198861::1680275505::1740179478::1::::<><>::
+Under the Sea.png::CompressedTexture2D::7059276431315558221::1695126323::1740179478::1::::<><>::
+Wired Skulls.png::CompressedTexture2D::1565916471751293319::1695125769::1740179478::1::::<><>::
+Zig Zag perfect.png::CompressedTexture2D::7056068859102159361::1679949092::1740179479::1::::<><>::
+Zig Zag wonky.png::CompressedTexture2D::4927118127914130002::1679949085::1740179479::1::::<><>::
 ::res://Assets/Smart Phone Asset by PogoNR/::1740085402
 Terms.txt::TextFile::-1::1740085394::0::1::::<><>::
 ::res://Assets/Smart Phone Asset by PogoNR/PNGs/::1740085449
@@ -33,17 +172,21 @@ TopDownHouse_FloorsAndWalls_OpenDoors.png::CompressedTexture2D::3413669740755731
 TopDownHouse_FurnitureState1.png::CompressedTexture2D::4058012339050250705::1739923184::1739923359::1::::<><>::
 TopDownHouse_FurnitureState2.png::CompressedTexture2D::6275062897222439730::1739923184::1739923359::1::::<><>::
 TopDownHouse_SmallItems.png::CompressedTexture2D::1580956565217962937::1739923184::1739923359::1::::<><>::
-::res://Scenes/::1740109934
-apartment.tscn::PackedScene::2728534642029012588::1740109215::0::1::::<><>::uid://bv7vxbmytoelj::::res://Assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png<>uid://bx2y4ud5gqyib::::res://Assets/Top-Down_Retro_Interior/TopDownHouse_FurnitureState1.png<>uid://djkew57mn4bf1::::res://Assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png<>uid://e0mdfdeoao8d::::res://Scenes/player.tscn<>res://Scripts/apartment_exit.gd<>uid://chinvs8bp3ahi::::res://Scenes/HUD.tscn
-hallway.tscn::PackedScene::4331592597496278360::1740109215::0::1::::<><>::uid://bv7vxbmytoelj::::res://Assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png<>uid://djkew57mn4bf1::::res://Assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png<>res://Scripts/apartment_enterance.gd<>uid://e0mdfdeoao8d::::res://Scenes/player.tscn
-HUD.tscn::PackedScene::5281506113928303398::1740109216::0::1::::<><>::res://Scripts/hud.gd
-main.tscn::PackedScene::2332591445580837877::1740109934::0::1::::<><>::res://Scripts/main.gd<>uid://chinvs8bp3ahi::::res://Scenes/HUD.tscn<>uid://e0mdfdeoao8d::::res://Scenes/player.tscn
-player.tscn::PackedScene::333099047150167869::1740109216::0::1::::<><>::uid://ceuqy6giy56b3::::res://Assets/16x16-RPG-characters/chibi-layered2.png<>res://Scripts/player_movement.gd<>res://Scripts/player_stats.gd
-::res://Scripts/::1740109934
-apartment_enterance.gd::GDScript::-1::1740083968::0::1::::<>Area2D<>::
-apartment_exit.gd::GDScript::-1::1740109934::0::1::::<>Area2D<>::
+::res://Scenes/::1740190936
+apartment.tscn::PackedScene::2728534642029012588::1740184814::0::1::::<><>::uid://bv7vxbmytoelj::::res://Assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png<>uid://bx2y4ud5gqyib::::res://Assets/Top-Down_Retro_Interior/TopDownHouse_FurnitureState1.png<>uid://djkew57mn4bf1::::res://Assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png<>uid://e0mdfdeoao8d::::res://Scenes/player.tscn<>res://Scripts/apartment_exit.gd<>uid://chinvs8bp3ahi::::res://Scenes/HUD.tscn
+dialogue_ui.tscn::PackedScene::1134289809319486033::1740190199::0::1::::<><>::uid://i65qad3qt7sb::::res://Assets/gb dialogue boxes/GBS frames Black/Chunky simple 3b.png<>res://Scripts/dialogue_ui.gd
+hallway.tscn::PackedScene::4331592597496278360::1740190936::0::1::::<><>::uid://bv7vxbmytoelj::::res://Assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png<>uid://djkew57mn4bf1::::res://Assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png<>res://Scripts/apartment_enterance.gd<>uid://e0mdfdeoao8d::::res://Scenes/player.tscn<>uid://chinvs8bp3ahi::::res://Scenes/HUD.tscn<>uid://bis3p80sfognf::::res://Scenes/npc.tscn<>uid://qfpt8cwd6hrl::::res://Scenes/dialogue_ui.tscn<>uid://ceuqy6giy56b3::::res://Assets/16x16-RPG-characters/chibi-layered2.png
+HUD.tscn::PackedScene::5281506113928303398::1740114499::0::1::::<><>::res://Scripts/hud.gd
+main.tscn::PackedScene::2332591445580837877::1740114331::0::1::::<><>::res://Scripts/main.gd
+npc.tscn::PackedScene::2986818867792212631::1740184712::0::1::::<><>::uid://ceuqy6giy56b3::::res://Assets/16x16-RPG-characters/chibi-layered2.png<>res://Scripts/npc.gd
+player.tscn::PackedScene::333099047150167869::1740190214::0::1::::<><>::uid://ceuqy6giy56b3::::res://Assets/16x16-RPG-characters/chibi-layered2.png<>res://Scripts/player_movement.gd<>res://Scripts/player_stats.gd
+::res://Scripts/::1740190214
+apartment_enterance.gd::GDScript::-1::1740117619::0::1::::<>Area2D<>::
+apartment_exit.gd::GDScript::-1::1740114270::0::1::::<>Area2D<>::
+dialogue_ui.gd::GDScript::-1::1740190136::0::1::::<>Control<>::
 global.gd::GDScript::-1::1740080783::0::1::::<>Node<>::
 hud.gd::GDScript::-1::1740108534::0::1::::<>Control<>::
-main.gd::GDScript::-1::1740109889::0::1::::<>Node2D<>::
-player_movement.gd::GDScript::-1::1740108108::0::1::::<>CharacterBody2D<>::
-player_stats.gd::GDScript::-1::1740107696::0::1::::<>Node<>::
+main.gd::GDScript::-1::1740114326::0::1::::<>Node2D<>::
+npc.gd::GDScript::-1::1740189586::0::1::::<>CharacterBody2D<>::
+player_movement.gd::GDScript::-1::1740190136::0::1::::<>CharacterBody2D<>::
+player_stats.gd::GDScript::-1::1740190214::0::1::::<>Node<>::

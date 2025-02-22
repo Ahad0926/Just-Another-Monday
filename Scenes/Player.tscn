@@ -183,7 +183,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5pcxi"]
 size = Vector2(6, 6.5)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+y_sort_enabled = true
 position = Vector2(385, 433)
 script = ExtResource("1_v87ta")
 
@@ -192,13 +193,14 @@ script = ExtResource("3_0f36j")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -5)
+position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_7kwhs")
 animation = &"idle_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_5pcxi")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -6)
+position = Vector2(0, -8)
 zoom = Vector2(2.5, 2.5)
