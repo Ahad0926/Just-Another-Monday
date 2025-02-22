@@ -4,3 +4,8 @@ res://Scenes/player.tscn
 res://Scenes/apartment.tscn
 res://Scenes/office.tscn
 res://Scripts/scene_transition.gd
+res://Scripts/pc_interact.gd
+res://Scenes/desk_ui.tscn
+res://Scripts/desk_ui.gd
+res://Scripts/player_movement.gd
+res://Scripts/global.gd

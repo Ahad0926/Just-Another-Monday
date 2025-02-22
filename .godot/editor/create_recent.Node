@@ -1,5 +1,7 @@
 CollisionShape2D
 Area2D
+Button
+TextureRect
 RichTextLabel
 Label
 VBoxContainer
@@ -10,5 +12,3 @@ AnimatedSprite2D
 CharacterBody2D
 Node2D
 Node
-TextureRect
-Sprite2D

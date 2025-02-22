@@ -6,6 +6,9 @@ var player_stats = PlayerStats
 @onready var dialogue_ui = get_tree().get_first_node_in_group("dialogue_ui")
 var in_dialogue = false
 
+var near_pc = false
+var using_pc = false
+
 func _process(delta: float) -> void:
 	# Block player movement while dialogue is active
 	if dialogue_ui and dialogue_ui.visible:
@@ -15,7 +18,7 @@ func _process(delta: float) -> void:
 		_handle_input()
 
 func _physics_process(delta: float) -> void:
-	if in_dialogue:
+	if in_dialogue or using_pc:
 		velocity = Vector2.ZERO
 		_set_idle_animation()
 		return

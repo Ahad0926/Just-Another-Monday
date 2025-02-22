@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://b0njki0tqpwq5"]
+[gd_scene load_steps=11 format=4 uid="uid://b0njki0tqpwq5"]
 
 [ext_resource type="Texture2D" uid="uid://bv7vxbmytoelj" path="res://Assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png" id="1_akr71"]
 [ext_resource type="Texture2D" uid="uid://djkew57mn4bf1" path="res://Assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="2_ijq1t"]
 [ext_resource type="Texture2D" uid="uid://bx2y4ud5gqyib" path="res://Assets/Top-Down_Retro_Interior/TopDownHouse_FurnitureState1.png" id="3_nlgw5"]
 [ext_resource type="PackedScene" uid="uid://e0mdfdeoao8d" path="res://Scenes/player.tscn" id="4_ql2mq"]
+[ext_resource type="Script" path="res://Scripts/pc_interact.gd" id="5_v8463"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6ar1k"]
 texture = ExtResource("1_akr71")
@@ -179,15 +180,20 @@ texture = ExtResource("2_ijq1t")
 texture = ExtResource("3_nlgw5")
 11:16/size_in_atlas = Vector2i(2, 2)
 11:16/0 = 0
+11:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.5907, -11.359, 15.368, -11.359, 15.5907, 14.6998, -14.9226, 14.2544)
 9:16/size_in_atlas = Vector2i(2, 2)
 9:16/0 = 0
 8:16/size_in_atlas = Vector2i(1, 2)
 8:16/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_1ai30"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_6ar1k")
 sources/1 = SubResource("TileSetAtlasSource_eciic")
 sources/2 = SubResource("TileSetAtlasSource_vrb65")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p84li"]
+size = Vector2(53, 49)
 
 [node name="Office" type="Node2D"]
 
@@ -203,7 +209,7 @@ position = Vector2(27, 119)
 tile_map_data = PackedByteArray("AAAnAAoAAAABAAEAAAAnAAsAAAABAAIAAAAnAAwAAAABAAMAAAAnAA0AAAABAAQAAAAoAAoAAAACAAEAAAAoAAsAAAACAAIAAAAoAAwAAAACAAMAAAAoAA0AAAACAAQAAAApAAoAAAADAAEAAAApAAsAAAADAAIAAAApAAwAAAADAAMAAAApAA0AAAADAAQAAAAqAAoAAAAEAAEAAAAqAAsAAAAEAAIAAAAqAAwAAAAEAAMAAAAqAA0AAAAEAAQAAAArAAoAAAABAAEAAAArAAsAAAABAAIAAAArAAwAAAABAAMAAAArAA0AAAABAAQAAAAsAAoAAAACAAEAAAAsAAsAAAACAAIAAAAsAAwAAAACAAMAAAAsAA0AAAACAAQAAAAtAAoAAAADAAEAAAAtAAsAAAADAAIAAAAtAAwAAAADAAMAAAAtAA0AAAADAAQAAAAuAAoAAAAEAAEAAAAuAAsAAAAEAAIAAAAuAAwAAAAEAAMAAAAuAA0AAAAEAAQAAAAvAAoAAAABAAEAAAAvAAsAAAABAAIAAAAvAAwAAAABAAMAAAAvAA0AAAABAAQAAAAwAAoAAAACAAEAAAAwAAsAAAACAAIAAAAwAAwAAAACAAMAAAAwAA0AAAACAAQAAAAxAAoAAAADAAEAAAAxAAsAAAADAAIAAAAxAAwAAAADAAMAAAAxAA0AAAADAAQAAAAyAAoAAAAEAAEAAAAyAAsAAAAEAAIAAAAyAAwAAAAEAAMAAAAyAA0AAAAEAAQAAAAzAAoAAAABAAEAAAAzAAsAAAABAAIAAAAzAAwAAAABAAMAAAAzAA0AAAABAAQAAAA0AAoAAAACAAEAAAA0AAsAAAACAAIAAAA0AAwAAAACAAMAAAA0AA0AAAACAAQAAAA1AAoAAAADAAEAAAA1AAsAAAADAAIAAAA1AAwAAAADAAMAAAA1AA0AAAADAAQAAAA2AAoAAAAEAAEAAAA2AAsAAAAEAAIAAAA2AAwAAAAEAAMAAAA2AA0AAAAEAAQAAAA=")
 tile_set = SubResource("TileSet_1ai30")
 
-[node name="doors" type="TileMapLayer" parent="."]
+[node name="PC" type="TileMapLayer" parent="."]
 texture_filter = 1
 position = Vector2(27, 119)
 tile_map_data = PackedByteArray("AAApAA4AAgALABAAAAA=")
@@ -212,3 +218,14 @@ tile_set = SubResource("TileSet_1ai30")
 [node name="Player" parent="." instance=ExtResource("4_ql2mq")]
 position = Vector2(879, 357)
 scale = Vector2(2, 2)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(693, 359)
+script = ExtResource("5_v8463")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2.5, -8.5)
+shape = SubResource("RectangleShape2D_p84li")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
