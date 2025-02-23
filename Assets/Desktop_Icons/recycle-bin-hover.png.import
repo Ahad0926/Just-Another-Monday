@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xev6xce05lmj"
-path="res://.godot/imported/desk.png-6f390f138471cef9db3004d02b4bc42a.ctex"
+uid="uid://c8fjc1x0g65j8"
+path="res://.godot/imported/recycle-bin-hover.png-911c94879e3c2d03e45fb5360ea1329c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/desk.png"
-dest_files=["res://.godot/imported/desk.png-6f390f138471cef9db3004d02b4bc42a.ctex"]
+source_file="res://Assets/Desktop_Icons/recycle-bin-hover.png"
+dest_files=["res://.godot/imported/recycle-bin-hover.png-911c94879e3c2d03e45fb5360ea1329c.ctex"]
 
 [params]
 

@@ -1,12 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://da5mobc5uchw4"]
+[gd_scene load_steps=9 format=3 uid="uid://da5mobc5uchw4"]
 
 [ext_resource type="Texture2D" uid="uid://daomivj1gqtne" path="res://Assets/APT_BDR_ASSETS/APT_FLOOR.png" id="1_nlg8m"]
 [ext_resource type="Texture2D" uid="uid://c6n02t222tbpq" path="res://Assets/APT_BDR_ASSETS/APT_WALLS.png" id="2_hm2an"]
 [ext_resource type="Texture2D" uid="uid://dl76wretdukbn" path="res://Assets/APT_BDR_ASSETS/APT_FURNITURE.png" id="3_j868w"]
-[ext_resource type="PackedScene" uid="uid://e0mdfdeoao8d" path="res://Scenes/player.tscn" id="4_b2vqq"]
-[ext_resource type="Texture2D" uid="uid://cdaykn6y7ag6" path="res://Assets/APT_BDR_ASSETS_20%/APT_BDR_ASSETS_20%/APT_FLOOR_20%.png" id="4_qni5i"]
-[ext_resource type="Texture2D" uid="uid://bkakclq0t4b4m" path="res://Assets/APT_BDR_ASSETS_20%/APT_BDR_ASSETS_20%/APT_WALLS_20%.png" id="5_c0uvo"]
-[ext_resource type="Texture2D" uid="uid://co78wbjhlkuk3" path="res://Assets/APT_BDR_ASSETS_20%/APT_BDR_ASSETS_20%/APT_FURNITURE_20%.png" id="6_r2f7w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wlnuo"]
 texture = ExtResource("1_nlg8m")
@@ -44,30 +40,6 @@ texture = ExtResource("3_j868w")
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_isfvq")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f6js5"]
-texture = ExtResource("4_qni5i")
-texture_region_size = Vector2i(16, 17)
-8:5/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_vm8n4"]
-sources/0 = SubResource("TileSetAtlasSource_f6js5")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vhr2f"]
-texture = ExtResource("5_c0uvo")
-texture_region_size = Vector2i(16, 17)
-8:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_7sldi"]
-sources/0 = SubResource("TileSetAtlasSource_vhr2f")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2p0pr"]
-texture = ExtResource("6_r2f7w")
-texture_region_size = Vector2i(16, 17)
-8:0/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_gstgj"]
-sources/0 = SubResource("TileSetAtlasSource_2p0pr")
-
 [node name="TestApt" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -89,27 +61,3 @@ position = Vector2(464, 246)
 scale = Vector2(0.25, 0.25)
 tile_map_data = PackedByteArray(0, 0, 33, 0, 18, 0, 1, 0, 7, 0, 5, 0, 0, 0)
 tile_set = SubResource("TileSet_go8js")
-
-[node name="Player" parent="." instance=ExtResource("4_b2vqq")]
-position = Vector2(563, 443)
-scale = Vector2(2, 2)
-
-[node name="TileMapLayer6" type="TileMapLayer" parent="."]
-visible = false
-texture_filter = 1
-position = Vector2(1, 9)
-tile_map_data = PackedByteArray(0, 0, 34, 0, 22, 0, 0, 0, 8, 0, 5, 0, 0, 0)
-tile_set = SubResource("TileSet_vm8n4")
-
-[node name="TileMapLayer5" type="TileMapLayer" parent="."]
-visible = false
-texture_filter = 1
-tile_map_data = PackedByteArray(0, 0, 34, 0, 20, 0, 0, 0, 8, 0, 0, 0, 0, 0)
-tile_set = SubResource("TileSet_7sldi")
-
-[node name="TileMapLayer4" type="TileMapLayer" parent="."]
-visible = false
-texture_filter = 1
-position = Vector2(8, 0)
-tile_map_data = PackedByteArray(0, 0, 34, 0, 20, 0, 0, 0, 8, 0, 0, 0, 0, 0)
-tile_set = SubResource("TileSet_gstgj")

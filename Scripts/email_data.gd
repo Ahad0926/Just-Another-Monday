@@ -1,34 +1,15 @@
 extends Node
 
+# Example emails
 var emails = [
-	{
-		"id": 1,
-		"title": "Welcome to Work!",
-		"sender": "HR Department",
-		"body": "Hello and welcome to your first day! Please get started by completing the task in the 'Folders' app.",
-		"task": "organize_folders",
-		"completed": false
-	},
-	{
-		"id": 2,
-		"title": "Urgent Report Needed",
-		"sender": "Boss",
-		"body": "Hey, I need you to generate a report by sorting the files in the correct folders.",
-		"task": "generate_report",
-		"completed": false
-	},
-	{
-		"id": 3,
-		"title": "Strange System Log",
-		"sender": "Unknown",
-		"body": "There’s something odd happening in the system. Have you noticed any glitches?",
-		"task": "read_log",
-		"completed": false
-	}
+	{"title": "Project Update", "sender": "Boss", "body": "Please review the project report.", "is_spam": false},
+	{"title": "YOU WON A MILLION DOLLARS!", "sender": "SpamBot", "body": "Click here to claim your prize!", "is_spam": true},
+	{"title": "Meeting Reminder", "sender": "HR", "body": "Don't forget about the meeting at 3PM.", "is_spam": false},
+	{"title": "URGENT: Security Alert", "sender": "Admin", "body": "Your password was compromised. Reset now.", "is_spam": false},
+	{"title": "FREE VACATION!", "sender": "Scammer", "body": "You've won a free trip to Hawaii!", "is_spam": true},
 ]
 
-func mark_email_completed(email_id):
-	for email in emails:
-		if email["id"] == email_id:
-			email["completed"] = true
-			break
+# Track progress
+var current_email_index = 0
+var correct_sort_count = 0
+var total_emails = emails.size()
