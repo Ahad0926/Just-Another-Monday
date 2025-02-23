@@ -19,7 +19,7 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 Global="*res://Scripts/global.gd"
 PlayerStats="*res://Scripts/player_stats.gd"
 Main="*res://Scripts/main.gd"
-DialogueManager="*res://Scripts/dialogue_manager.gd"
+EmailData="*res://Scripts/email_data.gd"
 
 [editor]
 

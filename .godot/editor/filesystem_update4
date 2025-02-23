@@ -1,9 +1,6 @@
-res://Scenes/desktop.tscn
-res://Assets/Desktop/Font.tres
 res://Scenes/desk_ui.tscn
-res://Scenes/office.tscn
+res://Assets/Desktop/Font.tres
+res://Scenes/desktop.tscn
 res://Scenes/test_apt.tscn
-res://Scenes/apartment.tscn
-res://Scripts/main.gd
-res://Scripts/desktop.gd
 res://Scripts/email_window.gd
+res://Scripts/email_data.gd

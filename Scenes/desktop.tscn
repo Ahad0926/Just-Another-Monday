@@ -47,6 +47,13 @@ texture_margin_right = 2.0
 texture_margin_bottom = 2.0
 region_rect = Rect2(0, 0, 16, 16)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oieyw"]
+texture = ExtResource("3_i7xhc")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
 [sub_resource type="Shader" id="7"]
 code = "shader_type canvas_item;
 
@@ -64,13 +71,6 @@ void fragment() {
 [sub_resource type="ShaderMaterial" id="8"]
 shader = SubResource("7")
 shader_parameter/SCREEN_HEIGHT = 240.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oieyw"]
-texture = ExtResource("3_i7xhc")
-texture_margin_left = 2.0
-texture_margin_top = 2.0
-texture_margin_right = 2.0
-texture_margin_bottom = 2.0
 
 [node name="Desktop" type="Control"]
 texture_filter = 1
@@ -166,35 +166,12 @@ text = "12:30 PM"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Window" type="Window" parent="."]
-position = Vector2i(0, 17)
-visible = false
-theme_override_colors/title_color = Color(1, 1, 1, 1)
-theme_override_constants/title_height = 17
-theme_override_constants/close_h_offset = 19
-theme_override_constants/close_v_offset = 14
-theme_override_icons/close = ExtResource("6_dc1c3")
-
-[node name="ScanLines" type="ColorRect" parent="."]
-visible = false
-material = SubResource("8")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 30.0
-offset_top = 10.0
-offset_right = 30.0
-offset_bottom = 10.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="EmailAppButton" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 113.0
-offset_top = 364.0
-offset_right = 177.0
-offset_bottom = 455.0
+offset_left = 40.0
+offset_top = 42.0
+offset_right = 104.0
+offset_bottom = 133.0
 
 [node name="TextureButton" type="TextureButton" parent="EmailAppButton"]
 layout_mode = 2
@@ -208,6 +185,7 @@ text = "E-mail"
 horizontal_alignment = 1
 
 [node name="EmailAppWindow" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -253,3 +231,80 @@ offset_bottom = 41.0
 texture_normal = ExtResource("6_dc1c3")
 texture_pressed = ExtResource("8_bapbp")
 stretch_mode = 5
+
+[node name="FoldersAppButton" type="VBoxContainer" parent="."]
+offset_left = 40.0
+offset_top = 159.0
+offset_right = 104.0
+offset_bottom = 250.0
+
+[node name="TextureButton" type="TextureButton" parent="FoldersAppButton"]
+layout_mode = 2
+texture_normal = ExtResource("7_n8k8n")
+texture_pressed = ExtResource("7_n8k8n")
+texture_hover = ExtResource("7_n8k8n")
+
+[node name="Label" type="Label" parent="FoldersAppButton"]
+layout_mode = 2
+text = "Folders"
+horizontal_alignment = 1
+
+[node name="FoldersAppWindow" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -391.5
+offset_top = -241.0
+offset_right = 391.5
+offset_bottom = 241.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oieyw")
+
+[node name="Label" type="Label" parent="FoldersAppWindow"]
+layout_mode = 0
+offset_left = 356.5
+offset_top = -3.0
+offset_right = 400.5
+offset_bottom = 20.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Folders"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FoldersAppWindow"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 34.0
+offset_top = 58.0
+offset_right = -21.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CloseButton" type="TextureButton" parent="FoldersAppWindow"]
+layout_mode = 0
+offset_left = 738.5
+offset_top = 1.0
+offset_right = 778.5
+offset_bottom = 41.0
+texture_normal = ExtResource("6_dc1c3")
+texture_pressed = ExtResource("8_bapbp")
+stretch_mode = 5
+
+[node name="ScanLines" type="ColorRect" parent="."]
+material = SubResource("8")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 10.0
+offset_right = 30.0
+offset_bottom = 10.0
+grow_horizontal = 2
+grow_vertical = 2

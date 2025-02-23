@@ -47,7 +47,6 @@ sources/1 = SubResource("TileSetAtlasSource_isfvq")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f6js5"]
 texture = ExtResource("4_qni5i")
 texture_region_size = Vector2i(16, 17)
-8:5/size_in_atlas = Vector2i(23, 17)
 8:5/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_vm8n4"]
@@ -56,7 +55,6 @@ sources/0 = SubResource("TileSetAtlasSource_f6js5")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vhr2f"]
 texture = ExtResource("5_c0uvo")
 texture_region_size = Vector2i(16, 17)
-8:0/size_in_atlas = Vector2i(23, 22)
 8:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_7sldi"]
@@ -65,7 +63,6 @@ sources/0 = SubResource("TileSetAtlasSource_vhr2f")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2p0pr"]
 texture = ExtResource("6_r2f7w")
 texture_region_size = Vector2i(16, 17)
-8:0/size_in_atlas = Vector2i(24, 22)
 8:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_gstgj"]
