@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var desk_scene: String = "res://Scenes/desk_ui.tscn"  # Path to desk scene
+@export var desk_scene: String = "res://Scenes/desktop.tscn"  # Path to desk scene
 
 func _on_body_entered(body):
 	if body.name == "Player":
