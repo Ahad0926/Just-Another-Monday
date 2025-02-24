@@ -54,6 +54,7 @@ var mutation_cooldown: Timer = Timer.new()
 @onready var portrait: TextureRect = %Portrait
 
 signal dialogue_finished
+var is_choice: bool = false  ## Tracks if we're in a choice selection
 
 func _ready() -> void:
 	balloon.hide()
@@ -67,11 +68,25 @@ func _ready() -> void:
 	add_child(mutation_cooldown)
 	DialogueManager.dialogue_ended.connect(_on_dialogue_ended)
 
-
-func _unhandled_input(_event: InputEvent) -> void:
+## 🔹 Custom Input Handling: Spacebar moves to the next line, mouse click selects choices
+func _unhandled_input(event: InputEvent) -> void:
 	# Only the balloon is allowed to handle input while it's showing
 	get_viewport().set_input_as_handled()
 
+	if not is_inside_tree() or not visible:
+		return
+
+	# Proceed to next dialogue line if there are no choices
+	if event.is_action_pressed("ui_accept") or event.is_action_pressed("space_bar"):
+		if not is_choice:
+			next(dialogue_line.next_id)  # Only go next if no choices
+
+	# Navigate choices (W/S instead of arrow keys)
+	if is_choice:
+		if event.is_action_pressed("ui_down") or event.is_action_pressed("move_down"):
+			responses_menu.select_next()
+		elif event.is_action_pressed("ui_up") or event.is_action_pressed("move_up"):
+			responses_menu.select_previous()
 
 func _notification(what: int) -> void:
 	## Detect a change of locale and update the current dialogue line to show the new language
@@ -82,15 +97,12 @@ func _notification(what: int) -> void:
 		if visible_ratio < 1:
 			dialogue_label.skip_typing()
 
-
 ## Start some dialogue
 func start(dialogue_resource: DialogueResource, title: String, extra_game_states: Array = []) -> void:
-	
 	temporary_game_states = [self] + extra_game_states
 	is_waiting_for_input = false
 	resource = dialogue_resource
 	self.dialogue_line = await resource.get_next_dialogue_line(title, temporary_game_states)
-
 
 ## Apply any changes to the balloon given a new [DialogueLine].
 func apply_dialogue_line() -> void:
@@ -121,6 +133,9 @@ func apply_dialogue_line() -> void:
 	responses_menu.hide()
 	responses_menu.responses = dialogue_line.responses
 
+	# Determine if we have choices
+	is_choice = dialogue_line.responses.size() > 0
+
 	# Show our balloon
 	balloon.show()
 	will_hide_balloon = false
@@ -131,7 +146,7 @@ func apply_dialogue_line() -> void:
 		await dialogue_label.finished_typing
 
 	# Wait for input
-	if dialogue_line.responses.size() > 0:
+	if is_choice:
 		balloon.focus_mode = Control.FOCUS_NONE
 		responses_menu.show()
 	elif dialogue_line.time != "":
@@ -143,26 +158,21 @@ func apply_dialogue_line() -> void:
 		balloon.focus_mode = Control.FOCUS_ALL
 		balloon.grab_focus()
 
-
 ## Go to the next line
 func next(next_id: String) -> void:
 	self.dialogue_line = await resource.get_next_dialogue_line(next_id, temporary_game_states)
 
-
 #region Signals
-
 
 func _on_mutation_cooldown_timeout() -> void:
 	if will_hide_balloon:
 		will_hide_balloon = false
 		balloon.hide()
 
-
 func _on_mutated(_mutation: Dictionary) -> void:
 	is_waiting_for_input = false
 	will_hide_balloon = true
 	mutation_cooldown.start(0.1)
-
 
 func _on_balloon_gui_input(event: InputEvent) -> void:
 	# See if we need to skip typing of the dialogue
@@ -175,7 +185,7 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 			return
 
 	if not is_waiting_for_input: return
-	if dialogue_line.responses.size() > 0: return
+	if is_choice: return  # Prevents spacebar from selecting choices
 
 	# When there are no response options the balloon itself is the clickable thing
 	get_viewport().set_input_as_handled()
@@ -184,7 +194,6 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 		next(dialogue_line.next_id)
 	elif event.is_action_pressed(next_action) and get_viewport().gui_get_focus_owner() == balloon:
 		next(dialogue_line.next_id)
-
 
 func _on_responses_menu_response_selected(response: DialogueResponse) -> void:
 	next(response.next_id)

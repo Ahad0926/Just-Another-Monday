@@ -3,25 +3,45 @@ extends CharacterBody2D
 @export var speed: float = 80.0
 @export var player_stats = PlayerStats
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var dialogue_ui = get_tree().get_first_node_in_group("balloon")
+@onready var dialogue_ui = get_tree().get_first_node_in_group("ExampleBalloon")
 var in_dialogue = false
+var using_pc = false
+var near_pc = false
+var input_vector: Vector2 = Vector2.ZERO
 
 
-func _process(delta: float) -> void:
-	# Block player movement while dialogue is active
-	if dialogue_ui and dialogue_ui.visible:
-		in_dialogue = true
-		return
-	else:
-		_handle_input()
+func _unhandled_input(event: InputEvent) -> void:
+	if in_dialogue or using_pc:
+		return  # Block movement during dialogue or PC use
+
+	# Reset input vector before detecting new inputs
+	var new_input_vector := Vector2.ZERO
+
+	if Input.is_action_pressed("player_left"):
+		new_input_vector.x -= 1
+	if Input.is_action_pressed("player_right"):
+		new_input_vector.x += 1
+	if Input.is_action_pressed("player_up"):
+		new_input_vector.y -= 1
+	if Input.is_action_pressed("player_down"):
+		new_input_vector.y += 1
+
+	# Normalize to prevent increased diagonal movement speed
+	input_vector = new_input_vector.normalized()
 
 func _physics_process(delta: float) -> void:
-	if in_dialogue:#or using_pc'''
+	if in_dialogue or using_pc:
 		velocity = Vector2.ZERO
 		_set_idle_animation()
 		return
 	
-	_update_movement()
+	velocity = input_vector * speed
+	move_and_slide()
+
+	if velocity.length() > 0:
+		_update_animation(input_vector)
+	else:
+		_set_idle_animation()
 
 # Detect player input
 func _handle_input() -> void:
@@ -51,20 +71,16 @@ func _update_movement() -> void:
 
 # Update animation based on movement direction
 func _update_animation(direction: Vector2) -> void:
-	if in_dialogue:
-		return
-	else:
-		if direction.x > 0:
-			animated_sprite.play("walk_right")
-		elif direction.x < 0:
-			animated_sprite.play("walk_left")
-		elif direction.y > 0:
-			animated_sprite.play("walk_down")
-		elif direction.y < 0:
-			animated_sprite.play("walk_up")
-			
-	# Reduce stamina when moving
-	player_stats.modify_stats(0, -0.1)
+	if direction.x > 0:
+		animated_sprite.play("walk_right")
+	elif direction.x < 0:
+		animated_sprite.play("walk_left")
+	elif direction.y > 0:
+		animated_sprite.play("walk_down")
+	elif direction.y < 0:
+		animated_sprite.play("walk_up")
+
+	player_stats.modify_stats(0, -0.1)  # Reduce stamina when moving
 
 func _set_idle_animation() -> void:
 	match animated_sprite.animation:
@@ -72,6 +88,14 @@ func _set_idle_animation() -> void:
 		"walk_left": animated_sprite.play("idle_left")
 		"walk_down": animated_sprite.play("idle_down")
 		"walk_up": animated_sprite.play("idle_up")
+
+func enter_dialogue_mode():
+	in_dialogue = true
+	velocity = Vector2.ZERO
+	_set_idle_animation()
+
+func exit_dialogue_mode():
+	in_dialogue = false
 		
 var near_npc: CharacterBody2D = null
 

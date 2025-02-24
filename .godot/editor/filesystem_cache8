@@ -1,5 +1,5 @@
 6b83eef13f46d74bce552f92a480ef09
-::res://::1740407167
+::res://::1740413766
 phoneUI.tscn::PackedScene::4404940885165326691::1740086525::0::1::::<><>::uid://dyghfpv8jxe0k::::res://Assets/Smart Phone Asset by PogoNR/PNGs/Phone_2.png<>res://phone_clock.gd
 phone_clock.gd::GDScript::-1::1740086525::0::1::::<>Control<>::
 README.md::TextFile::-1::1739829483::0::1::::<><>::
@@ -298,26 +298,26 @@ TopDownHouse_FloorsAndWalls_OpenDoors.png::CompressedTexture2D::3413669740755731
 TopDownHouse_FurnitureState1.png::CompressedTexture2D::4058012339050250705::1739923184::1739923359::1::::<><>::
 TopDownHouse_FurnitureState2.png::CompressedTexture2D::6275062897222439730::1739923184::1739923359::1::::<><>::
 TopDownHouse_SmallItems.png::CompressedTexture2D::1580956565217962937::1739923184::1739923359::1::::<><>::
-::res://Scenes/::1740410698
-apartment.tscn::PackedScene::2728534642029012588::1740410797::0::1::::<><>::uid://da5mobc5uchw4::::res://Scenes/test_apt.tscn<>uid://e0mdfdeoao8d::::res://Scenes/player.tscn<>res://Scripts/scene_transition.gd<>uid://chinvs8bp3ahi::::res://Scenes/HUD.tscn
+::res://Scenes/::1740413784
+apartment.tscn::PackedScene::2728534642029012588::1740411178::0::1::::<><>::uid://da5mobc5uchw4::::res://Scenes/test_apt.tscn<>uid://e0mdfdeoao8d::::res://Scenes/player.tscn<>res://Scripts/scene_transition.gd<>uid://chinvs8bp3ahi::::res://Scenes/HUD.tscn
 desktop.tscn::PackedScene::6922063341424060270::1740366890::0::1::::<><>::res://Scripts/desktop.gd<>uid://jnk3hrmjl2tl::::res://Assets/Desktop/Font.tres<>uid://biaakur0vk206::::res://Assets/Desktop/PatchInverted.png<>uid://bg241wt1xpfoy::::res://Assets/Desktop/PatchRegular.png<>uid://cggbubid3xpv3::::res://Assets/Desktop/Flag.png<>uid://o7mgu38xawj2::::res://Assets/Desktop/CloseRegular.png<>uid://by0n1lipoxrgg::::res://Assets/Desktop_Icons/email_icon.png<>uid://cukq4pbkpfaeu::::res://Assets/Desktop_Icons/email_icon_hover.png<>uid://dbrrlp4sabjhp::::res://Assets/Desktop/ClosePressed.png<>res://Scripts/email_window.gd<>uid://t0l3rrrxjoad::::res://Assets/Desktop_Icons/flag.png<>uid://o1qgicey1r0p::::res://Assets/Desktop_Icons/check.png<>uid://cjb0m5ybuts1m::::res://Assets/Desktop_Icons/recycle-bin.png<>uid://c8fjc1x0g65j8::::res://Assets/Desktop_Icons/recycle-bin-hover.png<>uid://cdm7nbgyt3nem::::res://Assets/Desktop_Icons/internet.png<>uid://cq7hwset4ici1::::res://Assets/Desktop_Icons/internet-hover.png<>uid://cms3rgup6net1::::res://Assets/Desktop_Icons/files.png<>uid://b0s104ttjaxrr::::res://Assets/Desktop_Icons/files-hover.png
 desk_ui.tscn::PackedScene::5777267759738834292::1740337905::0::1::::<><>::res://Scripts/desk_ui.gd
 dialogue_ui.tscn::PackedScene::1134289809319486033::1740366890::0::1::::<><>::uid://i65qad3qt7sb::::res://Assets/gb dialogue boxes/GBS frames Black/Chunky simple 3b.png<>res://Scripts/dialogue_ui.gd
-hallway.tscn::PackedScene::4331592597496278360::1740410795::0::1::::<><>::res://Scripts/apartment_enterance.gd<>uid://e0mdfdeoao8d::::res://Scenes/player.tscn<>uid://chinvs8bp3ahi::::res://Scenes/HUD.tscn<>uid://bis3p80sfognf::::res://Scenes/npc.tscn<>uid://qfpt8cwd6hrl::::res://Scenes/dialogue_ui.tscn<>res://Scripts/scene_transition.gd<>uid://bxtuvofacq65f::::res://Assets/APT_HALLWAY_ASSETS/APT_HALLWAY_FLOOR.png<>uid://bjnb6mebj64wg::::res://Assets/APT_HALLWAY_ASSETS/APT_HALLWAY_WALL.png<>uid://db8r0fq1q662::::res://Assets/APT_HALLWAY_ASSETS/APT_HALLWAY_DOOR.png<>uid://bmkhdyh1noo5b::::res://Assets/APT_HALLWAY_ASSETS/APT_HALLWAY_SIGNS.png
+hallway.tscn::PackedScene::4331592597496278360::1740413798::0::1::::<><>::res://Scripts/apartment_enterance.gd<>uid://e0mdfdeoao8d::::res://Scenes/player.tscn<>uid://chinvs8bp3ahi::::res://Scenes/HUD.tscn<>uid://bis3p80sfognf::::res://Scenes/npc.tscn<>uid://qfpt8cwd6hrl::::res://Scenes/dialogue_ui.tscn<>res://Scripts/scene_transition.gd<>uid://bxtuvofacq65f::::res://Assets/APT_HALLWAY_ASSETS/APT_HALLWAY_FLOOR.png<>uid://bjnb6mebj64wg::::res://Assets/APT_HALLWAY_ASSETS/APT_HALLWAY_WALL.png<>uid://db8r0fq1q662::::res://Assets/APT_HALLWAY_ASSETS/APT_HALLWAY_DOOR.png<>uid://bmkhdyh1noo5b::::res://Assets/APT_HALLWAY_ASSETS/APT_HALLWAY_SIGNS.png
 HUD.tscn::PackedScene::5281506113928303398::1740114499::0::1::::<><>::res://Scripts/hud.gd
 main.tscn::PackedScene::2332591445580837877::1740339475::0::1::::<><>::res://Scripts/main.gd
-npc.tscn::PackedScene::2986818867792212631::1740410797::0::1::::<><>::uid://ceuqy6giy56b3::::res://Assets/16x16-RPG-characters/chibi-layered2.png<>res://Scripts/npc.gd
+npc.tscn::PackedScene::2986818867792212631::1740411177::0::1::::<><>::uid://ceuqy6giy56b3::::res://Assets/16x16-RPG-characters/chibi-layered2.png<>res://Scripts/npc.gd
 office.tscn::PackedScene::4168543456012816430::1740273940::0::1::::<><>::uid://bv7vxbmytoelj::::res://Assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png<>uid://djkew57mn4bf1::::res://Assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png<>uid://bx2y4ud5gqyib::::res://Assets/Top-Down_Retro_Interior/TopDownHouse_FurnitureState1.png<>uid://e0mdfdeoao8d::::res://Scenes/player.tscn<>res://Scripts/pc_interact.gd
-player.tscn::PackedScene::333099047150167869::1740410797::0::1::::<><>::uid://ceuqy6giy56b3::::res://Assets/16x16-RPG-characters/chibi-layered2.png<>res://Scripts/player_movement.gd<>res://Scripts/player_stats.gd<>uid://ivw4wllxqy45::::res://Assets/SPRITES/player_sprite.png
+player.tscn::PackedScene::333099047150167869::1740411178::0::1::::<><>::uid://ceuqy6giy56b3::::res://Assets/16x16-RPG-characters/chibi-layered2.png<>res://Scripts/player_movement.gd<>res://Scripts/player_stats.gd<>uid://ivw4wllxqy45::::res://Assets/SPRITES/player_sprite.png
 test_apt.tscn::PackedScene::7221947045731798453::1740366889::0::1::::<><>::uid://daomivj1gqtne::::res://Assets/APT_BDR_ASSETS/APT_FLOOR.png<>uid://c6n02t222tbpq::::res://Assets/APT_BDR_ASSETS/APT_WALLS.png<>uid://dl76wretdukbn::::res://Assets/APT_BDR_ASSETS/APT_FURNITURE.png
 test_dialogue.tscn::PackedScene::3116789977868131770::1740374711::0::1::::<><>::
-::res://Scripts/::1740410698
+::res://Scripts/::1740413784
 apartment_enterance.gd::GDScript::-1::1740117619::0::1::::<>Area2D<>::
 desktop.gd::GDScript::-1::1740332444::0::1::::<>Node<>::
 desk_ui.gd::GDScript::-1::1740261866::0::1::::<>Control<>::
-dialogue.dialogue::Resource::5318294248033922965::1740408240::1740410798::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
-dialogue_insane.dialogue::Resource::1853079052274991524::1740407060::1740410798::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
-dialogue_normal.dialogue::Resource::6531400209339103108::1740409468::1740410798::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
+dialogue.dialogue::Resource::5318294248033922965::1740408240::1740413799::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
+dialogue_insane.dialogue::Resource::1853079052274991524::1740407060::1740413799::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
+dialogue_normal.dialogue::Resource::6531400209339103108::1740409468::1740413799::1::::<><>::res://addons/dialogue_manager/dialogue_resource.gd
 dialogue_ui.gd::GDScript::-1::1740379662::0::1::::<>Control<>::
 email_data.gd::GDScript::-1::1740332444::0::1::::<>Node<>::
 email_window.gd::GDScript::-1::1740333435::0::1::::<>Panel<>::
@@ -326,10 +326,10 @@ hud.gd::GDScript::-1::1740108534::0::1::::<>Control<>::
 main.gd::GDScript::-1::1740365551::0::1::::<>Node2D<>::
 npc.gd::GDScript::-1::1740410796::0::1::::<>CharacterBody2D<>::
 pc_interact.gd::GDScript::-1::1740267859::0::1::::<>Area2D<>::
-player_movement.gd::GDScript::-1::1740410796::0::1::::<>CharacterBody2D<>::
+player_movement.gd::GDScript::-1::1740411927::0::1::::<>CharacterBody2D<>::
 player_stats.gd::GDScript::-1::1740190214::0::1::::<>Node<>::
 scene_transition.gd::GDScript::-1::1740254545::0::1::::<>Area2D<>::
 scene_transition.tscn::PackedScene::8420512631399182038::1740254057::0::1::::<><>::
-::res://Scripts/Balloon/::1740410698
-balloon.gd::GDScript::-1::1740410795::0::1::::<>CanvasLayer<>::
-balloon.tscn::PackedScene::1051069120979644885::1740410797::0::1::::<><>::res://Scripts/Balloon/balloon.gd<>uid://jnk3hrmjl2tl::::res://Assets/Desktop/Font.tres<>uid://ckvgyvclnwggo::::res://addons/dialogue_manager/dialogue_label.tscn<>res://addons/dialogue_manager/dialogue_responses_menu.gd
+::res://Scripts/Balloon/::1740413783
+balloon.gd::GDScript::-1::1740413798::0::1::::<>CanvasLayer<>::
+balloon.tscn::PackedScene::1051069120979644885::1740411177::0::1::::<><>::res://Scripts/Balloon/balloon.gd<>uid://jnk3hrmjl2tl::::res://Assets/Desktop/Font.tres<>uid://ckvgyvclnwggo::::res://addons/dialogue_manager/dialogue_label.tscn<>res://addons/dialogue_manager/dialogue_responses_menu.gd
