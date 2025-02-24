@@ -1,0 +1,15 @@
+~ start
+NPC: Hello there! How can I help you today?
+Player:
+  - "Just checking in." => normal_response
+  - "Have you seen anything strange?" => hint_conspiracy
+  - "Never mind." => END
+
+~ normal_response
+NPC: All good then! Have a nice day.
+-> start
+
+~ hint_conspiracy
+NPC: Hmm... There was a weird email in the system today.
+Player:
+  - "What email?" => END

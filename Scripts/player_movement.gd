@@ -1,13 +1,11 @@
 extends CharacterBody2D
 
 @export var speed: float = 80.0
-var player_stats = PlayerStats
+@export var player_stats = PlayerStats
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var dialogue_ui = get_tree().get_first_node_in_group("dialogue_ui")
+@onready var dialogue_ui = get_tree().get_first_node_in_group("balloon")
 var in_dialogue = false
 
-var near_pc = false
-var using_pc = false
 
 func _process(delta: float) -> void:
 	# Block player movement while dialogue is active
@@ -18,7 +16,7 @@ func _process(delta: float) -> void:
 		_handle_input()
 
 func _physics_process(delta: float) -> void:
-	if in_dialogue or using_pc:
+	if in_dialogue:#or using_pc'''
 		velocity = Vector2.ZERO
 		_set_idle_animation()
 		return
@@ -75,10 +73,14 @@ func _set_idle_animation() -> void:
 		"walk_down": animated_sprite.play("idle_down")
 		"walk_up": animated_sprite.play("idle_up")
 		
-func enter_dialogue_mode():
-	in_dialogue = true
-	velocity = Vector2.ZERO
-	_set_idle_animation()
+var near_npc: CharacterBody2D = null
 
-func exit_dialogue_mode():
-	in_dialogue = false
+func _on_body_entered(body):
+	if body.is_in_group("NPC"):
+		print("Entered NPC area:", body.name)
+		near_npc = body  # Assign NPC to near_npc
+
+func _on_body_exited(body):
+	if body.is_in_group("NPC"):
+		print("Exited NPC area:", body.name)
+		near_npc = null  # Remove reference when leaving

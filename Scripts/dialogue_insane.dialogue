@@ -1,0 +1,13 @@
+~ start
+NPC: [static] ...who...are...you?
+Player:
+  - "What's wrong with you?" => glitch_response
+  - "This isn't real, is it?" => breakdown
+
+~ glitch_response
+NPC: [glitching] ERROR: SYSTEM MALFUNCTION
+-> END
+
+~ breakdown
+NPC: You shouldn't be here...
+-> END

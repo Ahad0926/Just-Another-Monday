@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://b2yixx8204rsy"]
+[gd_scene load_steps=26 format=4 uid="uid://b2yixx8204rsy"]
 
 [ext_resource type="Texture2D" uid="uid://bv7vxbmytoelj" path="res://Assets/Top-Down_Retro_Interior/TopDownHouse_FloorsAndWalls.png" id="1_1q6so"]
 [ext_resource type="Texture2D" uid="uid://djkew57mn4bf1" path="res://Assets/Top-Down_Retro_Interior/TopDownHouse_DoorsAndWindows.png" id="2_6mh2r"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://chinvs8bp3ahi" path="res://Scenes/HUD.tscn" id="5_rv7iu"]
 [ext_resource type="PackedScene" uid="uid://bis3p80sfognf" path="res://Scenes/npc.tscn" id="6_d1y6b"]
 [ext_resource type="PackedScene" uid="uid://qfpt8cwd6hrl" path="res://Scenes/dialogue_ui.tscn" id="7_ejji8"]
-[ext_resource type="Texture2D" uid="uid://ceuqy6giy56b3" path="res://Assets/16x16-RPG-characters/chibi-layered2.png" id="7_s7was"]
 [ext_resource type="Script" path="res://Scripts/scene_transition.gd" id="9_i83oj"]
 [ext_resource type="Texture2D" uid="uid://bxtuvofacq65f" path="res://Assets/APT_HALLWAY_ASSETS/APT_HALLWAY_FLOOR.png" id="10_j67no"]
 [ext_resource type="Texture2D" uid="uid://bjnb6mebj64wg" path="res://Assets/APT_HALLWAY_ASSETS/APT_HALLWAY_WALL.png" id="11_q2n5s"]
@@ -191,44 +190,6 @@ sources/1 = SubResource("TileSetAtlasSource_7vkgu")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_440fx"]
 size = Vector2(76, 84)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hd8uc"]
-atlas = ExtResource("7_s7was")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ibxxc"]
-atlas = ExtResource("7_s7was")
-region = Rect2(32, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_7wshd"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hd8uc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ibxxc")
-}],
-"loop": true,
-"name": &"all",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hd8uc")
-}],
-"loop": true,
-"name": &"idle_down",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ibxxc")
-}],
-"loop": true,
-"name": &"idle_up",
-"speed": 5.0
-}]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bidyt"]
 size = Vector2(13, 48)
 
@@ -319,7 +280,6 @@ scale = Vector2(2, 2)
 metadata/_edit_use_anchors_ = true
 
 [node name="TestDialogueUi" parent="CanvasLayer" instance=ExtResource("7_ejji8")]
-visible = false
 offset_left = -2.0
 offset_top = 8.784
 offset_right = -2.0
@@ -328,8 +288,6 @@ offset_bottom = 8.784
 [node name="Npc" parent="." instance=ExtResource("6_d1y6b")]
 y_sort_enabled = false
 position = Vector2(816, 322)
-npc_name = "Neighbour"
-animations = SubResource("SpriteFrames_7wshd")
 
 [node name="HallwayExit" type="Area2D" parent="."]
 position = Vector2(535, 319)

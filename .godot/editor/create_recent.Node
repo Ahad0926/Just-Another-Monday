@@ -1,7 +1,8 @@
+TextureRect
+HBoxContainer
 TileMapLayer
 GridContainer
 VBoxContainer
-HBoxContainer
 Button
 RichTextLabel
 Label
@@ -9,6 +10,5 @@ ColorRect
 Control
 TextureButton
 CanvasLayer
-TextureRect
 Panel
 Window

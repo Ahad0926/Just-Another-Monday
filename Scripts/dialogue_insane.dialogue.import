@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://1nv7ac8564fo"
+path="res://.godot/imported/dialogue_insane.dialogue-94cdd0ee820a5bf6897e78bea97d1eb9.tres"
+
+[deps]
+
+source_file="res://Scripts/dialogue_insane.dialogue"
+dest_files=["res://.godot/imported/dialogue_insane.dialogue-94cdd0ee820a5bf6897e78bea97d1eb9.tres"]
+
+[params]
+
+defaults=true

@@ -1,7 +1,6 @@
-res://Scenes/desktop.tscn
-res://Scenes/test_apt.tscn
-res://Assets/Desktop/Font.tres
 res://Scenes/apartment.tscn
+res://Assets/Desktop/Font.tres
 res://Scenes/hallway.tscn
-res://Scenes/main.tscn
-res://Scripts/main.gd
+res://Scripts/Balloon/balloon.tscn
+res://Scenes/npc.tscn
+res://Scenes/player.tscn
