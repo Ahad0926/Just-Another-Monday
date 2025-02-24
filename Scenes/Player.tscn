@@ -282,7 +282,6 @@ animation = &"idle_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.333344, 1.14578)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_5pcxi")
 
 [node name="Camera2D" type="Camera2D" parent="."]

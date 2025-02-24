@@ -1,0 +1,49 @@
+~ start
+Cat1: [#smug, #mischevious] Finally awake?
+Player1: Unfortunately.
+Cat2: [#grinning] You look terrible.
+Player1: Thanks. Real morale boost.
+Cat1: No problem. You get that one for free.
+
+Player1: [#groggy] What do you even want?
+Cat2: [#mischevious] Oh, nothing. Just sitting here. Watching you waste away.
+Player2: [#annoyed] I *just* woke up.
+Cat2: [#smug] Exactly. That was already a struggle to witness.
+
+Player1: [#sighs] You know, normal pets greet their owners with affection.
+Cat1: [#grinning] And normal people wake up before noon.
+- "You're not a real cat, are you?" => hint_illusion
+- "Keep talking, and I'm locking you out." => threat_lock_out
+
+~ hint_illusion
+Player2: You’re not a real cat, are you?
+Cat2: [#mocking] Oh no, you got me. I’m actually a figment of your miserable little life.
+Player1: [#dry] That tracks, honestly.
+Cat1: [#purring] Good! Wouldn’t want you thinking you were *sane*.
+=> check_emails
+
+~ threat_lock_out
+Player2: Keep talking, and I’m locking you out.
+Cat2: [#mocking] Ooooh, terrifying. You think I need doors?
+Player1: You *are* getting way too comfortable in here.
+Cat1: [#grinning] And you aren’t? 
+=> check_emails
+
+~ check_emails
+Cat2: [#mocking] But enough about your tragic existence. Don’t you have emails to sort through?
+- "Oh, *now* you care about my productivity?" => sarcasm
+- "What emails?" => clueless
+
+~ sarcasm
+Player2: Oh, *now* you care about my productivity?
+Cat1: [#stretching] Someone has to.
+Player1: You’re literally a cat.
+Cat2: [#smug] And yet, I seem to have my life together more than you do.
+=> END
+
+~ clueless
+Player1: What emails?
+Cat2: [#mocking] The ones rotting away in your inbox. Along with your ambitions.
+Player2: …Right. Thanks for that.
+Cat1: [#purring] Anytime.
+=> END

@@ -126,6 +126,7 @@ size = Vector2(7, 6)
 
 [node name="Npc" type="CharacterBody2D"]
 y_sort_enabled = true
+position = Vector2(25, -10)
 scale = Vector2(2, 2)
 script = ExtResource("1_pm0hm")
 
@@ -133,7 +134,7 @@ script = ExtResource("1_pm0hm")
 texture_filter = 1
 position = Vector2(0, -7.5)
 sprite_frames = SubResource("SpriteFrames_4ug23")
-animation = &"idle_up"
+animation = &"idle_down"
 autoplay = "idle_up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

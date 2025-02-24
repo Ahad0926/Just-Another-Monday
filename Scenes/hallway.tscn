@@ -96,10 +96,12 @@ offset_bottom = 8.784
 
 [node name="Npc" parent="." instance=ExtResource("6_d1y6b")]
 y_sort_enabled = false
-position = Vector2(639, 298)
+position = Vector2(639, 304)
+scale = Vector2(4, 4)
+npc_name = "NPC"
 
 [node name="HallwayExit" type="Area2D" parent="."]
-position = Vector2(190, 285)
+position = Vector2(206, -27)
 script = ExtResource("9_i83oj")
 target_scene = "res://Scenes/office.tscn"
 metadata/_edit_group_ = true

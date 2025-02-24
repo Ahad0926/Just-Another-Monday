@@ -1,17 +1,87 @@
 ~ start
-Cat1: Hello there! How can I help you today?  
+NPC: [#neutral] Hello there! How can I help you today?  
 - "Just checking in." => normal_response
 - "Have you seen anything strange?" => hint_conspiracy
+- "You look exhausted." => comment_on_npc
 - "Never mind." => END
 
 ~ normal_response
 Player1: Just checking in.
-Cat1: All good then! Have a nice day. => END
+NPC: [#forced_smile] All good then! Have a nice day.
+Cat2: [#mocking] *Riveting conversation.*  
+=> END
+
+~ comment_on_npc
+Player2: You look exhausted.
+NPC: [#hesitant] Oh? Do I? Must be the long hours.
+Player1: [#suspicious] They overworking you?
+NPC: [#nervous_laugh] You could say that.
+- "You're dodging the question." => press_for_more
+- "Alright, take care." => END
+
+~ press_for_more
+Player2: You're dodging the question.
+NPC: [#lowers_voice] Look, between us? Something's been… *off* lately.
+Player1: [#tense] Off *how*?
+NPC: [#whispering] Strange errors in the system. Things disappearing. Then reappearing somewhere else.
+- "That just sounds like a software bug." => dismiss_strangeness
+- "Go on…" => hint_conspiracy
+
+~ dismiss_strangeness
+Player2: That just sounds like a software bug.
+NPC: [#forcing_laugh] Yeah, maybe...  
+Cat2: [#mocking] *Or maybe reality is held together with duct tape and crossed fingers.*
+NPC: [#oblivious] Anyway, forget I said anything.  
+=> END
 
 ~ hint_conspiracy
-Player2: Have you seen anything strange?
-Cat1: Hmm... There was a weird email in the system today.
-- "What email?"
-	Player2: What email?
-	Cat2: Oh nothing
-	=> END
+Player2: Go on...
+NPC: [#looks_around] There was a weird email in the system today.
+- "What email?" => ask_about_email
+- "Do you get a lot of weird emails?" => general_question
+
+~ ask_about_email
+Player1: What email?
+NPC: [#nervous] Oh, nothing. It was probably a glitch.
+Cat2: [#mocking] *A 'glitch'? That's what we're calling it now?*
+- "You hesitated. What did it say?" => press_further
+- "Alright, I'll drop it." => END
+
+~ press_further
+Player2: You hesitated. What did it say?
+NPC: [#nervous_whisper] It was addressed to me. But… it was from me.
+Player1: [#confused] What?
+NPC: [#serious] It had my employee ID. My writing style. But I never sent it.
+Cat1: [#smug] *Spooky. Maybe you have an evil twin.*  
+NPC: [#oblivious] And it wasn’t just that.
+- "What else?" => more_weird_occurrences
+- "Sounds like a system bug." => dismiss_strangeness
+
+~ general_question
+Player2: Do you get a lot of weird emails?
+NPC: [#shrugs] Most of them are spam. But this one felt… *wrong*.
+Player1: [#raised_brow] Wrong how?
+NPC: [#whispering] It knew things. Personal things. Stuff I don’t even remember writing.
+Cat1: [#grinning] *Maybe you wrote it in your sleep. Or maybe you’re not you anymore.*
+NPC: [#exhales] Anyway, I flagged it and IT wiped it. No trace left.
+- "That’s unsettling." => more_weird_occurrences
+- "Sounds like a system bug." => dismiss_strangeness
+- "Maybe someone’s messing with you." => END
+
+~ more_weird_occurrences
+Player1: What else?
+NPC: [#whispering] My schedule changed overnight. I was suddenly assigned to a department that doesn’t exist.
+Player2: [#incredulous] A *non-existent* department?
+NPC: [#shaking_head] And when I asked IT about it, they told me I had never been scheduled in the first place.
+Cat2: [#mocking] *Ooo, now that’s a fun one.*
+- "That’s insane. What did you do?" => NPC_reaction
+- "Okay, now you’re messing with me." => END
+
+~ NPC_reaction
+Player1: That’s insane. What did you do?
+NPC: [#looks_around] I played along. What else *could* I do?
+Player2: What does that mean?
+NPC: [#nervous] If things keep changing and no one else notices… maybe I’m the one that’s wrong.
+Cat1: [#grinning] *Or maybe you’re the only one paying attention.*
+NPC: [#exhales] Anyway, forget I said anything.
+=> END

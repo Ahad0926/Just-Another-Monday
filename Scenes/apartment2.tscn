@@ -1,0 +1,156 @@
+[gd_scene load_steps=21 format=3 uid="uid://cdhvwgsfrwmhs"]
+
+[ext_resource type="PackedScene" uid="uid://da5mobc5uchw4" path="res://Scenes/test_apt.tscn" id="1_yooo6"]
+[ext_resource type="PackedScene" uid="uid://e0mdfdeoao8d" path="res://Scenes/player.tscn" id="2_e6e0e"]
+[ext_resource type="Script" path="res://Scripts/scene_transition.gd" id="3_h0fyg"]
+[ext_resource type="PackedScene" uid="uid://chinvs8bp3ahi" path="res://Scenes/HUD.tscn" id="4_p6qau"]
+[ext_resource type="Script" path="res://Scripts/npc.gd" id="5_y6n8e"]
+[ext_resource type="Texture2D" uid="uid://dd8ne53y3sokx" path="res://Assets/SPRITES/Cat Sprite Sheet.png" id="6_soi8g"]
+[ext_resource type="Script" path="res://Scripts/pc_interact.gd" id="7_um33v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xh0t5"]
+size = Vector2(69, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7refg"]
+atlas = ExtResource("6_soi8g")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qb5tj"]
+atlas = ExtResource("6_soi8g")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfvqn"]
+atlas = ExtResource("6_soi8g")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3o4g"]
+atlas = ExtResource("6_soi8g")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_380kn"]
+atlas = ExtResource("6_soi8g")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hntlb"]
+atlas = ExtResource("6_soi8g")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3iof"]
+atlas = ExtResource("6_soi8g")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_48ax5"]
+atlas = ExtResource("6_soi8g")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6ownn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7refg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qb5tj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfvqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3o4g")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_380kn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hntlb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3iof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_48ax5")
+}],
+"loop": true,
+"name": &"new_animation_1",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_acqgl"]
+size = Vector2(7, 6)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lc4xt"]
+radius = 12.5
+height = 25.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0031g"]
+size = Vector2(41.5, 35.5)
+
+[node name="world" type="Node2D"]
+
+[node name="TestApt" parent="." instance=ExtResource("1_yooo6")]
+position = Vector2(-39, 83)
+
+[node name="Player" parent="." instance=ExtResource("2_e6e0e")]
+position = Vector2(408, 548)
+
+[node name="Exit" type="Area2D" parent="."]
+position = Vector2(535, 609)
+collision_layer = 0
+script = ExtResource("3_h0fyg")
+target_scene = "res://Scenes/hallway.tscn"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
+position = Vector2(18.5, 4)
+shape = SubResource("RectangleShape2D_xh0t5")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hud" parent="CanvasLayer" instance=ExtResource("4_p6qau")]
+
+[node name="Cat" type="CharacterBody2D" parent="."]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(516, 479)
+scale = Vector2(2, 2)
+script = ExtResource("5_y6n8e")
+dialogue_file = "res://Scripts/cat_dialogue_2.dialogue"
+normal_dialogue = "res://Scripts/cat_dialogue_2.dialogue"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Cat"]
+texture_filter = 1
+position = Vector2(0, -7.5)
+sprite_frames = SubResource("SpriteFrames_6ownn")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.245991
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cat"]
+position = Vector2(1, 5)
+shape = SubResource("RectangleShape2D_acqgl")
+
+[node name="Area2D" type="Area2D" parent="Cat"]
+position = Vector2(0, -7.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cat/Area2D"]
+position = Vector2(1, 11)
+shape = SubResource("CapsuleShape2D_lc4xt")
+
+[node name="PC" type="Area2D" parent="."]
+position = Vector2(605, 386)
+scale = Vector2(2, 2)
+script = ExtResource("7_um33v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PC"]
+position = Vector2(-115.75, 71.75)
+shape = SubResource("RectangleShape2D_0031g")
+
+[connection signal="body_entered" from="Exit" to="Exit" method="_on_body_entered"]
+[connection signal="body_exited" from="Exit" to="Exit" method="_on_body_exited"]
+[connection signal="body_entered" from="PC" to="PC" method="_on_body_entered"]
+[connection signal="body_exited" from="PC" to="PC" method="_on_body_exited"]

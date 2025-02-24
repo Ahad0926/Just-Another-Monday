@@ -12,6 +12,7 @@ var input_vector: Vector2 = Vector2.ZERO
 
 func _unhandled_input(event: InputEvent) -> void:
 	if in_dialogue or using_pc:
+		_set_idle_animation()
 		return  # Block movement during dialogue or PC use
 
 	# Reset input vector before detecting new inputs

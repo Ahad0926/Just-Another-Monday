@@ -1,0 +1,269 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_skqar"]
+
+[resource]
+script = ExtResource("1_skqar")
+using_states = PackedStringArray()
+titles = {
+"start": "1"
+}
+character_names = PackedStringArray("Cat1", "Player1", "Cat2", "Player2")
+first_title = "0"
+lines = {
+"0": {
+"id": "0",
+"next_id": "1",
+"type": "title"
+},
+"1": {
+"character": "Cat1",
+"id": "1",
+"next_id": "2",
+"tags": PackedStringArray("smug", "mischevious"),
+"text": "Finally awake?",
+"type": "dialogue"
+},
+"10": {
+"character": "Cat2",
+"id": "10",
+"next_id": "12",
+"tags": PackedStringArray("smug"),
+"text": "Exactly. That was already a struggle to witness.",
+"type": "dialogue"
+},
+"11": {
+"id": "11",
+"next_id": "12",
+"type": ""
+},
+"12": {
+"character": "Player1",
+"id": "12",
+"next_id": "13",
+"tags": PackedStringArray("sighs"),
+"text": "You know, normal pets greet their owners with affection.",
+"type": "dialogue"
+},
+"13": {
+"character": "Cat1",
+"id": "13",
+"next_id": "14",
+"tags": PackedStringArray("grinning"),
+"text": "And normal people wake up before noon.",
+"type": "dialogue"
+},
+"14": {
+"character": "Player2",
+"id": "14",
+"next_id": "15",
+"text": "You’re not a real cat, are you?",
+"type": "dialogue"
+},
+"15": {
+"character": "Cat2",
+"id": "15",
+"next_id": "17",
+"tags": PackedStringArray("mocking"),
+"text": "Oh no, you got me. I’m actually a figment of your miserable little life.",
+"type": "dialogue"
+},
+"16": {
+"id": "16",
+"next_id": "17",
+"type": ""
+},
+"17": {
+"character": "Player1",
+"id": "17",
+"next_id": "18",
+"text": "Great. So I have a **talking** hallucination to deal with now.",
+"type": "dialogue"
+},
+"18": {
+"character": "Cat1",
+"id": "18",
+"next_id": "19",
+"tags": PackedStringArray("smug"),
+"text": "Yep. And guess what?",
+"type": "dialogue"
+},
+"19": {
+"character": "Player1",
+"id": "19",
+"next_id": "20",
+"text": "What.",
+"type": "dialogue"
+},
+"2": {
+"character": "Player1",
+"id": "2",
+"next_id": "3",
+"text": "Unfortunately.",
+"type": "dialogue"
+},
+"20": {
+"character": "Cat2",
+"id": "20",
+"next_id": "22",
+"text": "You should check your emails.",
+"type": "dialogue"
+},
+"21": {
+"id": "21",
+"next_id": "22",
+"type": ""
+},
+"22": {
+"character": "Player2",
+"id": "22",
+"next_id": "23",
+"text": "Oh, *now* you care about my productivity?",
+"type": "dialogue"
+},
+"23": {
+"character": "Cat1",
+"id": "23",
+"next_id": "24",
+"tags": PackedStringArray("stretching"),
+"text": "Someone has to.",
+"type": "dialogue"
+},
+"24": {
+"character": "Player1",
+"id": "24",
+"next_id": "25",
+"text": "You’re literally a cat.",
+"type": "dialogue"
+},
+"25": {
+"character": "Cat2",
+"id": "25",
+"next_id": "27",
+"tags": PackedStringArray("smug"),
+"text": "And yet, I seem to have my life together more than you do.",
+"type": "dialogue"
+},
+"26": {
+"id": "26",
+"next_id": "27",
+"type": ""
+},
+"27": {
+"character": "Player2",
+"id": "27",
+"next_id": "28",
+"text": "Fine. I’ll check them. Not because *you* said so, but because I was going to anyway.",
+"type": "dialogue"
+},
+"28": {
+"character": "Cat2",
+"id": "28",
+"next_id": "29",
+"tags": PackedStringArray("mocking"),
+"text": "Uh-huh. Whatever gets you through the day.",
+"type": "dialogue"
+},
+"29": {
+"id": "29",
+"is_snippet": false,
+"next_id": "end",
+"next_id_after": "",
+"type": "goto"
+},
+"3": {
+"character": "Cat2",
+"id": "3",
+"next_id": "4",
+"tags": PackedStringArray("grinning"),
+"text": "You look terrible.",
+"type": "dialogue"
+},
+"30": {
+"id": "30",
+"next_id": "31",
+"type": ""
+},
+"31": {
+"id": "31",
+"is_snippet": false,
+"next_id": "end",
+"next_id_after": "",
+"type": "goto"
+},
+"4": {
+"character": "Player1",
+"id": "4",
+"next_id": "5",
+"text": "Thanks. Real morale boost.",
+"type": "dialogue"
+},
+"5": {
+"character": "Cat1",
+"id": "5",
+"next_id": "7",
+"text": "No problem. You get that one for free.",
+"type": "dialogue"
+},
+"6": {
+"id": "6",
+"next_id": "7",
+"type": ""
+},
+"7": {
+"character": "Player1",
+"id": "7",
+"next_id": "8",
+"tags": PackedStringArray("groggy"),
+"text": "What do you even want?",
+"type": "dialogue"
+},
+"8": {
+"character": "Cat2",
+"id": "8",
+"next_id": "9",
+"tags": PackedStringArray("mischevious"),
+"text": "Oh, nothing. Just sitting here. Watching you waste away.",
+"type": "dialogue"
+},
+"9": {
+"character": "Player2",
+"id": "9",
+"next_id": "10",
+"tags": PackedStringArray("annoyed"),
+"text": "I *just* woke up.",
+"type": "dialogue"
+}
+}
+raw_text = "~ start
+Cat1: [#smug, #mischevious] Finally awake?
+Player1: Unfortunately.
+Cat2: [#grinning] You look terrible.
+Player1: Thanks. Real morale boost.
+Cat1: No problem. You get that one for free.
+
+Player1: [#groggy] What do you even want?
+Cat2: [#mischevious] Oh, nothing. Just sitting here. Watching you waste away.
+Player2: [#annoyed] I *just* woke up.
+Cat2: [#smug] Exactly. That was already a struggle to witness.
+
+Player1: [#sighs] You know, normal pets greet their owners with affection.
+Cat1: [#grinning] And normal people wake up before noon.
+Player2: You’re not a real cat, are you?
+Cat2: [#mocking] Oh no, you got me. I’m actually a figment of your miserable little life.
+
+Player1: Great. So I have a **talking** hallucination to deal with now.
+Cat1: [#smug] Yep. And guess what?
+Player1: What.
+Cat2: You should check your emails.
+
+Player2: Oh, *now* you care about my productivity?
+Cat1: [#stretching] Someone has to.
+Player1: You’re literally a cat.
+Cat2: [#smug] And yet, I seem to have my life together more than you do.
+
+Player2: Fine. I’ll check them. Not because *you* said so, but because I was going to anyway.
+Cat2: [#mocking] Uh-huh. Whatever gets you through the day.
+=> END
+"
+metadata/dialogue_manager_version = "3.3.2"

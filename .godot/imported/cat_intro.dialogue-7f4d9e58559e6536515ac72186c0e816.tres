@@ -1,0 +1,415 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_sdcxc"]
+
+[resource]
+script = ExtResource("1_sdcxc")
+using_states = PackedStringArray()
+titles = {
+"check_emails": "32",
+"clueless": "44",
+"hint_illusion": "18",
+"sarcasm": "37",
+"start": "1",
+"threat_lock_out": "25"
+}
+character_names = PackedStringArray("Cat1", "Player1", "Cat2", "Player2")
+first_title = "0"
+lines = {
+"0": {
+"id": "0",
+"next_id": "1",
+"type": "title"
+},
+"1": {
+"character": "Cat1",
+"id": "1",
+"next_id": "2",
+"tags": PackedStringArray("smug", "mischevious"),
+"text": "Finally awake?",
+"type": "dialogue"
+},
+"10": {
+"character": "Cat2",
+"id": "10",
+"next_id": "12",
+"tags": PackedStringArray("smug"),
+"text": "Exactly. That was already a struggle to witness.",
+"type": "dialogue"
+},
+"11": {
+"id": "11",
+"next_id": "12",
+"type": ""
+},
+"12": {
+"character": "Player1",
+"id": "12",
+"next_id": "13",
+"tags": PackedStringArray("sighs"),
+"text": "You know, normal pets greet their owners with affection.",
+"type": "dialogue"
+},
+"13": {
+"character": "Cat1",
+"id": "13",
+"next_id": "14",
+"tags": PackedStringArray("grinning"),
+"text": "And normal people wake up before noon.",
+"type": "dialogue"
+},
+"14": {
+"id": "14",
+"next_id": "18",
+"responses": PackedStringArray("14", "15"),
+"text": "\"You're not a real cat, are you?\"",
+"type": "response"
+},
+"15": {
+"id": "15",
+"next_id": "25",
+"text": "\"Keep talking, and I'm locking you out.\"",
+"type": "response"
+},
+"16": {
+"id": "16",
+"next_id": "17",
+"type": ""
+},
+"17": {
+"id": "17",
+"next_id": "18",
+"type": "title"
+},
+"18": {
+"character": "Player2",
+"id": "18",
+"next_id": "19",
+"text": "You’re not a real cat, are you?",
+"type": "dialogue"
+},
+"19": {
+"character": "Cat2",
+"id": "19",
+"next_id": "20",
+"tags": PackedStringArray("mocking"),
+"text": "Oh no, you got me. I’m actually a figment of your miserable little life.",
+"type": "dialogue"
+},
+"2": {
+"character": "Player1",
+"id": "2",
+"next_id": "3",
+"text": "Unfortunately.",
+"type": "dialogue"
+},
+"20": {
+"character": "Player1",
+"id": "20",
+"next_id": "21",
+"tags": PackedStringArray("dry"),
+"text": "That tracks, honestly.",
+"type": "dialogue"
+},
+"21": {
+"character": "Cat1",
+"id": "21",
+"next_id": "22",
+"tags": PackedStringArray("purring"),
+"text": "Good! Wouldn’t want you thinking you were *sane*.",
+"type": "dialogue"
+},
+"22": {
+"id": "22",
+"is_snippet": false,
+"next_id": "32",
+"next_id_after": "",
+"type": "goto"
+},
+"23": {
+"id": "23",
+"next_id": "24",
+"type": ""
+},
+"24": {
+"id": "24",
+"next_id": "25",
+"type": "title"
+},
+"25": {
+"character": "Player2",
+"id": "25",
+"next_id": "26",
+"text": "Keep talking, and I’m locking you out.",
+"type": "dialogue"
+},
+"26": {
+"character": "Cat2",
+"id": "26",
+"next_id": "27",
+"tags": PackedStringArray("mocking"),
+"text": "Ooooh, terrifying. You think I need doors?",
+"type": "dialogue"
+},
+"27": {
+"character": "Player1",
+"id": "27",
+"next_id": "28",
+"text": "You *are* getting way too comfortable in here.",
+"type": "dialogue"
+},
+"28": {
+"character": "Cat1",
+"id": "28",
+"next_id": "29",
+"tags": PackedStringArray("grinning"),
+"text": "And you aren’t?",
+"type": "dialogue"
+},
+"29": {
+"id": "29",
+"is_snippet": false,
+"next_id": "32",
+"next_id_after": "",
+"type": "goto"
+},
+"3": {
+"character": "Cat2",
+"id": "3",
+"next_id": "4",
+"tags": PackedStringArray("grinning"),
+"text": "You look terrible.",
+"type": "dialogue"
+},
+"30": {
+"id": "30",
+"next_id": "31",
+"type": ""
+},
+"31": {
+"id": "31",
+"next_id": "32",
+"type": "title"
+},
+"32": {
+"character": "Cat2",
+"id": "32",
+"next_id": "33",
+"tags": PackedStringArray("mocking"),
+"text": "But enough about your tragic existence. Don’t you have emails to sort through?",
+"type": "dialogue"
+},
+"33": {
+"id": "33",
+"next_id": "37",
+"responses": PackedStringArray("33", "34"),
+"text": "\"Oh, *now* you care about my productivity?\"",
+"type": "response"
+},
+"34": {
+"id": "34",
+"next_id": "44",
+"text": "\"What emails?\"",
+"type": "response"
+},
+"35": {
+"id": "35",
+"next_id": "36",
+"type": ""
+},
+"36": {
+"id": "36",
+"next_id": "37",
+"type": "title"
+},
+"37": {
+"character": "Player2",
+"id": "37",
+"next_id": "38",
+"text": "Oh, *now* you care about my productivity?",
+"type": "dialogue"
+},
+"38": {
+"character": "Cat1",
+"id": "38",
+"next_id": "39",
+"tags": PackedStringArray("stretching"),
+"text": "Someone has to.",
+"type": "dialogue"
+},
+"39": {
+"character": "Player1",
+"id": "39",
+"next_id": "40",
+"text": "You’re literally a cat.",
+"type": "dialogue"
+},
+"4": {
+"character": "Player1",
+"id": "4",
+"next_id": "5",
+"text": "Thanks. Real morale boost.",
+"type": "dialogue"
+},
+"40": {
+"character": "Cat2",
+"id": "40",
+"next_id": "41",
+"tags": PackedStringArray("smug"),
+"text": "And yet, I seem to have my life together more than you do.",
+"type": "dialogue"
+},
+"41": {
+"id": "41",
+"is_snippet": false,
+"next_id": "end",
+"next_id_after": "",
+"type": "goto"
+},
+"42": {
+"id": "42",
+"next_id": "43",
+"type": ""
+},
+"43": {
+"id": "43",
+"next_id": "44",
+"type": "title"
+},
+"44": {
+"character": "Player1",
+"id": "44",
+"next_id": "45",
+"text": "What emails?",
+"type": "dialogue"
+},
+"45": {
+"character": "Cat2",
+"id": "45",
+"next_id": "46",
+"tags": PackedStringArray("mocking"),
+"text": "The ones rotting away in your inbox. Along with your ambitions.",
+"type": "dialogue"
+},
+"46": {
+"character": "Player2",
+"id": "46",
+"next_id": "47",
+"text": "…Right. Thanks for that.",
+"type": "dialogue"
+},
+"47": {
+"character": "Cat1",
+"id": "47",
+"next_id": "48",
+"tags": PackedStringArray("purring"),
+"text": "Anytime.",
+"type": "dialogue"
+},
+"48": {
+"id": "48",
+"is_snippet": false,
+"next_id": "end",
+"next_id_after": "",
+"type": "goto"
+},
+"49": {
+"id": "49",
+"next_id": "50",
+"type": ""
+},
+"5": {
+"character": "Cat1",
+"id": "5",
+"next_id": "7",
+"text": "No problem. You get that one for free.",
+"type": "dialogue"
+},
+"50": {
+"id": "50",
+"is_snippet": false,
+"next_id": "end",
+"next_id_after": "",
+"type": "goto"
+},
+"6": {
+"id": "6",
+"next_id": "7",
+"type": ""
+},
+"7": {
+"character": "Player1",
+"id": "7",
+"next_id": "8",
+"tags": PackedStringArray("groggy"),
+"text": "What do you even want?",
+"type": "dialogue"
+},
+"8": {
+"character": "Cat2",
+"id": "8",
+"next_id": "9",
+"tags": PackedStringArray("mischevious"),
+"text": "Oh, nothing. Just sitting here. Watching you waste away.",
+"type": "dialogue"
+},
+"9": {
+"character": "Player2",
+"id": "9",
+"next_id": "10",
+"tags": PackedStringArray("annoyed"),
+"text": "I *just* woke up.",
+"type": "dialogue"
+}
+}
+raw_text = "~ start
+Cat1: [#smug, #mischevious] Finally awake?
+Player1: Unfortunately.
+Cat2: [#grinning] You look terrible.
+Player1: Thanks. Real morale boost.
+Cat1: No problem. You get that one for free.
+
+Player1: [#groggy] What do you even want?
+Cat2: [#mischevious] Oh, nothing. Just sitting here. Watching you waste away.
+Player2: [#annoyed] I *just* woke up.
+Cat2: [#smug] Exactly. That was already a struggle to witness.
+
+Player1: [#sighs] You know, normal pets greet their owners with affection.
+Cat1: [#grinning] And normal people wake up before noon.
+- \"You're not a real cat, are you?\" => hint_illusion
+- \"Keep talking, and I'm locking you out.\" => threat_lock_out
+
+~ hint_illusion
+Player2: You’re not a real cat, are you?
+Cat2: [#mocking] Oh no, you got me. I’m actually a figment of your miserable little life.
+Player1: [#dry] That tracks, honestly.
+Cat1: [#purring] Good! Wouldn’t want you thinking you were *sane*.
+=> check_emails
+
+~ threat_lock_out
+Player2: Keep talking, and I’m locking you out.
+Cat2: [#mocking] Ooooh, terrifying. You think I need doors?
+Player1: You *are* getting way too comfortable in here.
+Cat1: [#grinning] And you aren’t? 
+=> check_emails
+
+~ check_emails
+Cat2: [#mocking] But enough about your tragic existence. Don’t you have emails to sort through?
+- \"Oh, *now* you care about my productivity?\" => sarcasm
+- \"What emails?\" => clueless
+
+~ sarcasm
+Player2: Oh, *now* you care about my productivity?
+Cat1: [#stretching] Someone has to.
+Player1: You’re literally a cat.
+Cat2: [#smug] And yet, I seem to have my life together more than you do.
+=> END
+
+~ clueless
+Player1: What emails?
+Cat2: [#mocking] The ones rotting away in your inbox. Along with your ambitions.
+Player2: …Right. Thanks for that.
+Cat1: [#purring] Anytime.
+=> END
+"
+metadata/dialogue_manager_version = "3.3.2"

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_14"
+type="Resource"
+uid="uid://cepqwyd6b7tl7"
+path="res://.godot/imported/cat_intro.dialogue-7f4d9e58559e6536515ac72186c0e816.tres"
+
+[deps]
+
+source_file="res://Scripts/cat_intro.dialogue"
+dest_files=["res://.godot/imported/cat_intro.dialogue-7f4d9e58559e6536515ac72186c0e816.tres"]
+
+[params]
+
+defaults=true

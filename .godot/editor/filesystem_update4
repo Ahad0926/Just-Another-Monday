@@ -7,3 +7,17 @@ res://Scenes/player.tscn
 res://Scripts/Balloon/balloon.gd
 res://Scripts/npc.gd
 res://Scripts/player_movement.gd
+Scripts/npc.gd
+res://test_npc.tscn
+res://test_npc.gd
+res://Scenes/office.tscn
+res://Scenes/test_apt.tscn
+res://interactable_object.gd
+res://Scenes/interactable_objecttscn.tscn
+res://Scenes/desktop.tscn
+res://Scripts/desktop.gd
+res://Scripts/main.gd
+res://Scenes/interactable_object.tscn
+res://Scripts/cat.gd
+res://Scenes/apartment2.tscn
+res://Scenes/HUD.tscn

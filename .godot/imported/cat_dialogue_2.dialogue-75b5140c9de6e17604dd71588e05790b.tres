@@ -1,0 +1,127 @@
+[gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_scti3"]
+
+[resource]
+script = ExtResource("1_scti3")
+using_states = PackedStringArray()
+titles = {
+"start": "1"
+}
+character_names = PackedStringArray("Cat1", "Player1", "Player2", "Cat2", "Cat")
+first_title = "0"
+lines = {
+"0": {
+"id": "0",
+"next_id": "1",
+"type": "title"
+},
+"1": {
+"character": "Cat1",
+"id": "1",
+"next_id": "2",
+"tags": PackedStringArray("smug"),
+"text": "So, did you actually check your emails, or did you just stare at the screen?",
+"type": "dialogue"
+},
+"10": {
+"character": "Player2",
+"id": "10",
+"next_id": "11",
+"text": "It would still be an improvement.",
+"type": "dialogue"
+},
+"11": {
+"id": "11",
+"is_snippet": false,
+"next_id": "end",
+"next_id_after": "",
+"type": "goto"
+},
+"12": {
+"id": "12",
+"next_id": "13",
+"type": ""
+},
+"13": {
+"id": "13",
+"is_snippet": false,
+"next_id": "end",
+"next_id_after": "",
+"type": "goto"
+},
+"2": {
+"character": "Player1",
+"id": "2",
+"next_id": "3",
+"text": "I checked them.",
+"type": "dialogue"
+},
+"3": {
+"character": "Cat1",
+"id": "3",
+"next_id": "4",
+"tags": PackedStringArray("mocking"),
+"text": "*Really?* Name one email that wasn’t junk.",
+"type": "dialogue"
+},
+"4": {
+"character": "Player2",
+"id": "4",
+"next_id": "5",
+"text": "...There was one from work.",
+"type": "dialogue"
+},
+"5": {
+"character": "Cat2",
+"id": "5",
+"next_id": "6",
+"tags": PackedStringArray("grinning"),
+"text": "Uh-huh. And?",
+"type": "dialogue"
+},
+"6": {
+"character": "Player1",
+"id": "6",
+"next_id": "7",
+"text": "I ignored it.",
+"type": "dialogue"
+},
+"7": {
+"character": "Cat",
+"id": "7",
+"next_id": "8",
+"tags": PackedStringArray("sighing"),
+"text": "Amazing. A true master of productivity.",
+"type": "dialogue"
+},
+"8": {
+"character": "Player1",
+"id": "8",
+"next_id": "9",
+"text": "If you want me to do it so badly, why don’t you respond for me?",
+"type": "dialogue"
+},
+"9": {
+"character": "Cat2",
+"id": "9",
+"next_id": "10",
+"tags": PackedStringArray("mischevious"),
+"text": "Oh, I would. But I don’t think “Meow, screw off” is the right tone.",
+"type": "dialogue"
+}
+}
+raw_text = "~ start
+Cat1: [#smug] So, did you actually check your emails, or did you just stare at the screen?
+Player1: I checked them.
+Cat1: [#mocking] *Really?* Name one email that wasn’t junk.
+Player2: ...There was one from work.
+Cat2: [#grinning] Uh-huh. And?
+Player1: I ignored it.
+Cat: [#sighing] Amazing. A true master of productivity.
+Player1: If you want me to do it so badly, why don’t you respond for me?
+Cat2: [#mischevious] Oh, I would. But I don’t think “Meow, screw off” is the right tone.
+Player2: It would still be an improvement.
+=> END
+"
+metadata/dialogue_manager_version = "3.3.2"

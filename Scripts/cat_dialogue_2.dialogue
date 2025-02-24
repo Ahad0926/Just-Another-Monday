@@ -1,0 +1,24 @@
+~ start
+Player1: [#bored] Alright. I checked my emails. Now what?
+Cat2: [#stretching] I don’t know. Do some laps or something. Get those legs moving. 
+Player2: [#deadpan] You’re joking.
+Cat1: [#mocking] What? There’s not much else to do here.
+Player1: [#suspicious] *Here*?
+Cat2: [#grinning] Yeah. You know, the devs are still working on adding things.
+- "What do you mean 'the devs'?" => meta_questioning
+- "You’re really testing me today." => dismiss_cat
+
+~ meta_questioning
+Player2: What do you mean *the devs*?
+Cat1: [#yawning] Oh, nothing. Just some higher powers making questionable design choices.
+Player1: [#narrowing_eyes] That’s not ominous at all.
+Cat2: [#mocking] Don’t worry about it.
+Player2: [#muttering] I *hate* when you say that.
+=> END
+
+~ dismiss_cat
+Player1: You’re really testing me today.
+Cat2: [#smug] I do my best.
+Player2: *Right.* Well, if you’re done being weird, I’ve got *nothing* to do.
+Cat1: [#grinning] You’ll figure something out.
+=> END

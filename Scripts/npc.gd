@@ -20,7 +20,7 @@ var animation_reset_timer: Timer = Timer.new()
 @onready var dialogue_ui = get_node("../CanvasLayer/TestDialogueUi")
 var in_dialogue = false
 func _ready():
-	animated_sprite.play("idle_up")
+	animated_sprite.play("idle_down")
 	
 	$Area2D.connect("body_entered", Callable(self, "_on_body_entered"))
 	$Area2D.connect("body_exited", Callable(self, "_on_body_exited"))
