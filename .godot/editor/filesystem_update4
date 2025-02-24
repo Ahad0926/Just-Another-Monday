@@ -4,3 +4,6 @@ res://Scenes/hallway.tscn
 res://Scripts/Balloon/balloon.tscn
 res://Scenes/npc.tscn
 res://Scenes/player.tscn
+res://Scripts/Balloon/balloon.gd
+res://Scripts/npc.gd
+res://Scripts/player_movement.gd

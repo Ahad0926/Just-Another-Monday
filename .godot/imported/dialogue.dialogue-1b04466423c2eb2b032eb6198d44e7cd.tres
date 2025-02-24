@@ -1,14 +1,14 @@
 [gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_jpiju"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_6jswi"]
 
 [resource]
-script = ExtResource("1_jpiju")
+script = ExtResource("1_6jswi")
 using_states = PackedStringArray()
 titles = {
 "start": "1"
 }
-character_names = PackedStringArray("Nathan", "Purin")
+character_names = PackedStringArray("Nathan", "NPC")
 first_title = "0"
 lines = {
 "0": {
@@ -38,7 +38,7 @@ lines = {
 "type": "goto"
 },
 "2": {
-"character": "Purin",
+"character": "NPC",
 "id": "2",
 "next_id": "3",
 "text": "Here are some choices.",
@@ -93,7 +93,7 @@ lines = {
 }
 raw_text = "~ start
 Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
-Purin: Here are some choices.
+NPC: Here are some choices.
 - First one
 	Nathan: You picked the first one.
 - Second one

@@ -85,6 +85,7 @@ func _notification(what: int) -> void:
 
 ## Start some dialogue
 func start(dialogue_resource: DialogueResource, title: String, extra_game_states: Array = []) -> void:
+	
 	temporary_game_states = [self] + extra_game_states
 	is_waiting_for_input = false
 	resource = dialogue_resource
@@ -100,12 +101,18 @@ func apply_dialogue_line() -> void:
 	balloon.grab_focus()
 
 	character_label.visible = not dialogue_line.character.is_empty()
-	character_label.text = tr(dialogue_line.character, "dialogue")
+	
+	var regex = RegEx.create_from_string("\\d+")
+	var character_name_without_numbers = regex.sub(dialogue_line.character, "", true)
+	
+	character_label.text = tr(character_name_without_numbers, "dialogue")
 	
 	var portrait_path: String = "res://Assets/headshots/%s.png" % dialogue_line.character.to_lower()
 	if FileAccess.file_exists(portrait_path):
+		print("found res://Assets/headshots/%s.png" % dialogue_line.character.to_lower())
 		portrait.texture = load(portrait_path)
 	else:
+		print("cant find res://Assets/headshots/%s.png" % dialogue_line.character.to_lower())
 		portrait.texture = null
 	
 	dialogue_label.hide()

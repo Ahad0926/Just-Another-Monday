@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="DialogueResource" load_steps=2 format=3]
 
-[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_j62i8"]
+[ext_resource type="Script" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_affbm"]
 
 [resource]
-script = ExtResource("1_j62i8")
+script = ExtResource("1_affbm")
 using_states = PackedStringArray()
 titles = {
 "breakdown": "11",
@@ -58,7 +58,7 @@ lines = {
 "2": {
 "id": "2",
 "next_id": "3",
-"text": "Player:",
+"text": "Player1:",
 "type": "dialogue"
 },
 "3": {
@@ -105,7 +105,7 @@ lines = {
 }
 raw_text = "~ start
 NPC: [static] ...who...are...you?
-Player:
+Player1:
   - \"What's wrong with you?\" => glitch_response
   - \"This isn't real, is it?\" => breakdown
 

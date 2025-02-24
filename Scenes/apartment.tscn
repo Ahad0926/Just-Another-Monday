@@ -14,8 +14,7 @@ size = Vector2(69, 12)
 position = Vector2(-39, 83)
 
 [node name="Player" parent="." instance=ExtResource("4_m8xsa")]
-position = Vector2(550, 586)
-scale = Vector2(2, 2)
+position = Vector2(516, 449)
 
 [node name="Exit" type="Area2D" parent="."]
 position = Vector2(535, 609)

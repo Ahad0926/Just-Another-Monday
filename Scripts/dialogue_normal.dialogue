@@ -1,15 +1,17 @@
 ~ start
-NPC: Hello there! How can I help you today?
-Player:
-  - "Just checking in." => normal_response
-  - "Have you seen anything strange?" => hint_conspiracy
-  - "Never mind." => END
+Cat1: Hello there! How can I help you today?  
+- "Just checking in." => normal_response
+- "Have you seen anything strange?" => hint_conspiracy
+- "Never mind." => END
 
 ~ normal_response
-NPC: All good then! Have a nice day.
--> start
+Player1: Just checking in.
+Cat1: All good then! Have a nice day. => END
 
 ~ hint_conspiracy
-NPC: Hmm... There was a weird email in the system today.
-Player:
-  - "What email?" => END
+Player2: Have you seen anything strange?
+Cat1: Hmm... There was a weird email in the system today.
+- "What email?"
+	Player2: What email?
+	Cat2: Oh nothing
+	=> END

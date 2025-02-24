@@ -1,6 +1,6 @@
 ~ start
 NPC: [static] ...who...are...you?
-Player:
+Player1:
   - "What's wrong with you?" => glitch_response
   - "This isn't real, is it?" => breakdown
 
