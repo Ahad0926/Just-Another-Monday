@@ -1,0 +1,414 @@
+[gd_scene load_steps=29 format=3 uid="uid://dn554dadqe6sn"]
+
+[ext_resource type="Script" path="res://Scenes/Apartment/apartment.gd" id="1_xv1jp"]
+[ext_resource type="PackedScene" uid="uid://cfsoly6blnqso" path="res://Interactions/actionable.tscn" id="5_hfx8c"]
+[ext_resource type="Resource" uid="uid://d0fmsdjvt2i6e" path="res://Dialogue/Dialogues/closet.dialogue" id="6_vakdj"]
+[ext_resource type="Texture2D" uid="uid://o61uk474sy1o" path="res://Assets/APARTMENT/APT_BDR/APT_BDR_FLOOR.png" id="7_ahd1j"]
+[ext_resource type="Resource" uid="uid://bf7oykmb0d5cq" path="res://Dialogue/Dialogues/bed.dialogue" id="7_bdg3v"]
+[ext_resource type="Resource" uid="uid://diuoup7lqqxlg" path="res://Dialogue/Dialogues/stove.dialogue" id="8_83luw"]
+[ext_resource type="Texture2D" uid="uid://cpknycn2kcn7k" path="res://Assets/APARTMENT/APT_BDR/APT_BDR_WALLS.png" id="8_jw0ct"]
+[ext_resource type="PackedScene" uid="uid://cfks6he7p50ls" path="res://SceneTrigger/scene_trigger.tscn" id="8_p6y7h"]
+[ext_resource type="Texture2D" uid="uid://dd5s21da06ffy" path="res://Assets/APARTMENT/APT_BDR/APT_BDR_FURNITURE.png" id="9_w2xev"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="11_lcpgr"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="12_bgyt0"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="13_ial47"]
+[ext_resource type="PackedScene" uid="uid://jvx4ydu1vmbb" path="res://Altoid/altoid.tscn" id="17_3oe7x"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qivdl"]
+texture = ExtResource("7_ahd1j")
+3:6/size_in_atlas = Vector2i(19, 14)
+3:6/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_8occs"]
+sources/1 = SubResource("TileSetAtlasSource_qivdl")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wywm5"]
+texture = ExtResource("8_jw0ct")
+3:0/size_in_atlas = Vector2i(19, 20)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-144.375, -147, -145.222, 157.154, -16.7054, 157.508, -17.4125, -7.07107, -27.312, -7.07107, -27.6656, 78.3121, -24.7761, 79.7241, -25.0139, 150.26, -136.737, 149.73, -137.09, 78.8424, -55.7731, 79.196, -55.4195, -6.89429, -137.444, -7.07107, -136.914, -61.5183, -17.3168, -61.5104, -13.7532, -64.2561, 33.4644, -64.3674, 34.578, -61.507, 141.875, -61.5, 141.875, 34.25, 31.875, 33.5, 31.625, 78.25, 142.056, 78.1151, 141.875, 149.25, 31.183, 148.671, 32.625, 158.75, 149.625, 157.25, 149.616, -147.411)
+
+[sub_resource type="TileSet" id="TileSet_xew80"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_wywm5")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m4qf3"]
+texture = ExtResource("9_w2xev")
+10:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
+21:2/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+20:3/0 = 0
+21:3/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+20:4/0 = 0
+21:4/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+20:5/0 = 0
+21:5/0 = 0
+4:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+20:6/0 = 0
+21:6/0 = 0
+4:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+17:7/0 = 0
+18:7/0 = 0
+19:7/0 = 0
+20:7/0 = 0
+21:7/0 = 0
+4:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+15:8/0 = 0
+16:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+20:8/0 = 0
+21:8/0 = 0
+15:9/0 = 0
+16:9/0 = 0
+17:9/0 = 0
+18:9/0 = 0
+19:9/0 = 0
+20:9/0 = 0
+21:9/0 = 0
+8:10/0 = 0
+16:10/0 = 0
+17:10/0 = 0
+18:10/0 = 0
+19:10/0 = 0
+20:10/0 = 0
+21:10/0 = 0
+8:11/0 = 0
+14:11/0 = 0
+15:11/0 = 0
+16:11/0 = 0
+17:11/0 = 0
+18:11/0 = 0
+19:11/0 = 0
+20:11/0 = 0
+21:11/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+17:12/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+8:13/0 = 0
+14:13/0 = 0
+15:13/0 = 0
+16:13/0 = 0
+17:13/0 = 0
+18:13/0 = 0
+19:13/0 = 0
+20:13/0 = 0
+21:13/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+8:14/0 = 0
+14:14/0 = 0
+15:14/0 = 0
+16:14/0 = 0
+17:14/0 = 0
+18:14/0 = 0
+19:14/0 = 0
+20:14/0 = 0
+21:14/0 = 0
+3:15/0 = 0
+4:15/0 = 0
+5:15/0 = 0
+6:15/0 = 0
+7:15/0 = 0
+8:15/0 = 0
+14:15/0 = 0
+15:15/0 = 0
+16:15/0 = 0
+17:15/0 = 0
+18:15/0 = 0
+19:15/0 = 0
+20:15/0 = 0
+21:15/0 = 0
+3:16/0 = 0
+4:16/0 = 0
+5:16/0 = 0
+6:16/0 = 0
+7:16/0 = 0
+8:16/0 = 0
+19:16/0 = 0
+20:16/0 = 0
+21:16/0 = 0
+3:17/0 = 0
+4:17/0 = 0
+5:17/0 = 0
+6:17/0 = 0
+7:17/0 = 0
+8:17/0 = 0
+16:17/0 = 0
+17:17/0 = 0
+18:17/0 = 0
+19:17/0 = 0
+20:17/0 = 0
+21:17/0 = 0
+3:18/0 = 0
+4:18/0 = 0
+5:18/0 = 0
+6:18/0 = 0
+16:18/0 = 0
+17:18/0 = 0
+18:18/0 = 0
+19:18/0 = 0
+20:18/0 = 0
+21:18/0 = 0
+3:19/0 = 0
+4:19/0 = 0
+5:19/0 = 0
+16:19/0 = 0
+17:19/0 = 0
+18:19/0 = 0
+19:19/0 = 0
+20:19/0 = 0
+21:19/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qnm3e"]
+texture = ExtResource("9_w2xev")
+3:2/size_in_atlas = Vector2i(19, 18)
+3:2/next_alternative_id = 2
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(140.272, -39.3328, 138.858, 9.8995, 137.444, 12.3744, 58.0712, 12.1976, 57.5408, -30.4056, 61.4299, -33.7644, 62.3138, -40.1283, 111.811, -39.5096, 112.342, -99.6137)
+3:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(63.1977, -143.896, 62.8441, -57.0989, 110.927, -57.9828, 111.281, -143.366)
+3:2/0/physics_layer_0/polygon_2/points = PackedVector2Array(-38.2722, -61.3415, -21.8319, -61.5183, -22.3623, -75.8372, -28.5494, -76.3675, -27.8423, -104.298, -18.2964, -108.011, -25.721, -130.461, -37.0347, -130.284, -41.8077, -112.076, -36.8579, -103.945, -33.4992, -101.47, -32.7921, -77.0746, -39.3328, -75.8372)
+3:2/0/physics_layer_0/polygon_3/points = PackedVector2Array(-46.0503, -59.9273, -47.111, -101.47, -134.085, -102.177, -133.908, -59.8389, -89.891, -65.7609)
+3:2/0/physics_layer_0/polygon_4/points = PackedVector2Array(-61.9602, 43.3103, -61.2531, 87.1509, -64.0816, 90.1561, -110.927, 91.2168, -111.988, 98.6414, -114.286, 101.116, -119.943, 101.116, -119.413, 111.723, -107.215, 112.43, -105.271, 115.435, -104.387, 131.699, -107.215, 134.174, -137.974, 133.29, -138.151, 56.0382)
+3:2/0/physics_layer_0/polygon_5/points = PackedVector2Array(37.375, 34.25, 37.125, 77.5, 118.875, 75.5, 119.375, 110.75, 63.375, 111.75, 63.875, 133.75, 142.625, 134.25, 142.125, 34.25)
+3:2/0/physics_layer_0/polygon_6/points = PackedVector2Array(43.546, -81.2649, 61.0274, -80.9499, 62.1299, -61.2637, 44.3335, -60.7912, 33.1517, -64.571, 34.5691, -75.7528, 38.0339, -76.8552, 40.8687, -75.7528)
+3:2/0/physics_layer_0/polygon_7/points = PackedVector2Array(-98.1994, -39.9515, -81.7592, -39.598, -86.709, -47.9065, -90.9516, -48.6136)
+
+[sub_resource type="TileSet" id="TileSet_on05s"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_qnm3e")
+sources/0 = SubResource("TileSetAtlasSource_m4qf3")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_trasy"]
+size = Vector2(49, 86)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpf7q"]
+size = Vector2(84, 53)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_taidm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryn00"]
+size = Vector2(48, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ap4sn"]
+size = Vector2(49, 69)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfjur"]
+size = Vector2(26, 47.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oiijn"]
+size = Vector2(323, 324)
+
+[sub_resource type="Resource" id="Resource_yhs3g"]
+script = ExtResource("13_ial47")
+duration = 1.0
+transition = 0
+ease = 2
+
+[node name="Apartment" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_xv1jp")
+
+[node name="Floor" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 3, 0, 6, 0, 0, 0)
+tile_set = SubResource("TileSet_8occs")
+
+[node name="Walls" type="TileMapLayer" parent="."]
+z_index = 1
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(0, -32)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 1, 0, 3, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_xew80")
+
+[node name="Things" type="TileMapLayer" parent="."]
+z_index = 2
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(0, 15)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 253, 255, 1, 0, 3, 0, 2, 0, 0, 0)
+tile_set = SubResource("TileSet_on05s")
+
+[node name="Closet" parent="Things" instance=ExtResource("5_hfx8c")]
+z_index = 1
+position = Vector2(96, -123)
+action_id = "Closet"
+dialogue_resource = ExtResource("6_vakdj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Things/Closet"]
+position = Vector2(-0.5, -18)
+shape = SubResource("RectangleShape2D_trasy")
+debug_color = Color(0.960784, 0.6, 0.701961, 0.419608)
+
+[node name="Bed" parent="Things" instance=ExtResource("5_hfx8c")]
+position = Vector2(104, -60)
+action_id = "Bed"
+dialogue_resource = ExtResource("7_bdg3v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Things/Bed"]
+z_index = 1
+position = Vector2(2, 6.5)
+shape = SubResource("RectangleShape2D_mpf7q")
+debug_color = Color(1, 0.6, 0.701961, 0.419608)
+
+[node name="Stove" parent="Things" instance=ExtResource("5_hfx8c")]
+position = Vector2(139, 42)
+action_id = "Stove"
+dialogue_resource = ExtResource("8_83luw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Things/Stove"]
+shape = SubResource("RectangleShape2D_taidm")
+debug_color = Color(0.972549, 0.6, 0.701961, 0.419608)
+
+[node name="EntranceMarkers" type="Node2D" parent="."]
+position = Vector2(15, 102)
+
+[node name="hallway" type="Marker2D" parent="EntranceMarkers"]
+
+[node name="fire_escape" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(1, -194)
+
+[node name="desktop2" type="Marker2D" parent="EntranceMarkers"]
+z_index = 2
+position = Vector2(-97, -184)
+
+[node name="title" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(88, -172)
+
+[node name="Front Exit" parent="." instance=ExtResource("8_p6y7h")]
+z_index = 2
+position = Vector2(15, 116)
+connected_scene = "Hallway/hallway"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Front Exit"]
+z_index = 1
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_ryn00")
+
+[node name="Back Door" parent="." instance=ExtResource("8_p6y7h")]
+z_index = 2
+connected_scene = "Fire_Escape/fire_escape"
+is_interact = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back Door"]
+z_index = 1
+position = Vector2(17.5, -134.5)
+shape = SubResource("RectangleShape2D_ap4sn")
+
+[node name="PC" parent="." instance=ExtResource("8_p6y7h")]
+z_index = 2
+position = Vector2(-82, -112)
+connected_scene = "PC/Desktop2"
+is_interact = true
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PC"]
+z_index = 1
+position = Vector2(0, 3.25)
+shape = SubResource("RectangleShape2D_kfjur")
+
+[node name="camera_bounds" type="Area2D" parent="."]
+
+[node name="collision" type="CollisionShape2D" parent="camera_bounds"]
+position = Vector2(12.5, -35)
+shape = SubResource("RectangleShape2D_oiijn")
+disabled = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+physics_interpolation_mode = 1
+position = Vector2(30, -98)
+zoom = Vector2(4, 3.5)
+limit_left = -149
+limit_top = -197
+limit_right = 174
+limit_bottom = 127
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("11_lcpgr")
+
+[node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
+top_level = true
+position = Vector2(30, -98)
+script = ExtResource("12_bgyt0")
+follow_mode = 5
+follow_target = NodePath("")
+zoom = Vector2(4, 3.5)
+tween_resource = SubResource("Resource_yhs3g")
+follow_damping = true
+limit_target = NodePath("../camera_bounds/collision")
+
+[node name="Altoid" parent="." instance=ExtResource("17_3oe7x")]
+z_index = 3
+position = Vector2(81, -56)

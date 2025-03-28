@@ -1,0 +1,9 @@
+~ start
+
+I am the stove
+if not GameState.has_met_nathan:
+	Nathan: Hi, im nthan
+else:
+	yo
+
+=> END

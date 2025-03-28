@@ -1,0 +1,355 @@
+[gd_scene load_steps=27 format=3 uid="uid://c5vdmv6o50mxi"]
+
+[ext_resource type="Script" path="res://Scripts/desktop.gd" id="1_v7eru"]
+[ext_resource type="FontFile" uid="uid://jnk3hrmjl2tl" path="res://Assets/Desktop/Font.tres" id="2_oe615"]
+[ext_resource type="Texture2D" uid="uid://biaakur0vk206" path="res://Assets/Desktop/PatchInverted.png" id="3_i7xhc"]
+[ext_resource type="Texture2D" uid="uid://bg241wt1xpfoy" path="res://Assets/Desktop/PatchRegular.png" id="4_dxkvp"]
+[ext_resource type="Texture2D" uid="uid://cggbubid3xpv3" path="res://Assets/Desktop/Flag.png" id="5_u8k7x"]
+[ext_resource type="Texture2D" uid="uid://o7mgu38xawj2" path="res://Assets/Desktop/CloseRegular.png" id="6_dc1c3"]
+[ext_resource type="Texture2D" uid="uid://by0n1lipoxrgg" path="res://Assets/Desktop_Icons/email_icon.png" id="6_fxnk2"]
+[ext_resource type="Texture2D" uid="uid://cukq4pbkpfaeu" path="res://Assets/Desktop_Icons/email_icon_hover.png" id="7_x0ee7"]
+[ext_resource type="Texture2D" uid="uid://dbrrlp4sabjhp" path="res://Assets/Desktop/ClosePressed.png" id="8_bapbp"]
+[ext_resource type="Script" path="res://Scripts/email_window.gd" id="8_yapln"]
+[ext_resource type="Texture2D" uid="uid://t0l3rrrxjoad" path="res://Assets/Desktop_Icons/flag.png" id="9_6hadg"]
+[ext_resource type="Texture2D" uid="uid://o1qgicey1r0p" path="res://Assets/Desktop_Icons/check.png" id="10_cfcwg"]
+[ext_resource type="Texture2D" uid="uid://cjb0m5ybuts1m" path="res://Assets/Desktop_Icons/recycle-bin.png" id="13_sgd70"]
+[ext_resource type="Texture2D" uid="uid://c8fjc1x0g65j8" path="res://Assets/Desktop_Icons/recycle-bin-hover.png" id="14_jqtsb"]
+[ext_resource type="Texture2D" uid="uid://cdm7nbgyt3nem" path="res://Assets/Desktop_Icons/internet.png" id="15_vtvuc"]
+[ext_resource type="Texture2D" uid="uid://cq7hwset4ici1" path="res://Assets/Desktop_Icons/internet-hover.png" id="16_u0gyx"]
+[ext_resource type="Texture2D" uid="uid://cms3rgup6net1" path="res://Assets/Desktop_Icons/files.png" id="17_7eby0"]
+[ext_resource type="Texture2D" uid="uid://b0s104ttjaxrr" path="res://Assets/Desktop_Icons/files-hover.png" id="18_4a5he"]
+
+[sub_resource type="Shader" id="7"]
+code = "shader_type canvas_item;
+
+uniform float SCREEN_HEIGHT = 240.0;
+
+void fragment() {
+	int y_pixel = int(UV.y * SCREEN_HEIGHT);
+	if (y_pixel % 2 == 0) {
+		COLOR.a = 0.0;
+	} else {
+		COLOR.a = 0.05;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id="8"]
+shader = SubResource("7")
+shader_parameter/SCREEN_HEIGHT = 240.0
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(0.764706, 0.764706, 0.764706, 1)
+
+[sub_resource type="StyleBoxFlat" id="2"]
+draw_center = false
+border_width_top = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Theme" id="Theme_qhl2v"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xr2ds"]
+texture = ExtResource("4_dxkvp")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="5"]
+texture = ExtResource("3_i7xhc")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+region_rect = Rect2(0, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oieyw"]
+texture = ExtResource("3_i7xhc")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[node name="Desktop" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_v7eru")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0.501961, 0.501961, 1)
+
+[node name="ScanLines" type="ColorRect" parent="."]
+material = SubResource("8")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Taskbar" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -75.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("1")
+
+[node name="Line" type="Panel" parent="Taskbar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("2")
+
+[node name="StartButton" type="Button" parent="Taskbar"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 7.0
+offset_right = 142.0
+offset_bottom = 68.0
+theme = SubResource("Theme_qhl2v")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_oe615")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_xr2ds")
+text = "Start"
+icon = ExtResource("5_u8k7x")
+expand_icon = true
+
+[node name="Time" type="Panel" parent="Taskbar"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -99.0
+offset_top = 4.0
+offset_right = -3.0
+offset_bottom = -3.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("5")
+
+[node name="Label" type="Label" parent="Taskbar/Time"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "12:30 PM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EmailAppButton" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 29.0
+offset_right = 94.0
+offset_bottom = 120.0
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="EmailAppButton"]
+layout_mode = 2
+texture_normal = ExtResource("6_fxnk2")
+texture_pressed = ExtResource("6_fxnk2")
+texture_hover = ExtResource("7_x0ee7")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="EmailAppButton"]
+layout_mode = 2
+text = "E-mail"
+horizontal_alignment = 1
+
+[node name="EmailAppWindow" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -391.5
+offset_top = -241.0
+offset_right = 391.5
+offset_bottom = 241.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_oieyw")
+script = ExtResource("8_yapln")
+
+[node name="Label" type="Label" parent="EmailAppWindow"]
+layout_mode = 0
+offset_left = 356.5
+offset_top = -3.0
+offset_right = 400.5
+offset_bottom = 20.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Inbox"
+
+[node name="EmailAppWindowContainer" type="VBoxContainer" parent="EmailAppWindow"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 34.0
+offset_top = 58.0
+offset_right = -21.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 90
+
+[node name="EmailContainer" type="VBoxContainer" parent="EmailAppWindow/EmailAppWindowContainer"]
+layout_mode = 2
+
+[node name="Title" type="RichTextLabel" parent="EmailAppWindow/EmailAppWindowContainer/EmailContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Title"
+fit_content = true
+
+[node name="Sender" type="RichTextLabel" parent="EmailAppWindow/EmailAppWindowContainer/EmailContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "Sender"
+fit_content = true
+
+[node name="Body" type="RichTextLabel" parent="EmailAppWindow/EmailAppWindowContainer/EmailContainer"]
+layout_mode = 2
+bbcode_enabled = true
+text = "BodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyB odyBody BodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBo
+dyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBody"
+fit_content = true
+
+[node name="ButtonContainer" type="HBoxContainer" parent="EmailAppWindow/EmailAppWindowContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="SpamContainer" type="VBoxContainer" parent="EmailAppWindow/EmailAppWindowContainer/ButtonContainer"]
+layout_mode = 2
+
+[node name="FlagSpam" type="TextureButton" parent="EmailAppWindow/EmailAppWindowContainer/ButtonContainer/SpamContainer"]
+layout_mode = 2
+texture_normal = ExtResource("9_6hadg")
+texture_pressed = ExtResource("9_6hadg")
+texture_hover = ExtResource("9_6hadg")
+
+[node name="Label" type="Label" parent="EmailAppWindow/EmailAppWindowContainer/ButtonContainer/SpamContainer"]
+layout_mode = 2
+text = "SPAM"
+horizontal_alignment = 1
+
+[node name="SafeContainer" type="VBoxContainer" parent="EmailAppWindow/EmailAppWindowContainer/ButtonContainer"]
+layout_mode = 2
+
+[node name="MarkSafe" type="TextureButton" parent="EmailAppWindow/EmailAppWindowContainer/ButtonContainer/SafeContainer"]
+layout_mode = 2
+texture_normal = ExtResource("10_cfcwg")
+texture_pressed = ExtResource("10_cfcwg")
+texture_hover = ExtResource("10_cfcwg")
+
+[node name="Label" type="Label" parent="EmailAppWindow/EmailAppWindowContainer/ButtonContainer/SafeContainer"]
+layout_mode = 2
+text = "SAFE"
+horizontal_alignment = 1
+
+[node name="CloseButton" type="TextureButton" parent="EmailAppWindow"]
+layout_mode = 0
+offset_left = 738.5
+offset_top = 1.0
+offset_right = 778.5
+offset_bottom = 41.0
+texture_normal = ExtResource("6_dc1c3")
+texture_pressed = ExtResource("8_bapbp")
+stretch_mode = 5
+
+[node name="RecycleButton" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.907
+anchor_top = 0.724
+anchor_right = 0.988
+anchor_bottom = 0.886
+offset_left = 3.13599
+offset_top = -0.152039
+offset_right = -3.17603
+offset_bottom = -14.1281
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="RecycleButton"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("13_sgd70")
+texture_pressed = ExtResource("13_sgd70")
+texture_hover = ExtResource("14_jqtsb")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="RecycleButton"]
+layout_mode = 2
+text = "Recycle Bin"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InternetButton" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 18.0
+offset_top = 148.0
+offset_right = 105.0
+offset_bottom = 239.0
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="InternetButton"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("15_vtvuc")
+texture_pressed = ExtResource("15_vtvuc")
+texture_hover = ExtResource("16_u0gyx")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="InternetButton"]
+layout_mode = 2
+text = "Internet"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FilesButton" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 18.0
+offset_top = 250.0
+offset_right = 105.0
+offset_bottom = 341.0
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="FilesButton"]
+texture_filter = 1
+layout_mode = 2
+texture_normal = ExtResource("17_7eby0")
+texture_pressed = ExtResource("17_7eby0")
+texture_hover = ExtResource("18_4a5he")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="FilesButton"]
+layout_mode = 2
+text = "Files"
+horizontal_alignment = 1
+vertical_alignment = 1

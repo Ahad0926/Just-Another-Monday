@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://c4xc4f03dr3vt"]
+
+[ext_resource type="PackedScene" uid="uid://dc7pw8cqy44tt" path="res://Player/player.tscn" id="1_e6mbs"]
+[ext_resource type="Script" path="res://Scenes/Title/title.gd" id="1_lxccj"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_uw7cg"]
+[ext_resource type="PackedScene" uid="uid://ceolcwatpaicu" path="res://Day_Night_Cycle/demo/ui/daynightcycle_ui.tscn" id="3_td2el"]
+[ext_resource type="Script" path="res://day_night_cycle.gd" id="4_jwf5h"]
+[ext_resource type="Texture2D" uid="uid://dvcny6m4sgt0d" path="res://Assets/daynightcycle-gradient-texture.tres" id="5_5ul73"]
+
+[node name="Title" type="Node2D"]
+script = ExtResource("1_lxccj")
+
+[node name="player" parent="." instance=ExtResource("1_e6mbs")]
+z_index = 3
+y_sort_enabled = true
+position = Vector2(103, -70)
+
+[node name="Eyes" type="Node2D" parent="player"]
+position = Vector2(0, -28)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+physics_interpolation_mode = 1
+position = Vector2(30, -98)
+zoom = Vector2(4, 3.5)
+limit_left = -149
+limit_top = -197
+limit_right = 174
+limit_bottom = 127
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("2_uw7cg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+
+[node name="DayNightCycleUI" parent="Camera2D/CanvasLayer" instance=ExtResource("3_td2el")]
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+script = ExtResource("4_jwf5h")
+gradient_texture = ExtResource("5_5ul73")
+INGAME_SPEED = 40.0
+INITIAL_HOUR = 0

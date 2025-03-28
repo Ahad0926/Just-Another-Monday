@@ -1,0 +1,180 @@
+[gd_scene load_steps=20 format=3 uid="uid://dn554dadqe6sn"]
+
+[ext_resource type="Script" path="res://Scenes/Apartment/apartment.gd" id="1_xv1jp"]
+[ext_resource type="Script" path="res://things.gd" id="5_ntisf"]
+[ext_resource type="PackedScene" uid="uid://ts5r4y2v0lrh" path="res://Interactions/interactable.tscn" id="6_w8hu5"]
+[ext_resource type="Texture2D" uid="uid://o61uk474sy1o" path="res://Assets/APARTMENT/APT_BDR/APT_BDR_FLOOR.png" id="7_ahd1j"]
+[ext_resource type="PackedScene" uid="uid://dc7pw8cqy44tt" path="res://Player/player.tscn" id="7_gayfj"]
+[ext_resource type="Texture2D" uid="uid://cpknycn2kcn7k" path="res://Assets/APARTMENT/APT_BDR/APT_BDR_WALLS.png" id="8_jw0ct"]
+[ext_resource type="PackedScene" uid="uid://cfks6he7p50ls" path="res://SceneTrigger/scene_trigger.tscn" id="8_p6y7h"]
+[ext_resource type="Texture2D" uid="uid://dd5s21da06ffy" path="res://Assets/APARTMENT/APT_BDR/APT_BDR_FURNITURE.png" id="9_w2xev"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qivdl"]
+texture = ExtResource("7_ahd1j")
+3:6/size_in_atlas = Vector2i(19, 14)
+3:6/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_8occs"]
+sources/1 = SubResource("TileSetAtlasSource_qivdl")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wywm5"]
+texture = ExtResource("8_jw0ct")
+3:0/size_in_atlas = Vector2i(19, 20)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-144.375, -147, -145.222, 157.154, -16.7054, 157.508, -17.4125, -7.07107, -27.312, -7.07107, -27.6656, 78.3121, -24.7761, 79.7241, -25.0139, 150.26, -136.737, 149.73, -137.09, 78.8424, -55.7731, 79.196, -55.4195, -6.89429, -137.444, -7.07107, -136.914, -61.5183, -17.3168, -61.5104, -13.7532, -64.2561, 33.4644, -64.3674, 34.578, -61.507, 141.875, -61.5, 141.875, 34.25, 31.875, 33.5, 31.625, 78.25, 142.056, 78.1151, 141.875, 149.25, 31.183, 148.671, 32.625, 158.75, 149.625, 157.25, 149.616, -147.411)
+
+[sub_resource type="TileSet" id="TileSet_xew80"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_wywm5")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qnm3e"]
+texture = ExtResource("9_w2xev")
+3:2/size_in_atlas = Vector2i(19, 18)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(136.56, -39.7748, 139.742, -34.2947, 138.858, 9.8995, 137.444, 12.3744, 58.0712, 12.1976, 57.5408, -30.4056, 61.4299, -33.7644, 62.3138, -40.1283, 103.503, -41.0122, 103.68, -39.9515)
+3:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(112.342, -70.8875, 112.342, -41.5425, 138.505, -41.5425, 139.742, -71.7713, 140.626, -130.638, 114.993, -130.815, 115.17, -104.829, 112.518, -103.238, 113.049, -97.5807)
+3:2/0/physics_layer_0/polygon_2/points = PackedVector2Array(63.1977, -143.896, 62.8441, -57.0989, 110.927, -57.9828, 111.281, -143.366)
+3:2/0/physics_layer_0/polygon_3/points = PackedVector2Array(-38.2722, -61.3415, -21.8319, -61.5183, -22.3623, -75.8372, -28.5494, -76.3675, -27.8423, -104.298, -18.2964, -108.011, -25.721, -130.461, -37.0347, -130.284, -41.8077, -112.076, -36.8579, -103.945, -33.4992, -101.47, -32.7921, -77.0746, -39.3328, -75.8372)
+3:2/0/physics_layer_0/polygon_4/points = PackedVector2Array(-100.498, -55.5079, -101.205, -70.5339, -97.3156, -75.6604, -84.0573, -76.1908, -80.5218, -71.5946, -80.345, -54.2705, -84.2341, -51.2653, -90.7748, -50.7349, -96.962, -50.9117)
+3:2/0/physics_layer_0/polygon_5/points = PackedVector2Array(-51.3536, -61.1647, -46.0503, -59.9273, -47.111, -101.47, -134.085, -102.177, -134.439, -60.4576, -128.251, -61.3415, -126.375, -66.625, -52.375, -67.125)
+3:2/0/physics_layer_0/polygon_6/points = PackedVector2Array(-61.9602, 43.3103, -61.2531, 87.1509, -64.0816, 90.1561, -110.927, 91.2168, -111.988, 98.6414, -114.286, 101.116, -119.943, 101.116, -119.413, 111.723, -107.215, 112.43, -105.271, 115.435, -104.387, 131.699, -107.215, 134.174, -137.974, 133.29, -138.151, 56.0382)
+3:2/0/physics_layer_0/polygon_7/points = PackedVector2Array(37.375, 34.25, 37.125, 77.5, 118.875, 75.5, 119.375, 110.75, 63.375, 111.75, 63.875, 133.75, 142.625, 134.25, 142.125, 34.25)
+
+[sub_resource type="TileSet" id="TileSet_on05s"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_qnm3e")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hv5s5"]
+size = Vector2(48, 88)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sdf7p"]
+size = Vector2(77.5, 31)
+
+[sub_resource type="GDScript" id="GDScript_owviv"]
+script/source = "class_name Player extends CharacterBody2D
+
+@export var speed: float = 80.0  # Adjusted for responsiveness
+@onready var animationTree = $AnimationTree
+@onready var state_machine = animationTree[\"parameters/playback\"]
+
+var input_vector: Vector2 = Vector2.ZERO
+
+var blend_position : Vector2 = Vector2.ZERO
+var blend_pos_paths = [
+	\"parameters/idle/idle_bs2d/blend_position\",
+	\"parameters/walk/walk_bs2d/blend_position\"
+]
+var animTree_state_keys = [
+	\"idle\",
+	\"walk\"
+]
+
+func _unhandled_input(event: InputEvent) -> void:
+	var new_input_vector := Vector2.ZERO
+
+	if Input.is_action_pressed(\"player_left\"):
+		new_input_vector.x -= 1
+	if Input.is_action_pressed(\"player_right\"):
+		new_input_vector.x += 1
+	if Input.is_action_pressed(\"player_up\"):
+		new_input_vector.y -= 1
+	if Input.is_action_pressed(\"player_down\"):
+		new_input_vector.y += 1
+
+	input_vector = new_input_vector.normalized()
+
+func _physics_process(delta: float) -> void:
+	velocity = input_vector * speed
+	move_and_slide()
+
+	if velocity.length() > 0:
+		_update_animation(input_vector)
+	else:
+		_set_idle_animation()
+
+func _update_animation(direction: Vector2) -> void:
+	blend_position = direction
+	state_machine.travel(\"walk\")  # Use walk animation when moving
+	animationTree.set(blend_pos_paths[1], blend_position)
+
+func _set_idle_animation() -> void:
+	state_machine.travel(\"idle\")
+	animationTree.set(blend_pos_paths[0], blend_position)
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfjur"]
+size = Vector2(47, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ap4sn"]
+size = Vector2(49, 69)
+
+[node name="Apartment" type="Node2D"]
+script = ExtResource("1_xv1jp")
+
+[node name="Floor" type="TileMapLayer" parent="."]
+texture_filter = 1
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 3, 0, 6, 0, 0, 0)
+tile_set = SubResource("TileSet_8occs")
+
+[node name="Walls" type="TileMapLayer" parent="."]
+texture_filter = 1
+position = Vector2(0, -32)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 1, 0, 3, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_xew80")
+
+[node name="Things" type="TileMapLayer" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(0, 15)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 253, 255, 1, 0, 3, 0, 2, 0, 0, 0)
+tile_set = SubResource("TileSet_on05s")
+script = ExtResource("5_ntisf")
+
+[node name="Closet" parent="Things" instance=ExtResource("6_w8hu5")]
+position = Vector2(90, -131)
+interact_name = "Check Closet"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Things/Closet"]
+position = Vector2(6, -9)
+shape = SubResource("RectangleShape2D_hv5s5")
+
+[node name="Sink" parent="Things" instance=ExtResource("6_w8hu5")]
+position = Vector2(116, 33)
+interact_name = "Check Sink"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Things/Sink"]
+position = Vector2(-31.75, -24)
+shape = SubResource("RectangleShape2D_sdf7p")
+
+[node name="player" parent="." instance=ExtResource("7_gayfj")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(110, -67)
+script = SubResource("GDScript_owviv")
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+zoom = Vector2(2.5, 2.5)
+
+[node name="EntranceMarkers" type="Node2D" parent="."]
+position = Vector2(15, 102)
+
+[node name="hallway" type="Marker2D" parent="EntranceMarkers"]
+
+[node name="fire_escape" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(1, -194)
+
+[node name="Front Exit" parent="." instance=ExtResource("8_p6y7h")]
+position = Vector2(15, 116)
+connected_scene = "Hallway/hallway"
+is_interact = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Front Exit"]
+shape = SubResource("RectangleShape2D_kfjur")
+
+[node name="Back Door" parent="." instance=ExtResource("8_p6y7h")]
+connected_scene = "Fire_Escape/fire_escape"
+is_interact = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back Door"]
+position = Vector2(17.5, -134.5)
+shape = SubResource("RectangleShape2D_ap4sn")

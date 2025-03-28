@@ -1,0 +1,11 @@
+~ start
+
+if GameState.has_interacted_with_closet == false:
+	set GameState.has_interacted_with_closet = true
+	# First interaction dialogue
+	I am the closet FIRST"
+else:
+	# Subsequent interaction dialogue
+	"I am the closet"
+
+=> END

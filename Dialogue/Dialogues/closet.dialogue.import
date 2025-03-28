@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://d0fmsdjvt2i6e"
+path="res://.godot/imported/closet.dialogue-bc3872cd9370764e4ed18efe43787c91.tres"
+
+[deps]
+
+source_file="res://Dialogue/Dialogues/closet.dialogue"
+dest_files=["res://.godot/imported/closet.dialogue-bc3872cd9370764e4ed18efe43787c91.tres"]
+
+[params]
+
+defaults=true
