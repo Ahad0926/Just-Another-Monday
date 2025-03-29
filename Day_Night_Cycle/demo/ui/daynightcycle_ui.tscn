@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://ceolcwatpaicu"]
+[gd_scene load_steps=10 format=3 uid="uid://ceolcwatpaicu"]
 
 [ext_resource type="Script" path="res://Day_Night_Cycle/demo/ui/daynightcycle_ui.gd" id="1_altij"]
 [ext_resource type="Shader" path="res://Day_Night_Assets/pixelperfect.gdshader" id="1_x3jdy"]
 [ext_resource type="Texture2D" uid="uid://bmkc3a0jp7qsv" path="res://Assets/INVENTORY/phone_asset.png" id="3_1vqas"]
 [ext_resource type="FontFile" uid="uid://dt6jbuskqvs7g" path="res://Day_Night_Assets/fonts/pixelmix/pixelmix.ttf" id="3_6qa0r"]
+[ext_resource type="Texture2D" uid="uid://5r7q676yds3q" path="res://Assets/INVENTORY/heart.png" id="5_bxgdr"]
+[ext_resource type="Texture2D" uid="uid://co8req8yxlc6n" path="res://Assets/INVENTORY/brain.png" id="6_m11ph"]
+[ext_resource type="Texture2D" uid="uid://chr7utlnsrodb" path="res://Assets/INVENTORY/stat_bar.png" id="7_p1olq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qhbnj"]
 shader = ExtResource("1_x3jdy")
@@ -34,15 +37,15 @@ texture = ExtResource("3_1vqas")
 
 [node name="CenterContainerDay" type="CenterContainer" parent="."]
 layout_mode = 0
-offset_left = 949.0
+offset_left = 952.0
 offset_top = 577.0
-offset_right = 994.0
+offset_right = 997.0
 offset_bottom = 597.0
 
 [node name="DayLabelBackground" type="Label" parent="CenterContainerDay"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.34902, 0.368627, 0.329412, 1)
 theme_override_fonts/font = ExtResource("3_6qa0r")
 theme_override_font_sizes/font_size = 15
 text = "Day"
@@ -54,7 +57,7 @@ layout_mode = 2
 offset_top = -1.0
 offset_right = 33.0
 offset_bottom = 10.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.0745098, 0.109804, 0.109804, 1)
 theme_override_fonts/font = ExtResource("3_6qa0r")
 theme_override_font_sizes/font_size = 15
 text = "Day"
@@ -70,7 +73,7 @@ offset_bottom = 597.0
 [node name="TimeLabelBackground" type="Label" parent="CenterContainerTime"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.34902, 0.368627, 0.329412, 1)
 theme_override_fonts/font = ExtResource("3_6qa0r")
 theme_override_font_sizes/font_size = 15
 text = "12:00 am"
@@ -82,8 +85,38 @@ layout_mode = 2
 offset_top = -1.0
 offset_right = 41.0
 offset_bottom = 10.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.0745098, 0.109804, 0.109804, 1)
 theme_override_fonts/font = ExtResource("3_6qa0r")
 theme_override_font_sizes/font_size = 15
 text = "12:00 am"
 metadata/_edit_lock_ = true
+
+[node name="Heart" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(961.85, 615.5)
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("5_bxgdr")
+
+[node name="Brain" type="Sprite2D" parent="."]
+position = Vector2(962, 635)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("6_m11ph")
+
+[node name="StaminaBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 978.0
+offset_top = 609.0
+offset_right = 1018.0
+offset_bottom = 649.0
+scale = Vector2(2.45274, 0.28554)
+nine_patch_stretch = true
+texture_progress = ExtResource("7_p1olq")
+
+[node name="StressBar" type="TextureProgressBar" parent="."]
+offset_left = 978.0
+offset_top = 629.0
+offset_right = 1018.0
+offset_bottom = 669.0
+scale = Vector2(2.45274, 0.28554)
+nine_patch_stretch = true
+texture_progress = ExtResource("7_p1olq")

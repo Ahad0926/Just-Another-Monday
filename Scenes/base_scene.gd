@@ -19,6 +19,8 @@ func _ready() -> void:
 	print(canvas_modulate)
 	print(time_canvas_layer)
 	print("")
+	print(PlayerStats.stamina)
+	print(PlayerStats.stress)
 
 func position_player() -> void:
 	# Setup player

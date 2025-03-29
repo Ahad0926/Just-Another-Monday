@@ -22,6 +22,7 @@ TransitionScreen="*res://Scenes/Transition_Scene/transition_screen.tscn"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 GameState="*res://game_state.gd"
 EmailData="*res://Scenes/PC/email_data.gd"
+PlayerStats="*res://Player/PlayerStats.gd"
 
 [dialogue_manager]
 

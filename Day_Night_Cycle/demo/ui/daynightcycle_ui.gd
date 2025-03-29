@@ -5,7 +5,18 @@ class_name DayNightCycleUI extends Control
 @onready var day_label: Label = %DayLabel
 @onready var time_label_background: Label = %TimeLabelBackground
 @onready var time_label: Label = %TimeLabel
+@onready var stamina_bar: TextureProgressBar = $StaminaBar
+@onready var stress_bar: TextureProgressBar = $StressBar
 
+func _ready() -> void:
+	print("Updating bars")
+	PlayerStats.stats_updated.connect(_update_bars)
+	_update_bars(PlayerStats.stamina, PlayerStats.stress)  # Initialize
+	print("Updated bars")
+	
+func _update_bars(stamina: float, stress: float) -> void:
+	stamina_bar.value = stamina
+	stress_bar.value = stress
 
 func set_daytime(day: int, hour: int, minute: int) -> void:
 	var day_names = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]

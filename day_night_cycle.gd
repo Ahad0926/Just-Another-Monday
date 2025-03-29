@@ -43,6 +43,7 @@ func _recalculate_time() -> void:
 	if past_minute != minute:
 		past_minute = minute
 		time_tick.emit(day, hour, minute)
+		PlayerStats.stamina -= 0.0694
 		#print("day: ", day, " hour: ", hour, " minute: ", minute)
 
 # Function to freeze time
