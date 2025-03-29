@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ceolcwatpaicu"]
+[gd_scene load_steps=12 format=3 uid="uid://ceolcwatpaicu"]
 
 [ext_resource type="Script" path="res://Day_Night_Cycle/demo/ui/daynightcycle_ui.gd" id="1_altij"]
 [ext_resource type="Shader" path="res://Day_Night_Assets/pixelperfect.gdshader" id="1_x3jdy"]
@@ -13,6 +13,24 @@ shader = ExtResource("1_x3jdy")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8xwu1"]
 shader = ExtResource("1_x3jdy")
+
+[sub_resource type="Shader" id="Shader_8n3nc"]
+code = "shader_type canvas_item;
+
+uniform float SCREEN_HEIGHT = 240.0;
+
+void fragment() {
+	int y_pixel = int(UV.y * SCREEN_HEIGHT);
+	if (y_pixel % 2 == 0) {
+		COLOR.a = 0.0;
+	} else {
+		COLOR.a = 0.05;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ulwjk"]
+shader = SubResource("Shader_8n3nc")
+shader_parameter/SCREEN_HEIGHT = 240.0
 
 [node name="DayNightCycleUI" type="Control"]
 material = SubResource("ShaderMaterial_qhbnj")
@@ -120,3 +138,17 @@ offset_bottom = 669.0
 scale = Vector2(2.45274, 0.28554)
 nine_patch_stretch = true
 texture_progress = ExtResource("7_p1olq")
+
+[node name="ScanLines" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ulwjk")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 951.0
+offset_top = 571.0
+offset_right = 951.0
+offset_bottom = 571.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.129542, 0.307645)

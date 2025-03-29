@@ -385,7 +385,6 @@ shape = SubResource("RectangleShape2D_oiijn")
 disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-physics_interpolation_mode = 1
 position = Vector2(30, -98)
 zoom = Vector2(4, 3.5)
 limit_left = -149
@@ -398,12 +397,11 @@ process_priority = 300
 process_physics_priority = 300
 script = ExtResource("11_lcpgr")
 
-[node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
+[node name="PhantomCamera2D" type="Node2D" parent="."]
 top_level = true
 position = Vector2(30, -98)
 script = ExtResource("12_bgyt0")
 follow_mode = 5
-follow_target = NodePath("")
 zoom = Vector2(4, 3.5)
 tween_resource = SubResource("Resource_yhs3g")
 follow_damping = true
