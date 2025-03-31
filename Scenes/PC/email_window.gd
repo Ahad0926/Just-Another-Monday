@@ -1,15 +1,12 @@
 extends Panel
 
-@onready var title_label = $EmailAppWindowContainer/EmailContainer/Title
-@onready var sender_label = $EmailAppWindowContainer/EmailContainer/Sender
-@onready var body_label = $EmailAppWindowContainer/EmailContainer/Body
-
-@onready var flag_spam_container = $EmailAppWindowContainer/ButtonContainer/SpamContainer
-@onready var mark_safe_container = $EmailAppWindowContainer/ButtonContainer/SafeContainer
+@onready var title_label = $Title
+@onready var sender_label = $Sender
+@onready var body_label = $Body
 
 
-@onready var flag_spam_button = $EmailAppWindowContainer/ButtonContainer/SpamContainer/FlagSpam
-@onready var mark_safe_button = $EmailAppWindowContainer/ButtonContainer/SafeContainer/MarkSafe
+@onready var flag_spam_button = $FlagSpam
+@onready var mark_safe_button = $MarkSafe
 
 @onready var close_button = $CloseButton
 
@@ -25,10 +22,16 @@ func load_next_email():
 	if EmailData.current_email_index < EmailData.total_emails:
 		current_email = EmailData.emails[EmailData.current_email_index]
 		title_label.text = current_email["title"]
-		sender_label.text = "From: " + current_email["sender"]
+		sender_label.text = current_email["sender"]
 		body_label.text = current_email["body"]
 	else:
+		get_mystery_email()
 		end_game()
+
+func get_mystery_email():
+	var stylebox := StyleBoxTexture.new()
+	stylebox.texture = preload("res://Assets/PC/Inbox/inbox_spam_bg.png")
+	self.add_theme_stylebox_override("panel", stylebox)
 
 func _flag_as_spam():
 	check_answer(true)
@@ -57,8 +60,8 @@ func end_game():
 	title_label.text = "Sorting Complete!"
 	sender_label.text = "Correct Emails Sorted: " + str(EmailData.correct_sort_count) + "/" + str(EmailData.total_emails)
 	body_label.text = "Great job! You finished reviewing all emails."
-	flag_spam_container.visible = false
-	mark_safe_container.visible = false
+	flag_spam_button.visible = false
+	mark_safe_button.visible = false
 	GameState.emails_done = true
 	PlayerStats.stress += 20
 	PlayerStats.stamina -= 20
