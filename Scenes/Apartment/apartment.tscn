@@ -1,17 +1,18 @@
-[gd_scene load_steps=29 format=3 uid="uid://dn554dadqe6sn"]
+[gd_scene load_steps=34 format=4 uid="uid://dn554dadqe6sn"]
 
 [ext_resource type="Script" path="res://Scenes/Apartment/apartment.gd" id="1_xv1jp"]
-[ext_resource type="PackedScene" uid="uid://cfsoly6blnqso" path="res://Interactions/actionable.tscn" id="5_hfx8c"]
+[ext_resource type="PackedScene" uid="uid://cfsoly6blnqso" path="res://Actionables/actionable.tscn" id="5_hfx8c"]
 [ext_resource type="Resource" uid="uid://d0fmsdjvt2i6e" path="res://Dialogue/Dialogues/closet.dialogue" id="6_vakdj"]
 [ext_resource type="Texture2D" uid="uid://o61uk474sy1o" path="res://Assets/APARTMENT/APT_BDR/APT_BDR_FLOOR.png" id="7_ahd1j"]
 [ext_resource type="Resource" uid="uid://bf7oykmb0d5cq" path="res://Dialogue/Dialogues/bed.dialogue" id="7_bdg3v"]
-[ext_resource type="Resource" uid="uid://diuoup7lqqxlg" path="res://Dialogue/Dialogues/stove.dialogue" id="8_83luw"]
+[ext_resource type="Resource" uid="uid://diuoup7lqqxlg" path="res://Dialogue/Dialogues/fridge.dialogue" id="8_83luw"]
 [ext_resource type="Texture2D" uid="uid://cpknycn2kcn7k" path="res://Assets/APARTMENT/APT_BDR/APT_BDR_WALLS.png" id="8_jw0ct"]
 [ext_resource type="PackedScene" uid="uid://cfks6he7p50ls" path="res://SceneTrigger/scene_trigger.tscn" id="8_p6y7h"]
 [ext_resource type="Texture2D" uid="uid://dd5s21da06ffy" path="res://Assets/APARTMENT/APT_BDR/APT_BDR_FURNITURE.png" id="9_w2xev"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="11_lcpgr"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="12_bgyt0"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="13_ial47"]
+[ext_resource type="Script" path="res://Scenes/cutscene_trigger.gd" id="14_01a37"]
 [ext_resource type="PackedScene" uid="uid://jvx4ydu1vmbb" path="res://Altoid/altoid.tscn" id="17_3oe7x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qivdl"]
@@ -254,6 +255,206 @@ size = Vector2(49, 86)
 size = Vector2(84, 53)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_taidm"]
+size = Vector2(33, 30)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cnglr"]
+texture = ExtResource("9_w2xev")
+10:2/0 = 0
+16:2/0 = 0
+17:2/0 = 0
+18:2/0 = 0
+19:2/0 = 0
+20:2/0 = 0
+21:2/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+16:3/0 = 0
+17:3/0 = 0
+18:3/0 = 0
+19:3/0 = 0
+20:3/0 = 0
+21:3/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+16:4/0 = 0
+17:4/0 = 0
+18:4/0 = 0
+19:4/0 = 0
+20:4/0 = 0
+21:4/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+10:5/0 = 0
+15:5/0 = 0
+16:5/0 = 0
+17:5/0 = 0
+18:5/0 = 0
+19:5/0 = 0
+20:5/0 = 0
+21:5/0 = 0
+4:6/0 = 0
+6:6/0 = 0
+7:6/0 = 0
+8:6/0 = 0
+9:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+14:6/0 = 0
+15:6/0 = 0
+16:6/0 = 0
+17:6/0 = 0
+18:6/0 = 0
+19:6/0 = 0
+20:6/0 = 0
+21:6/0 = 0
+4:7/0 = 0
+6:7/0 = 0
+7:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+15:7/0 = 0
+16:7/0 = 0
+17:7/0 = 0
+18:7/0 = 0
+19:7/0 = 0
+20:7/0 = 0
+21:7/0 = 0
+4:8/0 = 0
+6:8/0 = 0
+7:8/0 = 0
+15:8/0 = 0
+16:8/0 = 0
+17:8/0 = 0
+18:8/0 = 0
+19:8/0 = 0
+20:8/0 = 0
+21:8/0 = 0
+15:9/0 = 0
+16:9/0 = 0
+17:9/0 = 0
+18:9/0 = 0
+19:9/0 = 0
+20:9/0 = 0
+21:9/0 = 0
+8:10/0 = 0
+16:10/0 = 0
+17:10/0 = 0
+18:10/0 = 0
+19:10/0 = 0
+20:10/0 = 0
+21:10/0 = 0
+8:11/0 = 0
+14:11/0 = 0
+15:11/0 = 0
+16:11/0 = 0
+17:11/0 = 0
+18:11/0 = 0
+19:11/0 = 0
+20:11/0 = 0
+21:11/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+17:12/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+8:13/0 = 0
+14:13/0 = 0
+15:13/0 = 0
+16:13/0 = 0
+17:13/0 = 0
+18:13/0 = 0
+19:13/0 = 0
+20:13/0 = 0
+21:13/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+7:14/0 = 0
+8:14/0 = 0
+14:14/0 = 0
+15:14/0 = 0
+16:14/0 = 0
+17:14/0 = 0
+18:14/0 = 0
+19:14/0 = 0
+20:14/0 = 0
+21:14/0 = 0
+3:15/0 = 0
+4:15/0 = 0
+5:15/0 = 0
+6:15/0 = 0
+7:15/0 = 0
+8:15/0 = 0
+14:15/0 = 0
+15:15/0 = 0
+16:15/0 = 0
+17:15/0 = 0
+18:15/0 = 0
+19:15/0 = 0
+20:15/0 = 0
+21:15/0 = 0
+3:16/0 = 0
+4:16/0 = 0
+5:16/0 = 0
+6:16/0 = 0
+7:16/0 = 0
+8:16/0 = 0
+19:16/0 = 0
+20:16/0 = 0
+21:16/0 = 0
+3:17/0 = 0
+4:17/0 = 0
+5:17/0 = 0
+6:17/0 = 0
+7:17/0 = 0
+8:17/0 = 0
+16:17/0 = 0
+17:17/0 = 0
+18:17/0 = 0
+19:17/0 = 0
+20:17/0 = 0
+21:17/0 = 0
+3:18/0 = 0
+4:18/0 = 0
+5:18/0 = 0
+6:18/0 = 0
+16:18/0 = 0
+17:18/0 = 0
+18:18/0 = 0
+19:18/0 = 0
+20:18/0 = 0
+21:18/0 = 0
+3:19/0 = 0
+4:19/0 = 0
+5:19/0 = 0
+16:19/0 = 0
+17:19/0 = 0
+18:19/0 = 0
+19:19/0 = 0
+20:19/0 = 0
+21:19/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_sjlb8"]
+sources/0 = SubResource("TileSetAtlasSource_cnglr")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ryn00"]
 size = Vector2(48, 5)
@@ -273,6 +474,12 @@ duration = 1.0
 transition = 0
 ease = 2
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a4l42"]
+size = Vector2(48, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tck31"]
+size = Vector2(26, 24)
+
 [node name="Apartment" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_xv1jp")
@@ -280,7 +487,7 @@ script = ExtResource("1_xv1jp")
 [node name="Floor" type="TileMapLayer" parent="."]
 y_sort_enabled = true
 texture_filter = 1
-tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 3, 0, 6, 0, 0, 0)
+tile_map_data = PackedByteArray("AAAAAAAAAQADAAYAAAA=")
 tile_set = SubResource("TileSet_8occs")
 
 [node name="Walls" type="TileMapLayer" parent="."]
@@ -288,7 +495,7 @@ z_index = 1
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(0, -32)
-tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 1, 0, 3, 0, 0, 0, 0, 0)
+tile_map_data = PackedByteArray("AAAAAP//AQADAAAAAAA=")
 tile_set = SubResource("TileSet_xew80")
 
 [node name="Things" type="TileMapLayer" parent="."]
@@ -296,7 +503,7 @@ z_index = 2
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(0, 15)
-tile_map_data = PackedByteArray(0, 0, 0, 0, 253, 255, 1, 0, 3, 0, 2, 0, 0, 0)
+tile_map_data = PackedByteArray("AAAAAP3/AQADAAIAAAA=")
 tile_set = SubResource("TileSet_on05s")
 
 [node name="Closet" parent="Things" instance=ExtResource("5_hfx8c")]
@@ -321,14 +528,21 @@ position = Vector2(2, 6.5)
 shape = SubResource("RectangleShape2D_mpf7q")
 debug_color = Color(1, 0.6, 0.701961, 0.419608)
 
-[node name="Stove" parent="Things" instance=ExtResource("5_hfx8c")]
-position = Vector2(139, 42)
-action_id = "Stove"
+[node name="Fridge" parent="Things" instance=ExtResource("5_hfx8c")]
+position = Vector2(86, 84)
+action_id = "Fridge"
 dialogue_resource = ExtResource("8_83luw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Things/Stove"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Things/Fridge"]
+position = Vector2(-0.5, -2)
 shape = SubResource("RectangleShape2D_taidm")
 debug_color = Color(0.972549, 0.6, 0.701961, 0.419608)
+
+[node name="DeskChair" type="TileMapLayer" parent="Things"]
+z_index = 99
+position = Vector2(0, 8)
+tile_map_data = PackedByteArray("AAD6//j/AAAGAAYAAAD6//n/AAAGAAcAAAD6//r/AAAGAAgAAAD7//j/AAAHAAYAAAD7//n/AAAHAAcAAAD7//r/AAAHAAgAAAA=")
+tile_set = SubResource("TileSet_sjlb8")
 
 [node name="EntranceMarkers" type="Node2D" parent="."]
 position = Vector2(15, 102)
@@ -344,6 +558,9 @@ position = Vector2(-97, -184)
 
 [node name="title" type="Marker2D" parent="EntranceMarkers"]
 position = Vector2(88, -172)
+
+[node name="toilet" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(-100, -3)
 
 [node name="Front Exit" parent="." instance=ExtResource("8_p6y7h")]
 z_index = 2
@@ -410,3 +627,25 @@ limit_target = NodePath("../camera_bounds/collision")
 [node name="Altoid" parent="." instance=ExtResource("17_3oe7x")]
 z_index = 3
 position = Vector2(81, -56)
+
+[node name="CutsceneTrigger" type="Area2D" parent="."]
+position = Vector2(15, 112)
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("14_01a37")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CutsceneTrigger"]
+shape = SubResource("RectangleShape2D_a4l42")
+
+[node name="Toilet" parent="." instance=ExtResource("8_p6y7h")]
+position = Vector2(-109, 96)
+connected_scene = "Toilet/toilet"
+is_interact = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Toilet"]
+z_index = 2
+position = Vector2(3, 1)
+shape = SubResource("RectangleShape2D_tck31")
+debug_color = Color(1, 0.6, 0.701961, 0.419608)
+
+[connection signal="body_entered" from="CutsceneTrigger" to="CutsceneTrigger" method="_on_body_entered"]

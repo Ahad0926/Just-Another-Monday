@@ -15,6 +15,7 @@ func _ready() -> void:
 	position_player()
 	position_camera()
 	sync_time()
+	print("Stamina: ", PlayerStats.stamina, "\nStress: ", PlayerStats.stress)
 
 func position_player() -> void:
 	# Setup player

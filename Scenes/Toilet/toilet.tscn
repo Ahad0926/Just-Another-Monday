@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcajr0cyhd2jr"]
+
+[ext_resource type="Script" path="res://Scenes/Toilet/toilet.gd" id="1_ghu48"]
+[ext_resource type="Texture2D" uid="uid://br6et3odm26nr" path="res://Assets/Toilet/toilet_bg.png" id="2_vyumq"]
+[ext_resource type="Texture2D" uid="uid://botdi2fwuxykv" path="res://Assets/Toilet/toilet_under.png" id="3_anu1r"]
+[ext_resource type="Texture2D" uid="uid://ce60crecq8fsf" path="res://Assets/Toilet/toilet_progress.png" id="4_k2v4w"]
+
+[node name="Toilet" type="Node2D"]
+script = ExtResource("1_ghu48")
+
+[node name="ToiletBg" type="Sprite2D" parent="."]
+position = Vector2(577, 320)
+texture = ExtResource("2_vyumq")
+
+[node name="EntranceMarkers" type="Node2D" parent="."]
+
+[node name="any" type="Marker2D" parent="EntranceMarkers"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(572, 321)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+value = 100.0
+texture_under = ExtResource("3_anu1r")
+texture_progress = ExtResource("4_k2v4w")
+
+[node name="PeeTimer" type="Timer" parent="."]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(585, 659)
+emitting = false
+amount = 50
+direction = Vector2(0, 1)
+spread = 90.0
+gravity = Vector2(0, -980)
+initial_velocity_max = 15.0
+angle_min = -10.0
+angle_max = 10.0
+scale_amount_max = 10.0
+color = Color(0.815686, 0.694118, 0, 1)
+
+[node name="ToiletZone" type="Area2D" parent="."]
+position = Vector2(581, 332)
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ToiletZone"]
+polygon = PackedVector2Array(-13, -241, 65, -235, 108, -211, 136, -185, 160, -140, 170, -101, 174, -68, 167, -14, 161, 42, 143, 83, 119, 136, 96, 173, 63, 204, 25, 226, -8, 231, -50, 216, -78, 195, -110, 157, -141, 117, -157, 67, -172, 17, -182, -67, -170, -127, -158, -164, -131, -196, -104, -223, -60, -241)

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dudfr5v0r6i7w" path="res://Assets/APARTMENT/APT_BALCONY/APT_BALCONY_WALLS.png" id="3_8ftxb"]
 [ext_resource type="Texture2D" uid="uid://c55p1m8ru1i3p" path="res://Assets/APARTMENT/APT_BALCONY/APT_BALCONY_OBJECTS.png" id="4_fm41m"]
 [ext_resource type="PackedScene" uid="uid://cfks6he7p50ls" path="res://SceneTrigger/scene_trigger.tscn" id="5_vmxyp"]
-[ext_resource type="PackedScene" uid="uid://cfsoly6blnqso" path="res://Interactions/actionable.tscn" id="6_alsie"]
+[ext_resource type="PackedScene" uid="uid://cfsoly6blnqso" path="res://Actionables/actionable.tscn" id="6_alsie"]
 [ext_resource type="Resource" uid="uid://d0fmsdjvt2i6e" path="res://Dialogue/Dialogues/closet.dialogue" id="7_3tlwt"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="7_b3gx0"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="9_3tup3"]

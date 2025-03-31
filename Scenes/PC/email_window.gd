@@ -59,6 +59,9 @@ func end_game():
 	body_label.text = "Great job! You finished reviewing all emails."
 	flag_spam_container.visible = false
 	mark_safe_container.visible = false
+	GameState.emails_done = true
+	PlayerStats.stress += 20
+	PlayerStats.stamina -= 20
 
 func _close_app():
 	visible = false
