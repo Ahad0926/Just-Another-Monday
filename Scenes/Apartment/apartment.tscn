@@ -1,8 +1,7 @@
-[gd_scene load_steps=34 format=4 uid="uid://dn554dadqe6sn"]
+[gd_scene load_steps=33 format=4 uid="uid://dn554dadqe6sn"]
 
 [ext_resource type="Script" path="res://Scenes/Apartment/apartment.gd" id="1_xv1jp"]
 [ext_resource type="PackedScene" uid="uid://cfsoly6blnqso" path="res://Actionables/actionable.tscn" id="5_hfx8c"]
-[ext_resource type="Resource" uid="uid://d0fmsdjvt2i6e" path="res://Dialogue/Dialogues/closet.dialogue" id="6_vakdj"]
 [ext_resource type="Texture2D" uid="uid://o61uk474sy1o" path="res://Assets/APARTMENT/APT_BDR/APT_BDR_FLOOR.png" id="7_ahd1j"]
 [ext_resource type="Resource" uid="uid://bf7oykmb0d5cq" path="res://Dialogue/Dialogues/bed.dialogue" id="7_bdg3v"]
 [ext_resource type="Resource" uid="uid://diuoup7lqqxlg" path="res://Dialogue/Dialogues/fridge.dialogue" id="8_83luw"]
@@ -13,7 +12,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="12_bgyt0"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="13_ial47"]
 [ext_resource type="Script" path="res://Scenes/cutscene_trigger.gd" id="14_01a37"]
-[ext_resource type="PackedScene" uid="uid://jvx4ydu1vmbb" path="res://Altoid/altoid.tscn" id="17_3oe7x"]
+[ext_resource type="PackedScene" uid="uid://jvx4ydu1vmbb" path="res://Characters/Altoid/altoid.tscn" id="17_3oe7x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qivdl"]
 texture = ExtResource("7_ahd1j")
@@ -248,9 +247,6 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_qnm3e")
 sources/0 = SubResource("TileSetAtlasSource_m4qf3")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_trasy"]
-size = Vector2(49, 86)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mpf7q"]
 size = Vector2(84, 53)
 
@@ -480,6 +476,9 @@ size = Vector2(48, 3)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tck31"]
 size = Vector2(26, 24)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ypml"]
+size = Vector2(44, 43)
+
 [node name="Apartment" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_xv1jp")
@@ -505,17 +504,6 @@ texture_filter = 1
 position = Vector2(0, 15)
 tile_map_data = PackedByteArray("AAAAAP3/AQADAAIAAAA=")
 tile_set = SubResource("TileSet_on05s")
-
-[node name="Closet" parent="Things" instance=ExtResource("5_hfx8c")]
-z_index = 1
-position = Vector2(96, -123)
-action_id = "Closet"
-dialogue_resource = ExtResource("6_vakdj")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Things/Closet"]
-position = Vector2(-0.5, -18)
-shape = SubResource("RectangleShape2D_trasy")
-debug_color = Color(0.960784, 0.6, 0.701961, 0.419608)
 
 [node name="Bed" parent="Things" instance=ExtResource("5_hfx8c")]
 position = Vector2(104, -60)
@@ -561,6 +549,9 @@ position = Vector2(88, -172)
 
 [node name="toilet" type="Marker2D" parent="EntranceMarkers"]
 position = Vector2(-100, -3)
+
+[node name="sink" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(60, -47)
 
 [node name="Front Exit" parent="." instance=ExtResource("8_p6y7h")]
 z_index = 2
@@ -647,5 +638,15 @@ z_index = 2
 position = Vector2(3, 1)
 shape = SubResource("RectangleShape2D_tck31")
 debug_color = Color(1, 0.6, 0.701961, 0.419608)
+
+[node name="Sink" parent="." instance=ExtResource("8_p6y7h")]
+position = Vector2(74, 20)
+connected_scene = "Sink/sink"
+is_interact = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sink"]
+z_index = 2
+position = Vector2(0, 11.5)
+shape = SubResource("RectangleShape2D_5ypml")
 
 [connection signal="body_entered" from="CutsceneTrigger" to="CutsceneTrigger" method="_on_body_entered"]

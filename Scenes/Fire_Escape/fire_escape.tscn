@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c3me0xbfeg6hl"]
+[gd_scene load_steps=29 format=3 uid="uid://c3me0xbfeg6hl"]
 
 [ext_resource type="Script" path="res://Scenes/Fire_Escape/fire_escape.gd" id="1_ayjlh"]
 [ext_resource type="Texture2D" uid="uid://cilyhna7c6bwt" path="res://Assets/APARTMENT/APT_BALCONY/APT_BALCONY_BACKGROUND.png" id="1_ylwyb"]
@@ -7,7 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://c55p1m8ru1i3p" path="res://Assets/APARTMENT/APT_BALCONY/APT_BALCONY_OBJECTS.png" id="4_fm41m"]
 [ext_resource type="PackedScene" uid="uid://cfks6he7p50ls" path="res://SceneTrigger/scene_trigger.tscn" id="5_vmxyp"]
 [ext_resource type="PackedScene" uid="uid://cfsoly6blnqso" path="res://Actionables/actionable.tscn" id="6_alsie"]
-[ext_resource type="Resource" uid="uid://d0fmsdjvt2i6e" path="res://Dialogue/Dialogues/closet.dialogue" id="7_3tlwt"]
+[ext_resource type="Texture2D" uid="uid://df0whybwipyy6" path="res://Assets/APARTMENT/APT_BALCONY/APT_BDR_ASHTRAY.png" id="6_e3t66"]
+[ext_resource type="Resource" uid="uid://d0fmsdjvt2i6e" path="res://Dialogue/Dialogues/ashtray.dialogue" id="7_3tlwt"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="7_b3gx0"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="9_3tup3"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="9_f0wsp"]
@@ -32,8 +33,9 @@ sources/0 = SubResource("TileSetAtlasSource_qasyc")
 texture = ExtResource("3_8ftxb")
 2:9/size_in_atlas = Vector2i(21, 8)
 2:9/0 = 0
-2:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.375, 59.875, -15.875, 52.875, -55.625, 51.625, -56.125, 1.875, 42.125, 0.375, 42.125, 16.875, 46.875, 16.375, 47.125, 0.125, 77.625, 0.125, 78.375, 23.625, 82.875, 22.875, 166.875, -34.375, 168.375, -62.625, 102.875, -19.625, 88.375, -29.875, -57.375, -28.875, -60.875, -25.625, -61.125, 50.375, -156.875, 51.875, -157.375, 60.625)
+2:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.375, 59.875, -15.875, 52.875, -55.625, 51.625, -56.125, 1.875, 42.125, 0.375, 42.125, 16.875, 46.875, 16.375, 47.125, 0.125, 77.625, 0.125, 78.375, 23.625, 82.875, 22.875, 168.063, -34.6875, 168.375, -62.625, 102.875, -19.625, 88.375, -29.875, -57.375, -28.875, -60.875, -25.625, -61.125, 50.375, -156.875, 51.875, -157.375, 60.625)
 2:9/0/physics_layer_0/polygon_1/points = PackedVector2Array(28.875, 53.875, 29.625, 60.375, 169.125, 62.375, 167.6, -10.9135, 79.4013, 46.9949, 79.375, 53.375)
+2:9/0/physics_layer_0/polygon_2/points = PackedVector2Array(167.924, -33.1123, 167.845, -12.7961, 165.247, -10.67, 165.313, -31.0625)
 
 [sub_resource type="TileSet" id="TileSet_7ncyv"]
 physics_layer_0/collision_layer = 1
@@ -48,6 +50,35 @@ texture = ExtResource("4_fm41m")
 [sub_resource type="TileSet" id="TileSet_nsbs1"]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_wq06l")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7m1co"]
+atlas = ExtResource("6_e3t66")
+region = Rect2(0, 0, 30, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmqii"]
+atlas = ExtResource("6_e3t66")
+region = Rect2(30, 0, 30, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kwlw"]
+atlas = ExtResource("6_e3t66")
+region = Rect2(60, 0, 30, 31)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qhxdo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7m1co")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmqii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7kwlw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dwtjj"]
 size = Vector2(25, 23)
@@ -89,13 +120,19 @@ position = Vector2(-8, -9)
 tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 9, 0, 11, 0, 0, 0)
 tile_set = SubResource("TileSet_nsbs1")
 
-[node name="Ashtray" parent="Things" instance=ExtResource("6_alsie")]
+[node name="Ashtray" type="AnimatedSprite2D" parent="Things"]
+position = Vector2(59, -54)
+sprite_frames = SubResource("SpriteFrames_qhxdo")
+autoplay = "default"
+frame_progress = 0.15302
+
+[node name="Area2D" parent="Things/Ashtray" instance=ExtResource("6_alsie")]
 z_index = 1
-position = Vector2(29, -25)
-action_id = "Closet"
+position = Vector2(-29, 32)
+action_id = "Ashtray"
 dialogue_resource = ExtResource("7_3tlwt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Things/Ashtray"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Things/Ashtray/Area2D"]
 position = Vector2(11.5, -11.5)
 shape = SubResource("RectangleShape2D_dwtjj")
 debug_color = Color(0.960784, 0.6, 0.701961, 0.419608)

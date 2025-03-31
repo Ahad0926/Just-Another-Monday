@@ -1,9 +1,11 @@
 # GameState.gd
 extends Node
 
-var has_interacted_with_closet: bool = false
-var game_start: bool = false
+var game_start: bool = true
 var emails_done: bool = false
+var peed: bool = false
+var dishes: bool = false
+
 
 func _ready():
 	print("gamestate ready")

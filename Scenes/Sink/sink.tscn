@@ -1,0 +1,134 @@
+[gd_scene load_steps=16 format=3 uid="uid://bg2jtkpyjniey"]
+
+[ext_resource type="Script" path="res://Scenes/Sink/sink.gd" id="1_h5vv6"]
+[ext_resource type="Texture2D" uid="uid://bgxjfr3qmhp2p" path="res://Assets/Sink/sink_bg.png" id="2_001p2"]
+[ext_resource type="Texture2D" uid="uid://d2aeaum1v222q" path="res://Assets/Sink/sink_plate1.png" id="3_4qfpy"]
+[ext_resource type="Texture2D" uid="uid://bqu0sofy3v0v4" path="res://Assets/Sink/sink_plate2.png" id="4_q4qxu"]
+[ext_resource type="Texture2D" uid="uid://cearwtwq770q0" path="res://Assets/Sink/sink_plate3.png" id="5_i2eim"]
+[ext_resource type="Texture2D" uid="uid://bxufqs2utlo5u" path="res://Assets/Sink/sink_plate4.png" id="6_dalbs"]
+[ext_resource type="Texture2D" uid="uid://bddnkwxqauxgv" path="res://Assets/Sink/sink_plate5.png" id="7_bvka8"]
+[ext_resource type="Texture2D" uid="uid://c8dn1e83m4n5w" path="res://Assets/Sink/sink_plate6.png" id="8_mptc4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_76m38"]
+radius = 138.033
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qqqi1"]
+radius = 138.014
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tao7s"]
+radius = 149.482
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oks2c"]
+radius = 66.0303
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ecs7w"]
+radius = 64.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w2rc6"]
+radius = 101.966
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_osvpf"]
+radius = 186.0
+height = 474.0
+
+[node name="Sink" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_h5vv6")
+
+[node name="SinkBg" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(579, 326)
+texture = ExtResource("2_001p2")
+
+[node name="SinkPlate1" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(877, 221)
+texture = ExtResource("3_4qfpy")
+
+[node name="Area2D" type="Area2D" parent="SinkPlate1"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SinkPlate1/Area2D"]
+shape = SubResource("CircleShape2D_76m38")
+
+[node name="SinkPlate2" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(761, 226)
+texture = ExtResource("4_q4qxu")
+
+[node name="Area2D" type="Area2D" parent="SinkPlate2"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SinkPlate2/Area2D"]
+position = Vector2(-6, 3)
+shape = SubResource("CircleShape2D_qqqi1")
+
+[node name="SinkPlate3" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(877, 368)
+texture = ExtResource("5_i2eim")
+
+[node name="Area2D" type="Area2D" parent="SinkPlate3"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SinkPlate3/Area2D"]
+position = Vector2(2, -1)
+shape = SubResource("CircleShape2D_tao7s")
+
+[node name="SinkPlate4" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(753, 291)
+texture = ExtResource("6_dalbs")
+
+[node name="Area2D" type="Area2D" parent="SinkPlate4"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SinkPlate4/Area2D"]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_oks2c")
+
+[node name="SinkPlate5" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(717, 391)
+texture = ExtResource("7_bvka8")
+
+[node name="Area2D" type="Area2D" parent="SinkPlate5"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SinkPlate5/Area2D"]
+position = Vector2(7, -5)
+shape = SubResource("CircleShape2D_ecs7w")
+
+[node name="SinkPlate6" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(801, 508)
+texture = ExtResource("8_mptc4")
+
+[node name="Area2D" type="Area2D" parent="SinkPlate6"]
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SinkPlate6/Area2D"]
+position = Vector2(13, -21)
+shape = SubResource("CircleShape2D_w2rc6")
+
+[node name="SinkArea" type="Area2D" parent="."]
+position = Vector2(371, 317)
+collision_layer = 32
+collision_mask = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SinkArea"]
+position = Vector2(-2, 13)
+shape = SubResource("CapsuleShape2D_osvpf")
+
+[node name="EntranceMarkers" type="Node2D" parent="."]
+
+[node name="any" type="Marker2D" parent="EntranceMarkers"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(572, 321)

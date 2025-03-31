@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://c4xc4f03dr3vt"]
 
-[ext_resource type="PackedScene" uid="uid://dc7pw8cqy44tt" path="res://Player/player.tscn" id="1_e6mbs"]
+[ext_resource type="PackedScene" uid="uid://dc7pw8cqy44tt" path="res://Characters/Player/player.tscn" id="1_e6mbs"]
 [ext_resource type="Script" path="res://Scenes/Title/title.gd" id="1_lxccj"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="2_uw7cg"]
-[ext_resource type="PackedScene" uid="uid://ceolcwatpaicu" path="res://Day_Night_Cycle/demo/ui/daynightcycle_ui.tscn" id="3_td2el"]
+[ext_resource type="PackedScene" uid="uid://ceolcwatpaicu" path="res://Day_Night_Cycle/ui/daynightcycle_ui.tscn" id="3_td2el"]
 [ext_resource type="Script" path="res://day_night_cycle.gd" id="4_jwf5h"]
 [ext_resource type="Texture2D" uid="uid://dvcny6m4sgt0d" path="res://Assets/daynightcycle-gradient-texture.tres" id="5_5ul73"]
 
