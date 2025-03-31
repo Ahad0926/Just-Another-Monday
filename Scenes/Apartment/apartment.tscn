@@ -338,7 +338,7 @@ position = Vector2(15, 102)
 [node name="fire_escape" type="Marker2D" parent="EntranceMarkers"]
 position = Vector2(1, -194)
 
-[node name="desktop2" type="Marker2D" parent="EntranceMarkers"]
+[node name="desktop" type="Marker2D" parent="EntranceMarkers"]
 z_index = 2
 position = Vector2(-97, -184)
 
@@ -368,7 +368,7 @@ shape = SubResource("RectangleShape2D_ap4sn")
 [node name="PC" parent="." instance=ExtResource("8_p6y7h")]
 z_index = 2
 position = Vector2(-82, -112)
-connected_scene = "PC/Desktop2"
+connected_scene = "PC/Desktop"
 is_interact = true
 metadata/_edit_group_ = true
 
@@ -386,7 +386,7 @@ disabled = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(30, -98)
-zoom = Vector2(4, 3.5)
+zoom = Vector2(3.5, 3)
 limit_left = -149
 limit_top = -197
 limit_right = 174
@@ -402,7 +402,7 @@ top_level = true
 position = Vector2(30, -98)
 script = ExtResource("12_bgyt0")
 follow_mode = 5
-zoom = Vector2(4, 3.5)
+zoom = Vector2(3.5, 3)
 tween_resource = SubResource("Resource_yhs3g")
 follow_damping = true
 limit_target = NodePath("../camera_bounds/collision")

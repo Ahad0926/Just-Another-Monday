@@ -30,6 +30,7 @@ general/balloon_path="res://Dialogue/Balloon/balloon.tscn"
 
 [display]
 
+window/size/mode=2
 window/stretch/mode="viewport"
 mouse_cursor/custom_image="res://Assets/CURSOR_POINT.png"
 

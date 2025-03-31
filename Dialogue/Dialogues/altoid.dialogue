@@ -1,3 +1,33 @@
 ~ start
-Altoid: Heh, look who's FINALLY awake
+
+if GameState.game_start == true:
+	set GameState.game_start = false
+	Altoid: Mornin' princess... rough night again, huh? Surprise surprise... heh.
+	Altoid2: C'mon, we haven't got all day. Get up, freshen up, and get those stress levels down you lazy guy!
+	Altoid2: Oh, and PLEASE shut off your computer before bed next time. That thing kept dinging all night, driving me nuts.
+
+	- Player1: "Sorry about that, buddy."
+		Altoid: Eh, you're forgiven... this time.
+		
+	- Player2: "I had stuff to do, Altoid."
+		Altoid2: Oh sure, "stuff." Those late-night videos and doom-scrolling are super important, I bet.
+		
+	- Player2: "Maybe you're the one who needs less sleep?"
+		Altoid2: Says the human who could nap through the apocalypse. Okay, let's focus—coffee time.
+
+	Altoid: Anyway, what's first on today's exciting itinerary?
+
+	- Player1: "Check the computer, I guess."
+		Altoid: Woohoo, riveting stuff. Don't strain yourself.
+
+	- Player1: "Maybe grab a quick shower?"
+		Altoid2: Oh thank goodness. Was hoping you'd say that—no offense.
+
+	- Player2: "You tell me, wise guy."
+		Altoid2: Okay, since you're indecisive... how about starting with work? Those emails aren't gonna sort themselves.
+
+else:
+	% Altoid2: Well don't just sit around doing nothing... that's MY job.
+	% Altoid2: Anytime now, pal. Not like I'm busy or anything.
+	
 => END

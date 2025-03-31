@@ -50,7 +50,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_wq06l")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dwtjj"]
-size = Vector2(49, 86)
+size = Vector2(25, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n07og"]
 size = Vector2(48, 4)
@@ -77,25 +77,26 @@ tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 13, 0, 0, 0)
 tile_set = SubResource("TileSet_crkfl")
 
 [node name="Walls" type="TileMapLayer" parent="."]
-z_index = 1
 y_sort_enabled = true
+texture_filter = 1
 position = Vector2(-8, -1)
 tile_map_data = PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 2, 0, 9, 0, 0, 0)
 tile_set = SubResource("TileSet_7ncyv")
 
 [node name="Things" type="TileMapLayer" parent="."]
+texture_filter = 1
 position = Vector2(-8, -9)
 tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 9, 0, 11, 0, 0, 0)
 tile_set = SubResource("TileSet_nsbs1")
 
-[node name="Closet" parent="Things" instance=ExtResource("6_alsie")]
+[node name="Ashtray" parent="Things" instance=ExtResource("6_alsie")]
 z_index = 1
 position = Vector2(29, -25)
 action_id = "Closet"
 dialogue_resource = ExtResource("7_3tlwt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Things/Closet"]
-position = Vector2(-0.5, -18)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Things/Ashtray"]
+position = Vector2(11.5, -11.5)
 shape = SubResource("RectangleShape2D_dwtjj")
 debug_color = Color(0.960784, 0.6, 0.701961, 0.419608)
 

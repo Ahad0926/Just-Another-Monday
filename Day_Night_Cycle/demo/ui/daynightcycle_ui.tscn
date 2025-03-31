@@ -131,6 +131,7 @@ nine_patch_stretch = true
 texture_progress = ExtResource("7_p1olq")
 
 [node name="StressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
 offset_left = 978.0
 offset_top = 629.0
 offset_right = 1018.0

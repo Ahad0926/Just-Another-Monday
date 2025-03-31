@@ -1,25 +1,26 @@
-[gd_scene load_steps=27 format=3 uid="uid://c5vdmv6o50mxi"]
+[gd_scene load_steps=28 format=3 uid="uid://fpd45endcam8"]
 
-[ext_resource type="Script" path="res://Scenes/PC/desktop.gd" id="1_v7eru"]
-[ext_resource type="FontFile" uid="uid://jnk3hrmjl2tl" path="res://Assets/PC/Font.tres" id="2_oe615"]
-[ext_resource type="Texture2D" uid="uid://biaakur0vk206" path="res://Assets/PC/PatchInverted.png" id="3_i7xhc"]
-[ext_resource type="Texture2D" uid="uid://bg241wt1xpfoy" path="res://Assets/PC/PatchRegular.png" id="4_dxkvp"]
-[ext_resource type="Texture2D" uid="uid://cggbubid3xpv3" path="res://Assets/PC/Flag.png" id="5_u8k7x"]
-[ext_resource type="Texture2D" uid="uid://o7mgu38xawj2" path="res://Assets/PC/CloseRegular.png" id="6_dc1c3"]
-[ext_resource type="Texture2D" uid="uid://by0n1lipoxrgg" path="res://Assets/PC_Icons/email_icon.png" id="6_fxnk2"]
-[ext_resource type="Texture2D" uid="uid://cukq4pbkpfaeu" path="res://Assets/PC_Icons/email_icon_hover.png" id="7_x0ee7"]
-[ext_resource type="Texture2D" uid="uid://dbrrlp4sabjhp" path="res://Assets/PC/ClosePressed.png" id="8_bapbp"]
-[ext_resource type="Script" path="res://Scenes/PC/email_window.gd" id="8_yapln"]
-[ext_resource type="Texture2D" uid="uid://t0l3rrrxjoad" path="res://Assets/PC_Icons/flag.png" id="9_6hadg"]
-[ext_resource type="Texture2D" uid="uid://o1qgicey1r0p" path="res://Assets/PC_Icons/check.png" id="10_cfcwg"]
-[ext_resource type="Texture2D" uid="uid://cjb0m5ybuts1m" path="res://Assets/PC_Icons/recycle-bin.png" id="13_sgd70"]
-[ext_resource type="Texture2D" uid="uid://c8fjc1x0g65j8" path="res://Assets/PC_Icons/recycle-bin-hover.png" id="14_jqtsb"]
-[ext_resource type="Texture2D" uid="uid://cdm7nbgyt3nem" path="res://Assets/PC_Icons/internet.png" id="15_vtvuc"]
-[ext_resource type="Texture2D" uid="uid://cq7hwset4ici1" path="res://Assets/PC_Icons/internet-hover.png" id="16_u0gyx"]
-[ext_resource type="Texture2D" uid="uid://cms3rgup6net1" path="res://Assets/PC_Icons/files.png" id="17_7eby0"]
-[ext_resource type="Texture2D" uid="uid://b0s104ttjaxrr" path="res://Assets/PC_Icons/files-hover.png" id="18_4a5he"]
+[ext_resource type="Script" path="res://Scenes/PC/desktop.gd" id="1_fpvgn"]
+[ext_resource type="Texture2D" uid="uid://dxlygue35lt7e" path="res://Assets/PC/Background.png" id="2_sjacn"]
+[ext_resource type="FontFile" uid="uid://jnk3hrmjl2tl" path="res://Assets/PC/Font.tres" id="3_bds3p"]
+[ext_resource type="Texture2D" uid="uid://bg241wt1xpfoy" path="res://Assets/PC/PatchRegular.png" id="4_x3l3k"]
+[ext_resource type="Texture2D" uid="uid://cggbubid3xpv3" path="res://Assets/PC/Flag.png" id="5_pf22g"]
+[ext_resource type="Texture2D" uid="uid://biaakur0vk206" path="res://Assets/PC/PatchInverted.png" id="6_vy8kg"]
+[ext_resource type="Texture2D" uid="uid://by0n1lipoxrgg" path="res://Assets/PC_Icons/email_icon.png" id="7_au0s1"]
+[ext_resource type="Texture2D" uid="uid://cukq4pbkpfaeu" path="res://Assets/PC_Icons/email_icon_hover.png" id="8_g7yxx"]
+[ext_resource type="Script" path="res://Scenes/PC/email_window.gd" id="9_t80sg"]
+[ext_resource type="Texture2D" uid="uid://t0l3rrrxjoad" path="res://Assets/PC_Icons/flag.png" id="10_ymdyi"]
+[ext_resource type="Texture2D" uid="uid://o1qgicey1r0p" path="res://Assets/PC_Icons/check.png" id="11_ytnvw"]
+[ext_resource type="Texture2D" uid="uid://o7mgu38xawj2" path="res://Assets/PC/CloseRegular.png" id="12_a7v5e"]
+[ext_resource type="Texture2D" uid="uid://dbrrlp4sabjhp" path="res://Assets/PC/ClosePressed.png" id="13_4h8f7"]
+[ext_resource type="Texture2D" uid="uid://cjb0m5ybuts1m" path="res://Assets/PC_Icons/recycle-bin.png" id="14_l5el1"]
+[ext_resource type="Texture2D" uid="uid://c8fjc1x0g65j8" path="res://Assets/PC_Icons/recycle-bin-hover.png" id="15_qmbuh"]
+[ext_resource type="Texture2D" uid="uid://cdm7nbgyt3nem" path="res://Assets/PC_Icons/internet.png" id="16_78tt6"]
+[ext_resource type="Texture2D" uid="uid://cq7hwset4ici1" path="res://Assets/PC_Icons/internet-hover.png" id="17_jpd6t"]
+[ext_resource type="Texture2D" uid="uid://cms3rgup6net1" path="res://Assets/PC_Icons/files.png" id="18_ff4oh"]
+[ext_resource type="Texture2D" uid="uid://b0s104ttjaxrr" path="res://Assets/PC_Icons/files-hover.png" id="19_pudg6"]
 
-[sub_resource type="Shader" id="Shader_ca3vq"]
+[sub_resource type="Shader" id="Shader_8n3nc"]
 code = "shader_type canvas_item;
 
 uniform float SCREEN_HEIGHT = 240.0;
@@ -33,53 +34,65 @@ void fragment() {
 	}
 }"
 
-[sub_resource type="ShaderMaterial" id="8"]
-shader = SubResource("Shader_ca3vq")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wpxuc"]
+shader = SubResource("Shader_8n3nc")
 shader_parameter/SCREEN_HEIGHT = 240.0
 
-[sub_resource type="StyleBoxFlat" id="1"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pk1ya"]
 bg_color = Color(0.764706, 0.764706, 0.764706, 1)
 
-[sub_resource type="StyleBoxFlat" id="2"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rp51n"]
 draw_center = false
 border_width_top = 1
 border_color = Color(1, 1, 1, 1)
 
-[sub_resource type="Theme" id="Theme_qhl2v"]
+[sub_resource type="Theme" id="Theme_dmx1n"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xr2ds"]
-texture = ExtResource("4_dxkvp")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ua3ah"]
+texture = ExtResource("4_x3l3k")
 texture_margin_left = 2.0
 texture_margin_top = 2.0
 texture_margin_right = 2.0
 texture_margin_bottom = 2.0
 
-[sub_resource type="StyleBoxTexture" id="5"]
-texture = ExtResource("3_i7xhc")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_akxd1"]
+texture = ExtResource("6_vy8kg")
 texture_margin_left = 2.0
 texture_margin_top = 2.0
 texture_margin_right = 2.0
 texture_margin_bottom = 2.0
 region_rect = Rect2(0, 0, 16, 16)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oieyw"]
-texture = ExtResource("3_i7xhc")
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rmq8t"]
+texture = ExtResource("6_vy8kg")
 texture_margin_left = 2.0
 texture_margin_top = 2.0
 texture_margin_right = 2.0
 texture_margin_bottom = 2.0
 
-[node name="Desktop" type="Control"]
+[node name="Desktop" type="Node2D"]
+script = ExtResource("1_fpvgn")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = 3
+texture_filter = 1
+position = Vector2(574, 322)
+texture = ExtResource("2_sjacn")
+
+[node name="Control" type="Control" parent="."]
+z_index = 2
 texture_filter = 1
 layout_mode = 3
-anchor_top = 0.398
-anchor_right = 0.652
-anchor_bottom = 1.0
-offset_top = -257.904
-offset_right = 400.896
-script = ExtResource("1_v7eru")
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 337.0
+offset_top = 88.0
+offset_right = 809.0
+offset_bottom = 437.0
+grow_horizontal = 0
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -88,8 +101,8 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0.501961, 0.501961, 1)
 
-[node name="ScanLines" type="ColorRect" parent="."]
-material = SubResource("8")
+[node name="ScanLines" type="ColorRect" parent="Control"]
+material = SubResource("ShaderMaterial_wpxuc")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -101,18 +114,20 @@ offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Taskbar" type="Panel" parent="."]
+[node name="Taskbar" type="Panel" parent="Control"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -75.0
+offset_top = -47.0
+offset_bottom = 28.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/panel = SubResource("1")
+scale = Vector2(1, 0.64)
+theme_override_styles/panel = SubResource("StyleBoxFlat_pk1ya")
 
-[node name="Line" type="Panel" parent="Taskbar"]
+[node name="Line" type="Panel" parent="Control/Taskbar"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -120,38 +135,41 @@ anchor_bottom = 1.0
 offset_top = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("2")
+theme_override_styles/panel = SubResource("StyleBoxFlat_rp51n")
 
-[node name="StartButton" type="Button" parent="Taskbar"]
+[node name="StartButton" type="Button" parent="Control/Taskbar"]
+texture_filter = 1
 layout_mode = 0
 offset_left = 3.0
 offset_top = 7.0
 offset_right = 142.0
 offset_bottom = 68.0
-theme = SubResource("Theme_qhl2v")
+scale = Vector2(0.68, 0.9075)
+theme = SubResource("Theme_dmx1n")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("2_oe615")
-theme_override_font_sizes/font_size = 50
-theme_override_styles/normal = SubResource("StyleBoxTexture_xr2ds")
-text = "Start"
-icon = ExtResource("5_u8k7x")
+theme_override_fonts/font = ExtResource("3_bds3p")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxTexture_ua3ah")
+text = "Logout"
+icon = ExtResource("5_pf22g")
 expand_icon = true
 
-[node name="Time" type="Panel" parent="Taskbar"]
+[node name="Time" type="Panel" parent="Control/Taskbar"]
 layout_mode = 1
 anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -99.0
+offset_left = -65.0
 offset_top = 4.0
-offset_right = -3.0
+offset_right = 31.0
 offset_bottom = -3.0
 grow_horizontal = 0
 grow_vertical = 2
-theme_override_styles/panel = SubResource("5")
+scale = Vector2(0.64, 0.9375)
+theme_override_styles/panel = SubResource("StyleBoxTexture_akxd1")
 
-[node name="Label" type="Label" parent="Taskbar/Time"]
+[node name="Label" type="Label" parent="Control/Taskbar/Time"]
 layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -160,53 +178,60 @@ text = "12:30 PM"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="EmailAppButton" type="VBoxContainer" parent="."]
+[node name="EmailAppButton" type="VBoxContainer" parent="Control"]
+texture_filter = 1
 layout_mode = 0
-offset_left = 30.0
-offset_top = 29.0
-offset_right = 94.0
-offset_bottom = 120.0
+offset_left = 19.0
+offset_top = 11.0
+offset_right = 83.0
+offset_bottom = 102.0
+scale = Vector2(0.52, 0.48)
 alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="EmailAppButton"]
+[node name="TextureButton" type="TextureButton" parent="Control/EmailAppButton"]
 layout_mode = 2
-texture_normal = ExtResource("6_fxnk2")
-texture_pressed = ExtResource("6_fxnk2")
-texture_hover = ExtResource("7_x0ee7")
+texture_normal = ExtResource("7_au0s1")
+texture_pressed = ExtResource("7_au0s1")
+texture_hover = ExtResource("8_g7yxx")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="EmailAppButton"]
+[node name="Label" type="Label" parent="Control/EmailAppButton"]
+texture_filter = 1
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "E-mail"
 horizontal_alignment = 1
 
-[node name="EmailAppWindow" type="Panel" parent="."]
+[node name="EmailAppWindow" type="Panel" parent="Control"]
 visible = false
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -391.5
-offset_top = -241.0
-offset_right = 391.5
-offset_bottom = 241.0
+offset_left = -164.0
+offset_top = -135.0
+offset_right = 619.0
+offset_bottom = 347.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_oieyw")
-script = ExtResource("8_yapln")
+scale = Vector2(0.44, 0.48)
+theme_override_styles/panel = SubResource("StyleBoxTexture_rmq8t")
+script = ExtResource("9_t80sg")
 
-[node name="Label" type="Label" parent="EmailAppWindow"]
+[node name="Label" type="Label" parent="Control/EmailAppWindow"]
 layout_mode = 0
 offset_left = 356.5
 offset_top = -3.0
 offset_right = 400.5
 offset_bottom = 20.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
 text = "Inbox"
 
-[node name="EmailAppWindowContainer" type="VBoxContainer" parent="EmailAppWindow"]
+[node name="EmailAppWindowContainer" type="VBoxContainer" parent="Control/EmailAppWindow"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -219,140 +244,152 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 90
 
-[node name="EmailContainer" type="VBoxContainer" parent="EmailAppWindow/EmailAppWindowContainer"]
+[node name="EmailContainer" type="VBoxContainer" parent="Control/EmailAppWindow/EmailAppWindowContainer"]
 layout_mode = 2
 
-[node name="Title" type="RichTextLabel" parent="EmailAppWindow/EmailAppWindowContainer/EmailContainer"]
+[node name="Title" type="RichTextLabel" parent="Control/EmailAppWindow/EmailAppWindowContainer/EmailContainer"]
 layout_mode = 2
+theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "Title"
 fit_content = true
 
-[node name="Sender" type="RichTextLabel" parent="EmailAppWindow/EmailAppWindowContainer/EmailContainer"]
+[node name="Sender" type="RichTextLabel" parent="Control/EmailAppWindow/EmailAppWindowContainer/EmailContainer"]
 layout_mode = 2
+theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "Sender"
 fit_content = true
 
-[node name="Body" type="RichTextLabel" parent="EmailAppWindow/EmailAppWindowContainer/EmailContainer"]
+[node name="Body" type="RichTextLabel" parent="Control/EmailAppWindow/EmailAppWindowContainer/EmailContainer"]
 layout_mode = 2
+theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "BodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyB odyBody BodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBo
 dyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBodyBody"
 fit_content = true
 
-[node name="ButtonContainer" type="HBoxContainer" parent="EmailAppWindow/EmailAppWindowContainer"]
+[node name="ButtonContainer" type="HBoxContainer" parent="Control/EmailAppWindow/EmailAppWindowContainer"]
 layout_mode = 2
 theme_override_constants/separation = 100
 alignment = 1
 
-[node name="SpamContainer" type="VBoxContainer" parent="EmailAppWindow/EmailAppWindowContainer/ButtonContainer"]
+[node name="SpamContainer" type="VBoxContainer" parent="Control/EmailAppWindow/EmailAppWindowContainer/ButtonContainer"]
 layout_mode = 2
 
-[node name="FlagSpam" type="TextureButton" parent="EmailAppWindow/EmailAppWindowContainer/ButtonContainer/SpamContainer"]
+[node name="FlagSpam" type="TextureButton" parent="Control/EmailAppWindow/EmailAppWindowContainer/ButtonContainer/SpamContainer"]
 layout_mode = 2
-texture_normal = ExtResource("9_6hadg")
-texture_pressed = ExtResource("9_6hadg")
-texture_hover = ExtResource("9_6hadg")
+texture_normal = ExtResource("10_ymdyi")
+texture_pressed = ExtResource("10_ymdyi")
+texture_hover = ExtResource("10_ymdyi")
 
-[node name="Label" type="Label" parent="EmailAppWindow/EmailAppWindowContainer/ButtonContainer/SpamContainer"]
+[node name="Label" type="Label" parent="Control/EmailAppWindow/EmailAppWindowContainer/ButtonContainer/SpamContainer"]
 layout_mode = 2
 text = "SPAM"
 horizontal_alignment = 1
 
-[node name="SafeContainer" type="VBoxContainer" parent="EmailAppWindow/EmailAppWindowContainer/ButtonContainer"]
+[node name="SafeContainer" type="VBoxContainer" parent="Control/EmailAppWindow/EmailAppWindowContainer/ButtonContainer"]
 layout_mode = 2
 
-[node name="MarkSafe" type="TextureButton" parent="EmailAppWindow/EmailAppWindowContainer/ButtonContainer/SafeContainer"]
+[node name="MarkSafe" type="TextureButton" parent="Control/EmailAppWindow/EmailAppWindowContainer/ButtonContainer/SafeContainer"]
 layout_mode = 2
-texture_normal = ExtResource("10_cfcwg")
-texture_pressed = ExtResource("10_cfcwg")
-texture_hover = ExtResource("10_cfcwg")
+texture_normal = ExtResource("11_ytnvw")
+texture_pressed = ExtResource("11_ytnvw")
+texture_hover = ExtResource("11_ytnvw")
 
-[node name="Label" type="Label" parent="EmailAppWindow/EmailAppWindowContainer/ButtonContainer/SafeContainer"]
+[node name="Label" type="Label" parent="Control/EmailAppWindow/EmailAppWindowContainer/ButtonContainer/SafeContainer"]
 layout_mode = 2
 text = "SAFE"
 horizontal_alignment = 1
 
-[node name="CloseButton" type="TextureButton" parent="EmailAppWindow"]
+[node name="CloseButton" type="TextureButton" parent="Control/EmailAppWindow"]
 layout_mode = 0
 offset_left = 738.5
 offset_top = 1.0
 offset_right = 778.5
 offset_bottom = 41.0
-texture_normal = ExtResource("6_dc1c3")
-texture_pressed = ExtResource("8_bapbp")
+texture_normal = ExtResource("12_a7v5e")
+texture_pressed = ExtResource("13_4h8f7")
 stretch_mode = 5
 
-[node name="RecycleButton" type="VBoxContainer" parent="."]
+[node name="RecycleButton" type="VBoxContainer" parent="Control"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.907
 anchor_top = 0.724
 anchor_right = 0.988
 anchor_bottom = 0.886
-offset_left = 3.13599
-offset_top = -0.152039
-offset_right = -3.17603
-offset_bottom = -14.1281
+offset_left = -25.104
+offset_top = -3.67599
+offset_right = 45.664
+offset_bottom = 35.786
+scale = Vector2(0.567568, 0.52)
 alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="RecycleButton"]
+[node name="TextureButton" type="TextureButton" parent="Control/RecycleButton"]
 texture_filter = 1
 layout_mode = 2
-texture_normal = ExtResource("13_sgd70")
-texture_pressed = ExtResource("13_sgd70")
-texture_hover = ExtResource("14_jqtsb")
+texture_normal = ExtResource("14_l5el1")
+texture_pressed = ExtResource("14_l5el1")
+texture_hover = ExtResource("15_qmbuh")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="RecycleButton"]
+[node name="Label" type="Label" parent="Control/RecycleButton"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Recycle Bin"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="InternetButton" type="VBoxContainer" parent="."]
+[node name="InternetButton" type="VBoxContainer" parent="Control"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
-offset_left = 18.0
-offset_top = 148.0
-offset_right = 105.0
-offset_bottom = 239.0
+offset_left = 14.0
+offset_top = 62.0
+offset_right = 101.0
+offset_bottom = 153.0
+scale = Vector2(0.56, 0.52)
 alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="InternetButton"]
+[node name="TextureButton" type="TextureButton" parent="Control/InternetButton"]
 texture_filter = 1
 layout_mode = 2
-texture_normal = ExtResource("15_vtvuc")
-texture_pressed = ExtResource("15_vtvuc")
-texture_hover = ExtResource("16_u0gyx")
+texture_normal = ExtResource("16_78tt6")
+texture_pressed = ExtResource("16_78tt6")
+texture_hover = ExtResource("17_jpd6t")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="InternetButton"]
+[node name="Label" type="Label" parent="Control/InternetButton"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Internet"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="FilesButton" type="VBoxContainer" parent="."]
+[node name="FilesButton" type="VBoxContainer" parent="Control"]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
 offset_left = 18.0
-offset_top = 250.0
+offset_top = 119.0
 offset_right = 105.0
-offset_bottom = 341.0
+offset_bottom = 210.0
+scale = Vector2(0.462857, 0.4)
 alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="FilesButton"]
+[node name="TextureButton" type="TextureButton" parent="Control/FilesButton"]
 texture_filter = 1
 layout_mode = 2
-texture_normal = ExtResource("17_7eby0")
-texture_pressed = ExtResource("17_7eby0")
-texture_hover = ExtResource("18_4a5he")
+texture_normal = ExtResource("18_ff4oh")
+texture_pressed = ExtResource("18_ff4oh")
+texture_hover = ExtResource("19_pudg6")
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="FilesButton"]
+[node name="Label" type="Label" parent="Control/FilesButton"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 26
 text = "Files"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -360,3 +397,6 @@ vertical_alignment = 1
 [node name="EntranceMarkers" type="Node2D" parent="."]
 
 [node name="any" type="Marker2D" parent="EntranceMarkers"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(572, 321)

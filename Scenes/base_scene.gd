@@ -15,12 +15,6 @@ func _ready() -> void:
 	position_player()
 	position_camera()
 	sync_time()
-	print(player)
-	print(canvas_modulate)
-	print(time_canvas_layer)
-	print("")
-	print(PlayerStats.stamina)
-	print(PlayerStats.stress)
 
 func position_player() -> void:
 	# Setup player

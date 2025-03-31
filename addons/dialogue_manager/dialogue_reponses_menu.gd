@@ -55,15 +55,37 @@ var responses: Array = []:
 
 			_configure_focus()
 
+var current_selection_index := 0
 
 func _ready() -> void:
 	visibility_changed.connect(func():
 		if visible and get_menu_items().size() > 0:
-			get_menu_items()[0].grab_focus()
+			current_selection_index = 0
+			get_menu_items()[current_selection_index].grab_focus()
 	)
 
 	if is_instance_valid(response_template):
 		response_template.hide()
+
+func _unhandled_input(event: InputEvent) -> void:
+	if not visible or responses.is_empty():
+		return
+
+	if event is InputEventKey and event.is_pressed():
+		var items = get_menu_items()
+		if event.keycode == KEY_W:
+			current_selection_index = (current_selection_index - 1 + items.size()) % items.size()
+			items[current_selection_index].grab_focus()
+			get_viewport().set_input_as_handled()
+		elif event.keycode == KEY_S:
+			current_selection_index = (current_selection_index + 1) % items.size()
+			items[current_selection_index].grab_focus()
+			get_viewport().set_input_as_handled()
+		elif event.keycode == KEY_SPACE:
+			var selected_item = items[current_selection_index]
+			var response = selected_item.get_meta("response")
+			response_selected.emit(response)
+			get_viewport().set_input_as_handled()
 
 
 ## Get the selectable items in the menu.
@@ -80,6 +102,7 @@ func get_menu_items() -> Array:
 ## [b]DEPRECATED[/b]. Do not use.
 func set_responses(next_responses: Array) -> void:
 	self.responses = next_responses
+	current_selection_index = 0  # reset to the first option
 
 
 #region Internal

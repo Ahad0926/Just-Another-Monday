@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://fqa8rteum67p"]
+[gd_scene load_steps=19 format=3 uid="uid://fqa8rteum67p"]
 
 [ext_resource type="Script" path="res://Scenes/Hallway/hallway.gd" id="1_16emh"]
 [ext_resource type="Texture2D" uid="uid://l153reoq06fn" path="res://Assets/APARTMENT/APT_HALLWAY/APT_HALLWAY_FLOOR.png" id="2_x32dh"]
@@ -48,6 +48,9 @@ duration = 1.0
 transition = 0
 ease = 2
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ax1ww"]
+size = Vector2(50, 80)
+
 [node name="Hallway" type="Node2D"]
 script = ExtResource("1_16emh")
 
@@ -73,6 +76,9 @@ position = Vector2(164, -25)
 
 [node name="apartment" type="Marker2D" parent="EntranceMarkers"]
 
+[node name="lobby" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(-436, 0)
+
 [node name="SceneTrigger" parent="." instance=ExtResource("6_5jar8")]
 position = Vector2(166, -77)
 connected_scene = "Apartment/apartment"
@@ -94,7 +100,7 @@ zoom = Vector2(4, 3.5)
 limit_left = -312
 limit_top = -140
 limit_right = 330
-limit_bottom = 48
+limit_bottom = 52
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 process_priority = 300
@@ -109,3 +115,12 @@ zoom = Vector2(4, 3.5)
 tween_resource = SubResource("Resource_b6hkt")
 follow_damping = true
 limit_target = NodePath("../camera_bounds/collision")
+
+[node name="StairDoor" parent="." instance=ExtResource("6_5jar8")]
+position = Vector2(-273, -70)
+connected_scene = "Lobby/lobby"
+is_interact = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StairDoor"]
+position = Vector2(2, -4)
+shape = SubResource("RectangleShape2D_ax1ww")

@@ -24,6 +24,23 @@ var locals: Dictionary = {}
 
 var _locale: String = TranslationServer.get_locale()
 
+@onready var portrait: TextureRect = $Balloon/Panel/Dialogue/HBoxContainer/Portrait
+
+## The base balloon anchor
+@onready var balloon: Control = %Balloon
+
+## The label showing the name of the currently speaking character
+@onready var character_label: RichTextLabel = %CharacterLabel
+
+## The label showing the currently spoken dialogue
+@onready var dialogue_label: DialogueLabel = %DialogueLabel
+
+## The menu of responses
+@onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
+
+@onready var canvas_modulate = $"../CanvasModulate"
+@onready var time_ui = $"../Camera2D/CanvasLayer/DayNightCycleUI"
+
 ## The current line
 var dialogue_line: DialogueLine:
 	set(next_dialogue_line):
@@ -43,7 +60,15 @@ var dialogue_line: DialogueLine:
 		dialogue_line = next_dialogue_line
 
 		character_label.visible = not dialogue_line.character.is_empty()
-		character_label.text = tr(dialogue_line.character, "dialogue")
+		var regex = RegEx.new()
+		regex.compile("[^a-zA-Z\\s]+")
+		var clean_character_name = regex.sub(dialogue_line.character, "", true)
+		character_label.text = tr(clean_character_name, "dialogue")
+
+
+
+		# Set the portrait image
+		update_portrait(dialogue_line.character)
 
 		dialogue_label.hide()
 		dialogue_label.dialogue_line = dialogue_line
@@ -74,22 +99,6 @@ var dialogue_line: DialogueLine:
 			balloon.grab_focus()
 	get:
 		return dialogue_line
-
-## The base balloon anchor
-@onready var balloon: Control = %Balloon
-
-## The label showing the name of the currently speaking character
-@onready var character_label: RichTextLabel = %CharacterLabel
-
-## The label showing the currently spoken dialogue
-@onready var dialogue_label: DialogueLabel = %DialogueLabel
-
-## The menu of responses
-@onready var responses_menu: DialogueResponsesMenu = %ResponsesMenu
-
-@onready var canvas_modulate = $"../CanvasModulate"
-@onready var time_ui = $"../Camera2D/CanvasLayer/DayNightCycleUI"
-
 
 func _ready() -> void:
 	canvas_modulate.freeze()
@@ -132,8 +141,32 @@ func next(next_id: String) -> void:
 	self.dialogue_line = await resource.get_next_dialogue_line(next_id, temporary_game_states)
 
 
-#region Signals
+#region Portrait Updating
 
+@onready var dialogue_vbox: VBoxContainer = $Balloon/Panel/Dialogue/HBoxContainer/VBoxContainer
+
+func update_portrait(character_name: String) -> void:
+	var portrait_path = "res://Assets/HEADSHOTS/%s.png" % character_name
+	if ResourceLoader.exists(portrait_path):
+		var texture = load(portrait_path)
+		if texture is Texture2D:
+			portrait.texture = texture
+			portrait.show()
+			dialogue_vbox.add_theme_constant_override("margin_left", 0)
+		else:
+			print("Invalid texture file at: ", portrait_path)
+			portrait.hide()
+			dialogue_vbox.add_theme_constant_override("margin_left", 27)
+	else:
+		print("Portrait not found for character: ", character_name, " at: ", portrait_path)
+		portrait.hide()
+		dialogue_vbox.add_theme_constant_override("margin_left", 27)
+
+
+#endregion
+
+
+#region Signals
 
 func _on_mutated(_mutation: Dictionary) -> void:
 	is_waiting_for_input = false
@@ -150,7 +183,9 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 	if dialogue_label.is_typing:
 		var mouse_was_clicked: bool = event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed()
 		var skip_button_was_pressed: bool = event.is_action_pressed(skip_action)
-		if mouse_was_clicked or skip_button_was_pressed:
+		var spacebar_was_pressed: bool = event is InputEventKey and event.keycode == KEY_SPACE and event.is_pressed()
+		
+		if mouse_was_clicked or skip_button_was_pressed or spacebar_was_pressed:
 			get_viewport().set_input_as_handled()
 			dialogue_label.skip_typing()
 			return
@@ -158,12 +193,12 @@ func _on_balloon_gui_input(event: InputEvent) -> void:
 	if not is_waiting_for_input: return
 	if dialogue_line.responses.size() > 0: return
 
-	# When there are no response options the balloon itself is the clickable thing
+	# When there are no response options, the balloon itself is clickable
 	get_viewport().set_input_as_handled()
 
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
 		next(dialogue_line.next_id)
-	elif event.is_action_pressed(next_action) and get_viewport().gui_get_focus_owner() == balloon:
+	elif (event.is_action_pressed(next_action) or (event is InputEventKey and event.keycode == KEY_SPACE and event.is_pressed())) and get_viewport().gui_get_focus_owner() == balloon:
 		next(dialogue_line.next_id)
 
 

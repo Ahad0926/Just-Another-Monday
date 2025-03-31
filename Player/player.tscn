@@ -530,7 +530,6 @@ blend_point_3/pos = Vector2(0, -1)
 blend_mode = 1
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_43u2y"]
-graph_offset = Vector2(-361, -68)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_q48h8")
 nodes/TimeScale/position = Vector2(60, 80)
 nodes/walk_bs2d/node = SubResource("AnimationNodeBlendSpace2D_gvsd6")
@@ -581,7 +580,7 @@ tree_root = SubResource("AnimationNodeStateMachine_3ug5g")
 anim_player = NodePath("../AnimationPlayer")
 parameters/idle/TimeScale/scale = 1.0
 parameters/idle/idle_bs2d/blend_position = Vector2(-0.629898, 0.666667)
-parameters/walk/TimeScale/scale = 0.05
+parameters/walk/TimeScale/scale = 0.1
 parameters/walk/walk_bs2d/blend_position = Vector2(0.895332, 0.611691)
 
 [node name="Direction" type="Marker2D" parent="."]
