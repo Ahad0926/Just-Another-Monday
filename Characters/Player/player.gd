@@ -25,6 +25,7 @@ var animTree_state_keys = [
 func _unhandled_input(event: InputEvent) -> void:
 	canvas_modulate.unfreeze()
 	time_ui.show()
+	
 	if can_input:
 		var new_input_vector := Vector2.ZERO
 

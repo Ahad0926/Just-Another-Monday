@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://3xreb84vainl"]
+[gd_scene load_steps=20 format=3 uid="uid://3xreb84vainl"]
 
 [ext_resource type="Texture2D" uid="uid://mnhg0js6poso" path="res://Assets/APARTMENT/APT_GF_HALLWAY/APT_GF_HALLWAY_FLOOR.png" id="1_essvl"]
 [ext_resource type="Script" path="res://Scenes/Lobby_Hallway/lobby_hallway.gd" id="1_kihjy"]
@@ -7,6 +7,9 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="4_vwby0"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_2jr2f"]
 [ext_resource type="PackedScene" uid="uid://cfks6he7p50ls" path="res://SceneTrigger/scene_trigger.tscn" id="6_2pshm"]
+[ext_resource type="PackedScene" uid="uid://cfsoly6blnqso" path="res://Actionables/actionable.tscn" id="8_sckrj"]
+[ext_resource type="Resource" uid="uid://dh4jlkr5uwgxq" path="res://Dialogue/Dialogues/locked_door.dialogue" id="9_4wo6n"]
+[ext_resource type="PackedScene" uid="uid://d05tcir4ynhvp" path="res://Characters/Unknown/unknown.tscn" id="10_6toxr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_licdi"]
 texture = ExtResource("1_essvl")
@@ -40,6 +43,9 @@ size = Vector2(7, 54)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8nlbl"]
 size = Vector2(91, 75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjh33"]
+size = Vector2(43, 74)
 
 [node name="LobbyHallway" type="Node2D"]
 script = ExtResource("1_kihjy")
@@ -85,6 +91,7 @@ follow_damping = true
 limit_target = NodePath("../camera_bounds/collision")
 
 [node name="camera_bounds" type="Area2D" parent="."]
+visible = false
 
 [node name="collision" type="CollisionShape2D" parent="camera_bounds"]
 position = Vector2(11, -47.5)
@@ -111,3 +118,27 @@ is_interact = true
 z_index = 1
 position = Vector2(-0.5, -33.5)
 shape = SubResource("RectangleShape2D_8nlbl")
+
+[node name="Door" parent="." instance=ExtResource("8_sckrj")]
+position = Vector2(-45, -45)
+action_id = "Door"
+dialogue_resource = ExtResource("9_4wo6n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2(-0.5, -38)
+shape = SubResource("RectangleShape2D_sjh33")
+debug_color = Color(1, 0.6, 0.701961, 0.419608)
+
+[node name="Door2" parent="." instance=ExtResource("8_sckrj")]
+position = Vector2(-160, -44)
+action_id = "Door"
+dialogue_resource = ExtResource("9_4wo6n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door2"]
+position = Vector2(-0.5, -38)
+shape = SubResource("RectangleShape2D_sjh33")
+debug_color = Color(1, 0.6, 0.701961, 0.419608)
+
+[node name="Unknown" parent="." instance=ExtResource("10_6toxr")]
+position = Vector2(-222, 32)
+default_facing_anim = "Right"

@@ -175,6 +175,7 @@ func _on_mutated(_mutation: Dictionary) -> void:
 		if will_hide_balloon:
 			will_hide_balloon = false
 			balloon.hide()
+			print("hiding balloon")
 	)
 
 

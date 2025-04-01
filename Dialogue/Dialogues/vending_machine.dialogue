@@ -1,0 +1,9 @@
+~ start
+Buy a drink?
+- Yes
+	Player1: "Overpriced garbage..."
+	set PlayerStats.stamina -= 10
+	set PlayerStats.stress -= 10
+- No
+
+=> END

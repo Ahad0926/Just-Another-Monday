@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://fqa8rteum67p"]
+[gd_scene load_steps=20 format=3 uid="uid://fqa8rteum67p"]
 
 [ext_resource type="Script" path="res://Scenes/Hallway/hallway.gd" id="1_16emh"]
 [ext_resource type="Texture2D" uid="uid://l153reoq06fn" path="res://Assets/APARTMENT/APT_HALLWAY/APT_HALLWAY_FLOOR.png" id="2_x32dh"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_loyws"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="8_86b6u"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="8_hplob"]
+[ext_resource type="PackedScene" uid="uid://bg3e8fsfp2tsb" path="res://Characters/Wyatt/wyatt.tscn" id="9_u6158"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_432ho"]
 texture = ExtResource("2_x32dh")
@@ -89,6 +90,7 @@ position = Vector2(1, -1.5)
 shape = SubResource("RectangleShape2D_y8gms")
 
 [node name="camera_bounds" type="Area2D" parent="."]
+visible = false
 
 [node name="collision" type="CollisionShape2D" parent="camera_bounds"]
 position = Vector2(9, -44)
@@ -124,3 +126,6 @@ is_interact = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StairDoor"]
 position = Vector2(2, -4)
 shape = SubResource("RectangleShape2D_ax1ww")
+
+[node name="Wyatt" parent="." instance=ExtResource("9_u6158")]
+position = Vector2(62, -33)

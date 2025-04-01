@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://k2du3nyetf6i"
+path="res://.godot/imported/land_lady.dialogue-23acd2b3536e81827b5f59021bf819f4.tres"
+
+[deps]
+
+source_file="res://Dialogue/Dialogues/land_lady.dialogue"
+dest_files=["res://.godot/imported/land_lady.dialogue-23acd2b3536e81827b5f59021bf819f4.tres"]
+
+[params]
+
+defaults=true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dpi5g4ujp478b"]
+[gd_scene load_steps=22 format=3 uid="uid://dpi5g4ujp478b"]
 
 [ext_resource type="Texture2D" uid="uid://dukshdxbqw53a" path="res://Assets/APARTMENT/APT_LAUNDRYROOM/APT_LAUNDRYROOM_FLOOR.png" id="1_4seuc"]
 [ext_resource type="Script" path="res://Scenes/Laundry_Room/laundry_room.gd" id="1_s8qus"]
@@ -8,6 +8,9 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_6o47m"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="6_a7rac"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="7_2wumf"]
+[ext_resource type="PackedScene" uid="uid://ke108li6sig2" path="res://Characters/Girl/girl.tscn" id="9_1il8x"]
+[ext_resource type="PackedScene" uid="uid://cfsoly6blnqso" path="res://Actionables/actionable.tscn" id="10_236nu"]
+[ext_resource type="Resource" uid="uid://wqinnonu1q2j" path="res://Dialogue/Dialogues/washing_machine.dialogue" id="11_dp4qb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0jimj"]
 texture = ExtResource("1_4seuc")
@@ -54,6 +57,9 @@ ease = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wjhx5"]
 size = Vector2(389, 222)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1oefn"]
+size = Vector2(92, 52)
 
 [node name="LaundryRoom" type="Node2D"]
 script = ExtResource("1_s8qus")
@@ -112,8 +118,40 @@ follow_damping = true
 limit_target = NodePath("../camera_bounds/collision")
 
 [node name="camera_bounds" type="Area2D" parent="."]
+visible = false
 
 [node name="collision" type="CollisionShape2D" parent="camera_bounds"]
 position = Vector2(9.5, -30)
 shape = SubResource("RectangleShape2D_wjhx5")
 disabled = true
+
+[node name="Girl" parent="." instance=ExtResource("9_1il8x")]
+position = Vector2(-156, 48)
+default_facing_anim = "Up"
+
+[node name="WashingMachines" parent="." instance=ExtResource("10_236nu")]
+position = Vector2(-109, -67)
+action_id = "Washing Machine"
+dialogue_resource = ExtResource("11_dp4qb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WashingMachines"]
+shape = SubResource("RectangleShape2D_1oefn")
+debug_color = Color(1, 0.6, 0.701961, 0.419608)
+
+[node name="WashingMachines2" parent="." instance=ExtResource("10_236nu")]
+position = Vector2(9, -65)
+action_id = "Washing Machine"
+dialogue_resource = ExtResource("11_dp4qb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WashingMachines2"]
+shape = SubResource("RectangleShape2D_1oefn")
+debug_color = Color(1, 0.6, 0.701961, 0.419608)
+
+[node name="WashingMachines3" parent="." instance=ExtResource("10_236nu")]
+position = Vector2(127, -67)
+action_id = "Washing Machine"
+dialogue_resource = ExtResource("11_dp4qb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WashingMachines3"]
+shape = SubResource("RectangleShape2D_1oefn")
+debug_color = Color(1, 0.6, 0.701961, 0.419608)

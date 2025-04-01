@@ -657,9 +657,8 @@ shape = SubResource("RectangleShape2D_i1f7m")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -15)
 sprite_frames = SubResource("SpriteFrames_ncdaf")
-animation = &"paw_lick"
+animation = &"idle_down"
 autoplay = "paw_lick"
-frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -670,11 +669,8 @@ libraries = {
 active = false
 tree_root = SubResource("AnimationNodeStateMachine_wlvjo")
 anim_player = NodePath("../AnimationPlayer")
-"parameters/Idle 2/blend_position" = Vector2(-0.000701725, 0.830508)
+"parameters/Idle 2/blend_position" = Vector2(0.616134, -1)
 parameters/Walk/TimeScale/scale = 0.08
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(0, -10)
 
 [node name="Actionable" parent="." instance=ExtResource("3_gddpm")]
 action_id = "Altoid"

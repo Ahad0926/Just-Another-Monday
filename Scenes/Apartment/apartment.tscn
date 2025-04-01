@@ -586,6 +586,7 @@ position = Vector2(0, 3.25)
 shape = SubResource("RectangleShape2D_kfjur")
 
 [node name="camera_bounds" type="Area2D" parent="."]
+visible = false
 
 [node name="collision" type="CollisionShape2D" parent="camera_bounds"]
 position = Vector2(12.5, -35)

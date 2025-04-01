@@ -1,8 +1,8 @@
 # GameState.gd
 extends Node
 
-var game_start: bool = true
-var emails_done: bool = false
+var game_start: bool = false
+var emails_done: bool = true
 var peed: bool = false
 var dishes: bool = false
 
