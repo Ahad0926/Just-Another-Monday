@@ -3,9 +3,9 @@
 if PlayerStats.stamina >= 80.0:
 	"I'm not that hungry"
 else:
-	Grab somehting to eat?
+	Grab something to eat?
 	- Yes
 		Player1: Great, week old leftovers
-		set PlayerStats.stamina += 20
+		set PlayerStats.stamina = 80
 	- No
 => END

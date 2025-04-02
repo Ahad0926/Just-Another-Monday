@@ -78,7 +78,7 @@ player_mouse_click={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://Dialogue/Dialogues/bed.dialogue", "res://Dialogue/Dialogues/dialogue.dialogue", "res://Dialogue/Dialogues/altoid.dialogue", "res://Dialogue/Dialogues/fridge.dialogue", "res://Dialogue/Dialogues/ashtray.dialogue", "res://Dialogue/Dialogues/wyatt.dialogue", "res://Dialogue/Dialogues/land_lady.dialogue", "res://Dialogue/Dialogues/elevator.dialogue", "res://Dialogue/Dialogues/locked_door.dialogue", "res://Dialogue/Dialogues/rivaldo.dialogue", "res://Dialogue/Dialogues/vending_machine.dialogue", "res://Dialogue/Dialogues/nerd.dialogue", "res://Dialogue/Dialogues/unknown.dialogue", "res://Dialogue/Dialogues/girl.dialogue", "res://Dialogue/Dialogues/washing_machine.dialogue", "res://dialogue.dialogue")
+locale/translations_pot_files=PackedStringArray("res://Dialogue/Dialogues/bed.dialogue", "res://Dialogue/Dialogues/altoid.dialogue", "res://Dialogue/Dialogues/fridge.dialogue", "res://Dialogue/Dialogues/ashtray.dialogue", "res://Dialogue/Dialogues/wyatt.dialogue", "res://Dialogue/Dialogues/land_lady.dialogue", "res://Dialogue/Dialogues/elevator.dialogue", "res://Dialogue/Dialogues/locked_door.dialogue", "res://Dialogue/Dialogues/rivaldo.dialogue", "res://Dialogue/Dialogues/vending_machine.dialogue", "res://Dialogue/Dialogues/nerd.dialogue", "res://Dialogue/Dialogues/unknown.dialogue", "res://Dialogue/Dialogues/girl.dialogue", "res://Dialogue/Dialogues/washing_machine.dialogue", "res://dialogue.dialogue")
 
 [layer_names]
 

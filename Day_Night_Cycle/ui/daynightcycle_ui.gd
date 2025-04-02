@@ -9,10 +9,8 @@ class_name DayNightCycleUI extends Control
 @onready var stress_bar: TextureProgressBar = $StressBar
 
 func _ready() -> void:
-	print("Updating bars")
 	PlayerStats.stats_updated.connect(_update_bars)
 	_update_bars(PlayerStats.stamina, PlayerStats.stress)  # Initialize
-	print("Updated bars")
 	
 func _update_bars(stamina: float, stress: float) -> void:
 	stamina_bar.value = stamina

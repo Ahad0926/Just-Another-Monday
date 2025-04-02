@@ -1,35 +1,5 @@
 ~ start
 
-if GameState.wyatt_intro == false:
-	set GameState.wyatt_intro = true
-
-	Wyatt: [speed=0.9][i]Oh. H-h-hey neigh[b]bo[/b]ur—[i]voice cracks[/i]!  
-	Wyatt: I-I'm Wyatt, M21, student at [b]Northpoint Tech[/b]
-	Wyatt: I just moved in this morning. First time living alone since my mom [i]kicked me out[/i] of her basement.  
-	Wyatt: I told her I was gonna do the dishes [i]after[/i] I defeated the eldritch mythical dragon in [b]Mooncaster[/b]—but she just [i]doesn’t get it[/i].  
-	Wyatt: Pleb.
-
-	Wyatt: [wait=0.3]Oh gosh I’m so sorry—[wait=0.1]I went on a tangent [i]again[/i].  
-	Wyatt: What’s your name?
-
-	- Player1: "..."
-		Wyatt: ...Okay then.
-		Wyatt: Nice meeting you!
-		Wyatt: If you stop by the lobby, think you could bring me a drink from the vending machine?  
-
-	- Player1: "I have to... go walk my cat."
-		Wyatt: Oh...  
-		Wyatt: I’ll talk to you later then!  
-		Wyatt: If you stop by the lobby, think you could bring me a drink from the vending machine?
-		Wyatt: ~[i]Gosh I knew I was being too intense.. c’mon Wyatt... tone it down next time...[/i]~
-
-=> END
-
-if GameState.wyatt_intro:
-	% Wyatt: [i]Oh hey.[/i] I’m still unpacking but… Mooncaster’s calling.
-	% Wyatt: Did I already tell you about the Mooncaster raid last week? Oh—nevermind.
-	% Wyatt: If you need to borrow any HDMI cables I have like... twelve.
-	% Wyatt: I cleaned my dishes today. [b]Progress[/b].
-	% Wyatt: Still figuring out which drawer is for forks. This place is a labyrinth.
+Nerd: I love the history channel!
 
 => END

@@ -63,7 +63,7 @@ func end_game():
 	flag_spam_button.visible = false
 	mark_safe_button.visible = false
 	GameState.emails_done = true
-	PlayerStats.stress += 20
+	PlayerStats.stress += 40
 	PlayerStats.stamina -= 20
 
 func _close_app():

@@ -7,7 +7,7 @@ var max_stress: float = 100.0
 
 var stamina: float = max_stamina:
 	set(value):
-		stamina = clamp(value, 0, max_stamina)
+		stamina = clamp(value, 10, max_stamina)
 		stats_updated.emit(stamina, stress)
 
 var stress: float = 33.0:
