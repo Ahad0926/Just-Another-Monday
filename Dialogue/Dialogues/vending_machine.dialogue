@@ -1,9 +1,48 @@
-~ start
-Buy a drink?
-- Yes
-	Player1: "Overpriced garbage..."
-	set PlayerStats.stamina -= 10
-	set PlayerStats.stress -= 10
-- No
+~ Beetos
+Grabbed [i]Beeot's[/i]!
+=> END
 
+~ Flanders
+Grabbed [i]Flanders[/i]!
+=> END
+
+~ Flooreo
+Grabbed [i]Flooreo[/i]!
+=> END
+
+~ NmNs
+Grabbed [i]N&Ns[/i]!
+=> END
+
+~ Creeses
+Grabbed [i]Creese’s[/i]!
+=> END
+
+~ Snookers
+Grabbed [i]Snookers[/i]!
+=> END
+
+~ WaterBottle
+Grabbed [i]Water Bottle[/i]!
+=> END
+
+~ WaterBottle2
+=> WaterBottle
+
+~ WaterBottle3
+=> WaterBottle
+
+~ WaterBottle4
+=> WaterBottle
+
+~ BrokeCola
+Grabbed [i]Broke Cola[/i]!
+=> END
+
+~ FountainDoo
+Grabbed [i]Fountain Doo[/i]!
+=> END
+
+~ DrBob
+Grabbed [i]Dr Bob[/i]!.
 => END

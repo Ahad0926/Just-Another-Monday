@@ -9,19 +9,22 @@
 script = ExtResource("1_ghu48")
 
 [node name="ToiletBg" type="Sprite2D" parent="."]
-position = Vector2(577, 320)
+position = Vector2(576, 326)
 texture = ExtResource("2_vyumq")
 
 [node name="EntranceMarkers" type="Node2D" parent="."]
+position = Vector2(-1, 6)
 
 [node name="any" type="Marker2D" parent="EntranceMarkers"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(572, 321)
+position = Vector2(576, 325)
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -1.0
+offset_top = 6.0
+offset_right = 1151.0
+offset_bottom = 654.0
 mouse_filter = 2
 value = 100.0
 texture_under = ExtResource("3_anu1r")
@@ -30,7 +33,7 @@ texture_progress = ExtResource("4_k2v4w")
 [node name="PeeTimer" type="Timer" parent="."]
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2(585, 659)
+position = Vector2(584, 665)
 emitting = false
 amount = 50
 direction = Vector2(0, 1)
@@ -43,7 +46,7 @@ scale_amount_max = 10.0
 color = Color(0.815686, 0.694118, 0, 1)
 
 [node name="ToiletZone" type="Area2D" parent="."]
-position = Vector2(581, 332)
+position = Vector2(580, 338)
 collision_layer = 16
 collision_mask = 0
 

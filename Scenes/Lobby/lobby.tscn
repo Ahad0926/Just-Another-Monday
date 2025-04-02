@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://bre8hpn61s3n"]
+[gd_scene load_steps=32 format=4 uid="uid://bre8hpn61s3n"]
 
 [ext_resource type="Script" path="res://Scenes/Lobby/lobby.gd" id="1_ao4iv"]
 [ext_resource type="Texture2D" uid="uid://c5b6lpwbd6aq6" path="res://Assets/APARTMENT/APT_LOBBY/APT_LOBBY_FLOOR.png" id="2_tmgmi"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://cfsoly6blnqso" path="res://Actionables/actionable.tscn" id="10_n17xd"]
 [ext_resource type="Resource" uid="uid://c0kf4gj70wot" path="res://Dialogue/Dialogues/elevator.dialogue" id="11_wtu0a"]
 [ext_resource type="Resource" uid="uid://dh4jlkr5uwgxq" path="res://Dialogue/Dialogues/locked_door.dialogue" id="12_r2pc1"]
-[ext_resource type="Resource" uid="uid://b6aptsyeicf7k" path="res://Dialogue/Dialogues/vending_machine.dialogue" id="13_mv4m1"]
 [ext_resource type="PackedScene" uid="uid://bpdeuns36co15" path="res://Characters/Rivaldo/rivaldo.tscn" id="14_hseep"]
 [ext_resource type="PackedScene" uid="uid://dyk7o7lahg5ep" path="res://Characters/Nerd/nerd.tscn" id="15_fgh84"]
 
@@ -928,8 +927,8 @@ size = Vector2(69, 80)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0psuw"]
 size = Vector2(44, 76)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vbm5y"]
-size = Vector2(52, 82)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xsp25"]
+size = Vector2(54, 83)
 
 [node name="Lobby" type="Node2D"]
 position = Vector2(-1, 0)
@@ -972,6 +971,9 @@ position = Vector2(85, -141)
 [node name="lobby_hallway" type="Marker2D" parent="EntranceMarkers"]
 position = Vector2(-175, -120)
 
+[node name="vending_machine" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(166, -129)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(31, -98)
 zoom = Vector2(3, 2.5)
@@ -1013,12 +1015,12 @@ z_index = 1
 position = Vector2(1, -0.5)
 shape = SubResource("RectangleShape2D_7ytyv")
 
-[node name="SceneTrigger" parent="." instance=ExtResource("8_m53kc")]
+[node name="StairDoor" parent="." instance=ExtResource("8_m53kc")]
 position = Vector2(84, -179)
 connected_scene = "Hallway/hallway"
 is_interact = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StairDoor"]
 position = Vector2(1, -3)
 shape = SubResource("RectangleShape2D_ypfkd")
 
@@ -1047,19 +1049,18 @@ position = Vector2(0, -36)
 shape = SubResource("RectangleShape2D_0psuw")
 debug_color = Color(1, 0.6, 0.701961, 0.419608)
 
-[node name="VendingMachine" parent="." instance=ExtResource("10_n17xd")]
-position = Vector2(170, -138)
-action_id = "Vending Machine"
-dialogue_resource = ExtResource("13_mv4m1")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VendingMachine"]
-position = Vector2(-2, -37)
-shape = SubResource("RectangleShape2D_vbm5y")
-debug_color = Color(1, 0.6, 0.701961, 0.419608)
-
 [node name="Rivaldo" parent="." instance=ExtResource("14_hseep")]
 z_index = 10
 position = Vector2(7, 166)
 
 [node name="Nerd" parent="." instance=ExtResource("15_fgh84")]
 position = Vector2(-69, -140)
+
+[node name="VendingMachine" parent="." instance=ExtResource("8_m53kc")]
+position = Vector2(166, -136)
+connected_scene = "Vending_Machine/vending_machine"
+is_interact = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VendingMachine"]
+position = Vector2(2, -38.5)
+shape = SubResource("RectangleShape2D_xsp25")
