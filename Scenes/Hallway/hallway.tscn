@@ -1,9 +1,9 @@
 [gd_scene load_steps=20 format=3 uid="uid://fqa8rteum67p"]
 
 [ext_resource type="Script" path="res://Scenes/Hallway/hallway.gd" id="1_16emh"]
-[ext_resource type="Texture2D" uid="uid://l153reoq06fn" path="res://Assets/APARTMENT/APT_HALLWAY/APT_HALLWAY_FLOOR.png" id="2_x32dh"]
-[ext_resource type="Texture2D" uid="uid://dvwaon076vccd" path="res://Assets/APARTMENT/APT_HALLWAY/APT_HALLWAY_WALLS.png" id="3_kj3m4"]
-[ext_resource type="Texture2D" uid="uid://dan2qebb1ny1e" path="res://Assets/APARTMENT/APT_HALLWAY/APT_HALLWAY_DOORS.png" id="4_2eqa2"]
+[ext_resource type="Texture2D" uid="uid://cyrn214d0bs2r" path="res://Assets/APARTMENT/APT_HALLWAY/APT_HALLWAY_FLOOR.png" id="2_x32dh"]
+[ext_resource type="Texture2D" uid="uid://1rqysymde8jm" path="res://Assets/APARTMENT/APT_HALLWAY/APT_HALLWAY_WALLS.png" id="3_kj3m4"]
+[ext_resource type="Texture2D" uid="uid://dqdxjuxqgt50u" path="res://Assets/APARTMENT/APT_HALLWAY/APT_HALLWAY_DOORS.png" id="4_2eqa2"]
 [ext_resource type="PackedScene" uid="uid://cfks6he7p50ls" path="res://SceneTrigger/scene_trigger.tscn" id="6_5jar8"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_loyws"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="8_86b6u"]
@@ -22,8 +22,7 @@ sources/0 = SubResource("TileSetAtlasSource_432ho")
 texture = ExtResource("3_kj3m4")
 0:11/size_in_atlas = Vector2i(40, 12)
 0:11/0 = 0
-0:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-320.042, -84.0443, 320.323, -84.8862, 320.884, 89.9373, -320.323, 89.9373, -320.603, 80.3963, 285.526, 82.08, 286.929, 54.5797, 293.945, 54.8603, 294.787, 26.5182, 286.649, 25.6763, 286.649, 0.701538, 179.734, 1.26277, 179.454, -2.38523, 135.397, -2.94646, 135.397, 1.26277, -320.323, -0.140305)
-0:11/0/physics_layer_0/polygon_1/points = PackedVector2Array(-316.675, 80.9576, -316.955, 0.701538, -321.164, 0.701538, -321.164, 81.2382)
+0:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(319.232, 89.7694, -319.547, 88.1945, -319.862, -83.7848, 319.862, -84.7297, 319.862, 26.4583, 293.719, 25.1984, 293.089, 0, -311.358, 0.31498, -311.673, 80.9499, 292.776, 80.1638, 293.57, 54.3685, 301.705, 54.5669, 301.507, 25.5968, 320.177, 55.1215)
 
 [sub_resource type="TileSet" id="TileSet_pywvh"]
 physics_layer_0/collision_layer = 1
@@ -81,7 +80,7 @@ position = Vector2(164, -25)
 position = Vector2(-436, 0)
 
 [node name="SceneTrigger" parent="." instance=ExtResource("6_5jar8")]
-position = Vector2(166, -77)
+position = Vector2(166, -74)
 connected_scene = "Apartment/apartment"
 is_interact = true
 
