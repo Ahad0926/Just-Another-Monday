@@ -131,4 +131,4 @@ shape = SubResource("CapsuleShape2D_osvpf")
 [node name="any" type="Marker2D" parent="EntranceMarkers"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(572, 321)
+position = Vector2(579, 327)

@@ -101,8 +101,9 @@ var dialogue_line: DialogueLine:
 		return dialogue_line
 
 func _ready() -> void:
-	canvas_modulate.freeze()
-	time_ui.hide()
+	if canvas_modulate:
+		canvas_modulate.freeze()
+		time_ui.hide()
 	balloon.hide()
 	Engine.get_singleton("DialogueManager").mutated.connect(_on_mutated)
 
