@@ -23,34 +23,36 @@ var animTree_state_keys = [
 ]
 
 func _unhandled_input(event: InputEvent) -> void:
+	if not can_input:
+		return  # Prevent unfreezing and interaction if input is disabled
+
 	canvas_modulate.unfreeze()
 	time_ui.show()
-	
-	if can_input:
-		var new_input_vector := Vector2.ZERO
 
-		if Input.is_action_pressed("player_left"):
-			new_input_vector.x -= 1
-		if Input.is_action_pressed("player_right"):
-			new_input_vector.x += 1
-		if Input.is_action_pressed("player_up"):
-			new_input_vector.y -= 1
-		if Input.is_action_pressed("player_down"):
-			new_input_vector.y += 1
+	var new_input_vector := Vector2.ZERO
 
-		# Normalize input to avoid diagonal speed issues
-		input_vector = new_input_vector.normalized()
+	if Input.is_action_pressed("player_left"):
+		new_input_vector.x -= 1
+	if Input.is_action_pressed("player_right"):
+		new_input_vector.x += 1
+	if Input.is_action_pressed("player_up"):
+		new_input_vector.y -= 1
+	if Input.is_action_pressed("player_down"):
+		new_input_vector.y += 1
 
-		# Check for interaction with actionable areas
-		if Input.is_action_pressed("player_interact") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-			var actionables = actionable_finder.get_overlapping_areas()
-			
-			if actionables.size() > 0:
-				freeze()
-				#canvas_modulate.freeze()
-				actionables[0].action()
-				await unfreeze()
-				return
+	# Normalize input to avoid diagonal speed issues
+	input_vector = new_input_vector.normalized()
+
+	# Check for interaction with actionable areas
+	if Input.is_action_pressed("player_interact") or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		var actionables = actionable_finder.get_overlapping_areas()
+		
+		if actionables.size() > 0:
+			freeze()
+			actionables[0].action()
+			await unfreeze()
+			return
+
 
 func _physics_process(delta: float) -> void:
 	# Update velocity based on input

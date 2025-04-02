@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dc7pw8cqy44tt" path="res://Characters/Player/player.tscn" id="2_k3ocj"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_uvxby"]
 [ext_resource type="PackedScene" uid="uid://ceolcwatpaicu" path="res://Day_Night_Cycle/ui/daynightcycle_ui.tscn" id="4_4nbww"]
-[ext_resource type="Script" path="res://day_night_cycle.gd" id="5_ohjwk"]
+[ext_resource type="Script" path="res://Day_Night_Cycle/day_night_cycle.gd" id="5_ohjwk"]
 [ext_resource type="Texture2D" uid="uid://dvcny6m4sgt0d" path="res://Assets/daynightcycle-gradient-texture.tres" id="6_vgaed"]
 
 [node name="Setup" type="Node2D"]
