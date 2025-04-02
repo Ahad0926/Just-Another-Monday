@@ -27,6 +27,11 @@ func set_daytime(day: int, hour: int, minute: int) -> void:
 	
 	time_label.text = _amfm_hour(hour) + ":" + _minute(minute) + " " + _am_pm(hour)
 	time_label_background.text = time_label.text
+	
+	# Update GameState global vars
+	GameState.current_day = day
+	GameState.current_hour = hour
+	GameState.current_minute = minute
 
 
 func _amfm_hour(hour:int) -> String:

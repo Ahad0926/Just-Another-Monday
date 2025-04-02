@@ -304,6 +304,7 @@ stretch_mode = 5
 
 [node name="Title" type="RichTextLabel" parent="Control/EmailAppWindow"]
 texture_filter = 1
+layout_mode = 0
 offset_left = 20.4546
 offset_top = 40.625
 offset_right = 649.455

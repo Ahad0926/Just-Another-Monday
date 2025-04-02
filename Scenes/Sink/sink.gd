@@ -12,6 +12,7 @@ var offset := Vector2.ZERO
 
 func _ready() -> void:
 	super()
+	#time_canvas_layer.hide()
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
