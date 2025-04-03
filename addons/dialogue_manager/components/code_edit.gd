@@ -1,5 +1,9 @@
 @tool
+<<<<<<< HEAD
 class_name DMCodeEdit extends CodeEdit
+=======
+extends CodeEdit
+>>>>>>> dev_branch
 
 
 signal active_title_change(title: String)
@@ -7,6 +11,13 @@ signal error_clicked(line_number: int)
 signal external_file_requested(path: String, title: String)
 
 
+<<<<<<< HEAD
+=======
+const DialogueManagerParser = preload("./parser.gd")
+const DialogueSyntaxHighlighter = preload("./code_edit_syntax_highlighter.gd")
+
+
+>>>>>>> dev_branch
 # A link back to the owner `MainView`
 var main_view
 
@@ -15,7 +26,11 @@ var theme_overrides: Dictionary:
 	set(value):
 		theme_overrides = value
 
+<<<<<<< HEAD
 		syntax_highlighter = DMSyntaxHighlighter.new()
+=======
+		syntax_highlighter = DialogueSyntaxHighlighter.new()
+>>>>>>> dev_branch
 
 		# General UI
 		add_theme_color_override("font_color", theme_overrides.text_color)
@@ -63,7 +78,11 @@ func _ready() -> void:
 	if not has_comment_delimiter("#"):
 		add_comment_delimiter("#", "", true)
 
+<<<<<<< HEAD
 	syntax_highlighter = DMSyntaxHighlighter.new()
+=======
+	syntax_highlighter = DialogueSyntaxHighlighter.new()
+>>>>>>> dev_branch
 
 
 func _gui_input(event: InputEvent) -> void:
@@ -158,18 +177,29 @@ func _request_code_completion(force: bool) -> void:
 				add_code_completion_option(CodeEdit.KIND_CLASS, "END!", "END!".substr(prompt.length()), theme_overrides.text_color, get_theme_icon("Stop", "EditorIcons"))
 
 		# Get all titles, including those in imports
+<<<<<<< HEAD
 		for title: String in DMCompiler.get_titles_in_text(text, main_view.current_file_path):
 			# Ignore any imported titles that aren't resolved to human readable.
 			if title.to_int() > 0:
 				continue
 
 			elif "/" in title:
+=======
+		var parser: DialogueManagerParser = DialogueManagerParser.new()
+		parser.prepare(text, main_view.current_file_path, false)
+		for title in parser.titles:
+			if "/" in title:
+>>>>>>> dev_branch
 				var bits = title.split("/")
 				if matches_prompt(prompt, bits[0]) or matches_prompt(prompt, bits[1]):
 					add_code_completion_option(CodeEdit.KIND_CLASS, title, title.substr(prompt.length()), theme_overrides.text_color, get_theme_icon("CombineLines", "EditorIcons"))
 			elif matches_prompt(prompt, title):
 				add_code_completion_option(CodeEdit.KIND_CLASS, title, title.substr(prompt.length()), theme_overrides.text_color, get_theme_icon("ArrowRight", "EditorIcons"))
 		update_code_completion_options(true)
+<<<<<<< HEAD
+=======
+		parser.free()
+>>>>>>> dev_branch
 		return
 
 	var name_so_far: String = WEIGHTED_RANDOM_PREFIX.sub(current_line.strip_edges(), "")
@@ -229,7 +259,10 @@ func get_titles() -> PackedStringArray:
 	for line in lines:
 		if line.strip_edges().begins_with("~ "):
 			titles.append(line.strip_edges().substr(2))
+<<<<<<< HEAD
 
+=======
+>>>>>>> dev_branch
 	return titles
 
 
@@ -268,11 +301,14 @@ func get_character_names(beginning_with: String) -> PackedStringArray:
 
 # Mark a line as an error or not
 func mark_line_as_error(line_number: int, is_error: bool) -> void:
+<<<<<<< HEAD
 	# Lines display counting from 1 but are actually indexed from 0
 	line_number -= 1
 
 	if line_number < 0: return
 
+=======
+>>>>>>> dev_branch
 	if is_error:
 		set_line_background_color(line_number, theme_overrides.error_line_color)
 		set_line_gutter_icon(line_number, 0, get_theme_icon("StatusError", "EditorIcons"))

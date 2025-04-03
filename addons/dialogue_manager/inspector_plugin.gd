@@ -1,5 +1,9 @@
 @tool
+<<<<<<< HEAD
 class_name DMInspectorPlugin extends EditorInspectorPlugin
+=======
+extends EditorInspectorPlugin
+>>>>>>> dev_branch
 
 
 const DialogueEditorProperty = preload("./components/editor_property/editor_property.gd")

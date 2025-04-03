@@ -1,0 +1,176 @@
+[gd_scene load_steps=29 format=3 uid="uid://c3me0xbfeg6hl"]
+
+[ext_resource type="Script" path="res://Scenes/Fire_Escape/fire_escape.gd" id="1_ayjlh"]
+[ext_resource type="Texture2D" uid="uid://cilyhna7c6bwt" path="res://Assets/APARTMENT/APT_BALCONY/APT_BALCONY_BACKGROUND.png" id="1_ylwyb"]
+[ext_resource type="Texture2D" uid="uid://ei83y5g4s8oe" path="res://Assets/APARTMENT/APT_BALCONY/APT_BALCONY_FLOOR.png" id="2_ncagp"]
+[ext_resource type="Texture2D" uid="uid://dudfr5v0r6i7w" path="res://Assets/APARTMENT/APT_BALCONY/APT_BALCONY_WALLS.png" id="3_8ftxb"]
+[ext_resource type="Texture2D" uid="uid://c55p1m8ru1i3p" path="res://Assets/APARTMENT/APT_BALCONY/APT_BALCONY_OBJECTS.png" id="4_fm41m"]
+[ext_resource type="PackedScene" uid="uid://cfks6he7p50ls" path="res://SceneTrigger/scene_trigger.tscn" id="5_vmxyp"]
+[ext_resource type="PackedScene" uid="uid://cfsoly6blnqso" path="res://Actionables/actionable.tscn" id="6_alsie"]
+[ext_resource type="Texture2D" uid="uid://df0whybwipyy6" path="res://Assets/APARTMENT/APT_BALCONY/APT_BDR_ASHTRAY.png" id="6_e3t66"]
+[ext_resource type="Resource" uid="uid://d0fmsdjvt2i6e" path="res://Dialogue/Dialogues/ashtray.dialogue" id="7_3tlwt"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="7_b3gx0"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="9_3tup3"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="9_f0wsp"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kv7qn"]
+texture = ExtResource("1_ylwyb")
+2:4/size_in_atlas = Vector2i(21, 13)
+2:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_auvvs"]
+sources/0 = SubResource("TileSetAtlasSource_kv7qn")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qasyc"]
+texture = ExtResource("2_ncagp")
+8:13/size_in_atlas = Vector2i(10, 4)
+8:13/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_crkfl"]
+sources/0 = SubResource("TileSetAtlasSource_qasyc")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n7jly"]
+texture = ExtResource("3_8ftxb")
+2:9/size_in_atlas = Vector2i(21, 8)
+2:9/0 = 0
+2:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.375, 59.875, -15.875, 52.875, -55.625, 51.625, -56.125, 1.875, 42.125, 0.375, 42.125, 16.875, 46.875, 16.375, 47.125, 0.125, 77.625, 0.125, 78.375, 23.625, 82.875, 22.875, 168.063, -34.6875, 168.375, -62.625, 102.875, -19.625, 88.375, -29.875, -57.375, -28.875, -60.875, -25.625, -61.125, 50.375, -156.875, 51.875, -157.375, 60.625)
+2:9/0/physics_layer_0/polygon_1/points = PackedVector2Array(28.875, 53.875, 29.625, 60.375, 169.125, 62.375, 167.6, -10.9135, 79.4013, 46.9949, 79.375, 53.375)
+2:9/0/physics_layer_0/polygon_2/points = PackedVector2Array(167.924, -33.1123, 167.845, -12.7961, 165.247, -10.67, 165.313, -31.0625)
+
+[sub_resource type="TileSet" id="TileSet_7ncyv"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_n7jly")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wq06l"]
+texture = ExtResource("4_fm41m")
+9:11/size_in_atlas = Vector2i(7, 5)
+9:11/0 = 0
+9:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-51.8125, -11.0625, -40.6875, -11.5625, -40.0625, -5.8125, -40.6875, -2.3125, -41.8125, 2.5625, -49.3125, 2.6875, -51.9375, -2.8125)
+
+[sub_resource type="TileSet" id="TileSet_nsbs1"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_wq06l")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7m1co"]
+atlas = ExtResource("6_e3t66")
+region = Rect2(0, 0, 30, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmqii"]
+atlas = ExtResource("6_e3t66")
+region = Rect2(30, 0, 30, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kwlw"]
+atlas = ExtResource("6_e3t66")
+region = Rect2(60, 0, 30, 31)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qhxdo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7m1co")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmqii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7kwlw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dwtjj"]
+size = Vector2(25, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n07og"]
+size = Vector2(48, 4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bm8cn"]
+size = Vector2(325, 206)
+
+[sub_resource type="Resource" id="Resource_i52kv"]
+script = ExtResource("9_f0wsp")
+duration = 1.0
+transition = 0
+ease = 2
+
+[node name="FireEscape" type="Node2D"]
+script = ExtResource("1_ayjlh")
+
+[node name="Background" type="TileMapLayer" parent="."]
+position = Vector2(7, -9)
+tile_map_data = PackedByteArray(0, 0, 255, 255, 252, 255, 0, 0, 2, 0, 4, 0, 0, 0)
+tile_set = SubResource("TileSet_auvvs")
+
+[node name="Floor" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 13, 0, 0, 0)
+tile_set = SubResource("TileSet_crkfl")
+
+[node name="Walls" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+position = Vector2(-8, -1)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 254, 255, 0, 0, 2, 0, 9, 0, 0, 0)
+tile_set = SubResource("TileSet_7ncyv")
+
+[node name="Things" type="TileMapLayer" parent="."]
+texture_filter = 1
+position = Vector2(-8, -9)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 9, 0, 11, 0, 0, 0)
+tile_set = SubResource("TileSet_nsbs1")
+
+[node name="Ashtray" type="AnimatedSprite2D" parent="Things"]
+position = Vector2(59, -54)
+sprite_frames = SubResource("SpriteFrames_qhxdo")
+autoplay = "default"
+frame_progress = 0.15302
+
+[node name="Area2D" parent="Things/Ashtray" instance=ExtResource("6_alsie")]
+z_index = 1
+position = Vector2(-29, 32)
+action_id = "Ashtray"
+dialogue_resource = ExtResource("7_3tlwt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Things/Ashtray/Area2D"]
+position = Vector2(11.5, -11.5)
+shape = SubResource("RectangleShape2D_dwtjj")
+debug_color = Color(0.960784, 0.6, 0.701961, 0.419608)
+
+[node name="EntranceMarkers" type="Node2D" parent="."]
+
+[node name="any" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(7, 14)
+
+[node name="SceneTrigger" parent="." instance=ExtResource("5_vmxyp")]
+position = Vector2(1, 30)
+connected_scene = "Apartment/apartment"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
+position = Vector2(6, 5)
+shape = SubResource("RectangleShape2D_n07og")
+
+[node name="camera_bounds" type="Area2D" parent="."]
+
+[node name="collision" type="CollisionShape2D" parent="camera_bounds"]
+position = Vector2(4.5, -62)
+shape = SubResource("RectangleShape2D_bm8cn")
+disabled = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 3.5)
+limit_left = -158
+limit_top = -165
+limit_right = 167
+limit_bottom = 41
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("7_b3gx0")
+
+[node name="PhantomCamera2D" type="Node2D" parent="."]
+script = ExtResource("9_3tup3")
+zoom = Vector2(4, 3.5)
+tween_resource = SubResource("Resource_i52kv")
+limit_target = NodePath("../camera_bounds/collision")

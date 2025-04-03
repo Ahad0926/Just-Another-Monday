@@ -1,0 +1,130 @@
+[gd_scene load_steps=20 format=3 uid="uid://fqa8rteum67p"]
+
+[ext_resource type="Script" path="res://Scenes/Hallway/hallway.gd" id="1_16emh"]
+[ext_resource type="Texture2D" uid="uid://cyrn214d0bs2r" path="res://Assets/APARTMENT/APT_HALLWAY/APT_HALLWAY_FLOOR.png" id="2_x32dh"]
+[ext_resource type="Texture2D" uid="uid://1rqysymde8jm" path="res://Assets/APARTMENT/APT_HALLWAY/APT_HALLWAY_WALLS.png" id="3_kj3m4"]
+[ext_resource type="Texture2D" uid="uid://dqdxjuxqgt50u" path="res://Assets/APARTMENT/APT_HALLWAY/APT_HALLWAY_DOORS.png" id="4_2eqa2"]
+[ext_resource type="PackedScene" uid="uid://cfks6he7p50ls" path="res://SceneTrigger/scene_trigger.tscn" id="6_5jar8"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_loyws"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="8_86b6u"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="8_hplob"]
+[ext_resource type="PackedScene" uid="uid://bg3e8fsfp2tsb" path="res://Characters/Wyatt/wyatt.tscn" id="9_u6158"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_432ho"]
+texture = ExtResource("2_x32dh")
+0:17/size_in_atlas = Vector2i(40, 6)
+0:17/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_1ed6r"]
+sources/0 = SubResource("TileSetAtlasSource_432ho")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e2qqn"]
+texture = ExtResource("3_kj3m4")
+0:11/size_in_atlas = Vector2i(40, 12)
+0:11/0 = 0
+0:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(319.232, 89.7694, -319.547, 88.1945, -319.862, -83.7848, 319.862, -84.7297, 319.862, 26.4583, 293.719, 25.1984, 293.089, 0, -311.358, 0.31498, -311.673, 80.9499, 292.776, 80.1638, 293.57, 54.3685, 301.705, 54.5669, 301.507, 25.5968, 320.177, 55.1215)
+
+[sub_resource type="TileSet" id="TileSet_pywvh"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_e2qqn")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5xrxb"]
+texture = ExtResource("4_2eqa2")
+1:12/size_in_atlas = Vector2i(31, 5)
+1:12/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_hum3j"]
+sources/0 = SubResource("TileSetAtlasSource_5xrxb")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y8gms"]
+size = Vector2(48, 77)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_udysm"]
+size = Vector2(642, 192)
+
+[sub_resource type="Resource" id="Resource_b6hkt"]
+script = ExtResource("8_hplob")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ax1ww"]
+size = Vector2(50, 80)
+
+[node name="Hallway" type="Node2D"]
+script = ExtResource("1_16emh")
+
+[node name="Floors" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+texture_filter = 1
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 17, 0, 0, 0)
+tile_set = SubResource("TileSet_1ed6r")
+
+[node name="Walls" type="TileMapLayer" parent="."]
+texture_filter = 1
+tile_map_data = PackedByteArray(0, 0, 0, 0, 253, 255, 0, 0, 0, 0, 11, 0, 0, 0)
+tile_set = SubResource("TileSet_pywvh")
+
+[node name="Things" type="TileMapLayer" parent="."]
+texture_filter = 1
+position = Vector2(8, 8)
+tile_map_data = PackedByteArray(0, 0, 252, 255, 250, 255, 0, 0, 1, 0, 12, 0, 0, 0)
+tile_set = SubResource("TileSet_hum3j")
+
+[node name="EntranceMarkers" type="Node2D" parent="."]
+position = Vector2(164, -25)
+
+[node name="apartment" type="Marker2D" parent="EntranceMarkers"]
+
+[node name="lobby" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(-436, 0)
+
+[node name="SceneTrigger" parent="." instance=ExtResource("6_5jar8")]
+position = Vector2(166, -74)
+connected_scene = "Apartment/apartment"
+is_interact = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTrigger"]
+position = Vector2(1, -1.5)
+shape = SubResource("RectangleShape2D_y8gms")
+
+[node name="camera_bounds" type="Area2D" parent="."]
+visible = false
+
+[node name="collision" type="CollisionShape2D" parent="camera_bounds"]
+position = Vector2(9, -44)
+shape = SubResource("RectangleShape2D_udysm")
+disabled = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 3.5)
+limit_left = -312
+limit_top = -140
+limit_right = 330
+limit_bottom = 52
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("6_loyws")
+
+[node name="PhantomCamera2D" type="Node2D" parent="."]
+top_level = true
+script = ExtResource("8_86b6u")
+follow_mode = 5
+zoom = Vector2(4, 3.5)
+tween_resource = SubResource("Resource_b6hkt")
+follow_damping = true
+limit_target = NodePath("../camera_bounds/collision")
+
+[node name="StairDoor" parent="." instance=ExtResource("6_5jar8")]
+position = Vector2(-273, -70)
+connected_scene = "Lobby/lobby"
+is_interact = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StairDoor"]
+position = Vector2(2, -4)
+shape = SubResource("RectangleShape2D_ax1ww")
+
+[node name="Wyatt" parent="." instance=ExtResource("9_u6158")]
+position = Vector2(62, -33)

@@ -114,7 +114,11 @@ func find_in_files() -> Dictionary:
 	var results: Dictionary = {}
 
 	var q: String = input.text
+<<<<<<< HEAD
 	var cache = Engine.get_meta("DMCache")
+=======
+	var cache = Engine.get_meta("DialogueCache")
+>>>>>>> dev_branch
 	var file: FileAccess
 	for path in cache.get_files():
 		var path_results: Array = []

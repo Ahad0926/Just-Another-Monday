@@ -1,4 +1,5 @@
 @tool
+<<<<<<< HEAD
 class_name DMSettings extends Node
 
 
@@ -113,10 +114,38 @@ const SETTINGS_CONFIGURATION = {
 		type = TYPE_BOOL,
 		is_hidden = true
 	}
+=======
+extends Node
+
+
+const DialogueConstants = preload("./constants.gd")
+
+
+### Editor config
+
+const DEFAULT_SETTINGS = {
+	states = [],
+	missing_translations_are_errors = false,
+	export_characters_in_translation = true,
+	wrap_lines = false,
+	new_with_template = true,
+	new_template = "~ this_is_a_node_title\nNathan: [[Hi|Hello|Howdy]], this is some dialogue.\nNathan: Here are some choices.\n- First one\n\tNathan: You picked the first one.\n- Second one\n\tNathan: You picked the second one.\n- Start again => this_is_a_node_title\n- End the conversation => END\nNathan: For more information see the online documentation.\n=> END",
+	include_all_responses = false,
+	ignore_missing_state_values = false,
+	custom_test_scene_path = preload("./test_scene.tscn").resource_path,
+	default_csv_locale = "en",
+	balloon_path = "",
+	create_lines_for_responses_with_characters = true,
+	include_character_in_translation_exports = false,
+	include_notes_in_translation_exports = false,
+	uses_dotnet = false,
+	try_suppressing_startup_unsaved_indicator = false
+>>>>>>> dev_branch
 }
 
 
 static func prepare() -> void:
+<<<<<<< HEAD
 	var should_save_settings: bool = false
 
 	# Remap any old settings into their new keys
@@ -179,12 +208,60 @@ static func set_setting(key: String, value) -> void:
 static func get_setting(key: String, default):
 	if ProjectSettings.has_setting("dialogue_manager/%s" % key):
 		return ProjectSettings.get_setting("dialogue_manager/%s" % key)
+=======
+	# Migrate previous keys
+	for key in [
+		"states",
+		"missing_translations_are_errors",
+		"export_characters_in_translation",
+		"wrap_lines",
+		"new_with_template",
+		"include_all_responses",
+		"custom_test_scene_path"
+	]:
+		if ProjectSettings.has_setting("dialogue_manager/%s" % key):
+			var value = ProjectSettings.get_setting("dialogue_manager/%s" % key)
+			ProjectSettings.set_setting("dialogue_manager/%s" % key, null)
+			set_setting(key, value)
+
+	# Set up initial settings
+	for setting in DEFAULT_SETTINGS:
+		var setting_name: String = "dialogue_manager/general/%s" % setting
+		if not ProjectSettings.has_setting(setting_name):
+			set_setting(setting, DEFAULT_SETTINGS[setting])
+		ProjectSettings.set_initial_value(setting_name, DEFAULT_SETTINGS[setting])
+		if setting.ends_with("_path"):
+			ProjectSettings.add_property_info({
+				"name": setting_name,
+				"type": TYPE_STRING,
+				"hint": PROPERTY_HINT_FILE,
+			})
+
+	# Some settings shouldn't be edited directly in the Project Settings window
+	ProjectSettings.set_as_internal("dialogue_manager/general/states", true)
+	ProjectSettings.set_as_internal("dialogue_manager/general/custom_test_scene_path", true)
+	ProjectSettings.set_as_internal("dialogue_manager/general/uses_dotnet", true)
+
+	ProjectSettings.save()
+
+
+static func set_setting(key: String, value) -> void:
+	ProjectSettings.set_setting("dialogue_manager/general/%s" % key, value)
+	ProjectSettings.set_initial_value("dialogue_manager/general/%s" % key, DEFAULT_SETTINGS[key])
+	ProjectSettings.save()
+
+
+static func get_setting(key: String, default):
+	if ProjectSettings.has_setting("dialogue_manager/general/%s" % key):
+		return ProjectSettings.get_setting("dialogue_manager/general/%s" % key)
+>>>>>>> dev_branch
 	else:
 		return default
 
 
 static func get_settings(only_keys: PackedStringArray = []) -> Dictionary:
 	var settings: Dictionary = {}
+<<<<<<< HEAD
 	for key in SETTINGS_CONFIGURATION.keys():
 		if only_keys.is_empty() or key in only_keys:
 			settings[key] = get_setting(key, SETTINGS_CONFIGURATION[key].value)
@@ -194,6 +271,15 @@ static func get_settings(only_keys: PackedStringArray = []) -> Dictionary:
 #endregion
 
 #region User
+=======
+	for key in DEFAULT_SETTINGS.keys():
+		if only_keys.is_empty() or key in only_keys:
+			settings[key] = get_setting(key, DEFAULT_SETTINGS[key])
+	return settings
+
+
+### User config
+>>>>>>> dev_branch
 
 
 static func get_user_config() -> Dictionary:
@@ -211,15 +297,24 @@ static func get_user_config() -> Dictionary:
 		open_in_external_editor = false
 	}
 
+<<<<<<< HEAD
 	if FileAccess.file_exists(DMConstants.USER_CONFIG_PATH):
 		var file: FileAccess = FileAccess.open(DMConstants.USER_CONFIG_PATH, FileAccess.READ)
+=======
+	if FileAccess.file_exists(DialogueConstants.USER_CONFIG_PATH):
+		var file: FileAccess = FileAccess.open(DialogueConstants.USER_CONFIG_PATH, FileAccess.READ)
+>>>>>>> dev_branch
 		user_config.merge(JSON.parse_string(file.get_as_text()), true)
 
 	return user_config
 
 
 static func save_user_config(user_config: Dictionary) -> void:
+<<<<<<< HEAD
 	var file: FileAccess = FileAccess.open(DMConstants.USER_CONFIG_PATH, FileAccess.WRITE)
+=======
+	var file: FileAccess = FileAccess.open(DialogueConstants.USER_CONFIG_PATH, FileAccess.WRITE)
+>>>>>>> dev_branch
 	file.store_string(JSON.stringify(user_config))
 
 
@@ -290,6 +385,7 @@ static func check_for_dotnet_solution() -> bool:
 			var directory: String = ProjectSettings.get("dotnet/project/solution_directory")
 			var file_name: String = ProjectSettings.get("dotnet/project/assembly_name")
 			has_dotnet_solution = FileAccess.file_exists("res://%s/%s.sln" % [directory, file_name])
+<<<<<<< HEAD
 		set_setting(DMSettings.USES_DOTNET, has_dotnet_solution)
 		return has_dotnet_solution
 
@@ -297,3 +393,9 @@ static func check_for_dotnet_solution() -> bool:
 
 
 #endregion
+=======
+		set_setting("uses_dotnet", has_dotnet_solution)
+		return has_dotnet_solution
+
+	return get_setting("uses_dotnet", false)
+>>>>>>> dev_branch

@@ -1,0 +1,9 @@
+~ start
+if GameState.stamina <= 50 and GameState.current_hour >= 9:
+	Go to sleep?
+    - Yes
+	set PlayerStats.stamina = 100
+    - No
+else:
+	It's too early to sleep...
+=> END

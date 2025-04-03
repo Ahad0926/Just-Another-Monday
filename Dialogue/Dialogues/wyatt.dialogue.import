@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://b6pskg0wtls7y"
+path="res://.godot/imported/wyatt.dialogue-bc64fa37c722466db9a7a86162d20d53.tres"
+
+[deps]
+
+source_file="res://Dialogue/Dialogues/wyatt.dialogue"
+dest_files=["res://.godot/imported/wyatt.dialogue-bc64fa37c722466db9a7a86162d20d53.tres"]
+
+[params]
+
+defaults=true

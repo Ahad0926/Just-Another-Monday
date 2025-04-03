@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://d0fmsdjvt2i6e"
+path="res://.godot/imported/ashtray.dialogue-ce9eae203e7be3dd8a13b54925eee05e.tres"
+
+[deps]
+
+source_file="res://Dialogue/Dialogues/ashtray.dialogue"
+dest_files=["res://.godot/imported/ashtray.dialogue-ce9eae203e7be3dd8a13b54925eee05e.tres"]
+
+[params]
+
+defaults=true

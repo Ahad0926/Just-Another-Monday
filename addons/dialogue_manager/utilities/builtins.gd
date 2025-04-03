@@ -22,6 +22,7 @@ const SUPPORTED_BUILTIN_TYPES = [
 static var resolve_method_error: Error = OK
 
 
+<<<<<<< HEAD
 static func is_supported(thing, with_method: String = "") -> bool:
 	if not typeof(thing) in SUPPORTED_BUILTIN_TYPES: return false
 
@@ -48,6 +49,10 @@ static func is_supported(thing, with_method: String = "") -> bool:
 			&"values"]
 
 	return true
+=======
+static func is_supported(thing) -> bool:
+	return typeof(thing) in SUPPORTED_BUILTIN_TYPES
+>>>>>>> dev_branch
 
 
 static func resolve_property(builtin, property: String):
@@ -431,6 +436,7 @@ static func resolve_vector2_property(vector: Vector2, property: String):
 		"DOWN":
 			return Vector2.DOWN
 
+<<<<<<< HEAD
 		"DOWN_LEFT":
 			return Vector2(-1, 1)
 		"DOWN_RIGHT":
@@ -440,6 +446,8 @@ static func resolve_vector2_property(vector: Vector2, property: String):
 		"UP_RIGHT":
 			return Vector2(1, -1)
 
+=======
+>>>>>>> dev_branch
 	return vector[property]
 
 

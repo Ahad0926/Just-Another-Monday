@@ -1,0 +1,74 @@
+~ start
+
+if GameState.game_start == true:
+	set GameState.game_start = false
+	
+	Altoid1: [speed=0.9]Rise and grind, [i]princess[/i].
+	Altoid1: The sun’s probably shining, the fridge is probably empty, and your soul?
+	Altoid1: [wait=0.6][i]...Well[/i], let’s not dwell on that. We have things to do.
+
+	Altoid1: Oh, and [b]PLEASE[/b] shut off your computer before bed next time.  
+	Altoid1: It kept making noises all night—[i]drove me nuts[/i].
+
+	- Player1: "Sorry about that, buddy."
+		Altoid1: [wait=0.2]Eh, you're forgiven... [i]this time[/i].
+
+	- Player2: "Maybe you're the one who needs less sleep?"
+		Altoid2: [i]Says[/i] the human who could nap through the apocalypse.
+
+	Altoid2: Anyways, I took the liberty of making your to-do list for today:
+	Altoid1: Step 1: Pretend your job isn’t killing you.
+	Altoid2: Step 2: [i]Pee[/i]. Yes, it’s a mechanic now. Try not to miss.
+	Altoid1: Step 3: Scavenge the fridge for whatever won’t poison you.
+	Altoid2: Step 4: I dunno… maybe make [i]*one*[/i] healthy choice today to ease that stress before your head explodes?
+	Altoid1: [speed=0.8][i]But hey. No pressure.[/i]
+	
+	=> END
+
+if GameState.emails_done and GameState.email_talked == false:
+
+	Altoid2: [speed=0.9]Well if you have nothing important to say, leave me alone.
+
+	- Player1: "I got a weird email today."
+		Altoid1: [wait=0.2]Huh, a weird email?
+		Player1: Yeah, it just... popped up. No sender. Just a bunch of random symbols, coordinates maybe? Said to meet up.
+		Altoid1: [speed=0.9]Well that's definitely not horrifying. Wanna go back to pretending reality’s real?
+		Altoid2: But hey, let’s check it out. [wait=0.2] Maybe you have a secret admirer.
+		Altoid2: That would be a [i]first[/i].
+		set PlayerStats.stress += 5
+		set GameState.email_talked = true
+		=> END
+
+	- Player2: "Never mind."
+		Altoid2: Wow, [i]riveting[/i] update. Thanks for the suspense.
+		set GameState.email_talked = true
+		=> END
+
+if GameState.emails_done and GameState.email_talked == true:
+	=> post_email_idle
+
+else:
+	=> pre_email_idle
+
+
+~ pre_email_idle
+% Altoid2: Well don't just sit around doing nothing... [i]that's MY job[/i].
+% Altoid2: If you have nothing important to say, leave me alone.
+=> END
+
+
+~ post_email_idle
+% Altoid2: Hey, your brain hasn’t melted yet. Impressive.
+% Altoid2: Such a lonely day...
+% Altoid2: How you feelin?
+% Altoid2: Still thinking about that email? Or just zoning out?
+=> END
+
+
+~ dont_leave
+
+if GameState.emails_done:
+	Altoid2: HEY. I'm coming with you.
+else:
+	Altoid2: HEY. Don’t forget to [b]finish your emails[/b]—you’ve got bills to pay... and [i]cat food[/i] to buy.
+=> END

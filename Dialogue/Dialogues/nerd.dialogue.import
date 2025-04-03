@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://b24aed3u7yi64"
+path="res://.godot/imported/nerd.dialogue-b8afa509d9b866023a5609b7c04d7904.tres"
+
+[deps]
+
+source_file="res://Dialogue/Dialogues/nerd.dialogue"
+dest_files=["res://.godot/imported/nerd.dialogue-b8afa509d9b866023a5609b7c04d7904.tres"]
+
+[params]
+
+defaults=true

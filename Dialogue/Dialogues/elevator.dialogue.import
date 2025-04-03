@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://c0kf4gj70wot"
+path="res://.godot/imported/elevator.dialogue-fdfe05626a2d83c872c10b1dcbc0570c.tres"
+
+[deps]
+
+source_file="res://Dialogue/Dialogues/elevator.dialogue"
+dest_files=["res://.godot/imported/elevator.dialogue-fdfe05626a2d83c872c10b1dcbc0570c.tres"]
+
+[params]
+
+defaults=true

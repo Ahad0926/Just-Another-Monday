@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://7614usvup68h"
+path="res://.godot/imported/rivaldo.dialogue-f7782967583148af162713bb64db6e92.tres"
+
+[deps]
+
+source_file="res://Dialogue/Dialogues/rivaldo.dialogue"
+dest_files=["res://.godot/imported/rivaldo.dialogue-f7782967583148af162713bb64db6e92.tres"]
+
+[params]
+
+defaults=true

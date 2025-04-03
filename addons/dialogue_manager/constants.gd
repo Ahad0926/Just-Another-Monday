@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 class_name DMConstants extends RefCounted
+=======
+extends Node
+>>>>>>> dev_branch
 
 
 const USER_CONFIG_PATH = "user://dialogue_manager_user_config.json"
 const CACHE_PATH = "user://dialogue_manager_cache.json"
 
+<<<<<<< HEAD
 
 enum MutationBehaviour {
 	Wait,
@@ -18,6 +23,8 @@ enum TranslationSource {
 	PO
 }
 
+=======
+>>>>>>> dev_branch
 # Token types
 
 const TOKEN_FUNCTION = &"function"
@@ -47,11 +54,15 @@ const TOKEN_NUMBER = &"number"
 const TOKEN_VARIABLE = &"variable"
 const TOKEN_COMMENT = &"comment"
 
+<<<<<<< HEAD
 const TOKEN_VALUE = &"value"
+=======
+>>>>>>> dev_branch
 const TOKEN_ERROR = &"error"
 
 # Line types
 
+<<<<<<< HEAD
 const TYPE_UNKNOWN = &""
 const TYPE_IMPORT = &"import"
 const TYPE_COMMENT = &"comment"
@@ -67,6 +78,19 @@ const TYPE_DIALOGUE = &"dialogue"
 const TYPE_RANDOM = &"random"
 const TYPE_ERROR = &"error"
 
+=======
+const TYPE_UNKNOWN = &"unknown"
+const TYPE_RESPONSE = &"response"
+const TYPE_TITLE = &"title"
+const TYPE_CONDITION = &"condition"
+const TYPE_MUTATION = &"mutation"
+const TYPE_GOTO = &"goto"
+const TYPE_DIALOGUE = &"dialogue"
+const TYPE_ERROR = &"error"
+
+const TYPE_ELSE = &"else"
+
+>>>>>>> dev_branch
 # Line IDs
 
 const ID_NULL = &""
@@ -113,11 +137,14 @@ const ERR_UNEXPECTED_VARIABLE = 132
 const ERR_INVALID_INDEX = 133
 const ERR_UNEXPECTED_ASSIGNMENT = 134
 const ERR_UNKNOWN_USING = 135
+<<<<<<< HEAD
 const ERR_EXPECTED_WHEN_OR_ELSE = 136
 const ERR_ONLY_ONE_ELSE_ALLOWED = 137
 const ERR_WHEN_MUST_BELONG_TO_MATCH = 138
 const ERR_CONCURRENT_LINE_WITHOUT_ORIGIN = 139
 const ERR_GOTO_NOT_ALLOWED_ON_CONCURRECT_LINES = 140
+=======
+>>>>>>> dev_branch
 
 
 ## Get the error message
@@ -193,6 +220,7 @@ static func get_error_message(error: int) -> String:
 			return translate(&"errors.unexpected_assignment")
 		ERR_UNKNOWN_USING:
 			return translate(&"errors.unknown_using")
+<<<<<<< HEAD
 		ERR_EXPECTED_WHEN_OR_ELSE:
 			return translate(&"errors.expected_when_or_else")
 		ERR_ONLY_ONE_ELSE_ALLOWED:
@@ -203,12 +231,20 @@ static func get_error_message(error: int) -> String:
 			return translate(&"errors.concurrent_line_without_origin")
 		ERR_GOTO_NOT_ALLOWED_ON_CONCURRECT_LINES:
 			return translate(&"errors.goto_not_allowed_on_concurrect_lines")
+=======
+>>>>>>> dev_branch
 
 	return translate(&"errors.unknown")
 
 
 static func translate(string: String) -> String:
+<<<<<<< HEAD
 	var base_path = new().get_script().resource_path.get_base_dir()
+=======
+	var temp_node = new()
+	var base_path = temp_node.get_script().resource_path.get_base_dir()
+	temp_node.free()
+>>>>>>> dev_branch
 
 	var language: String = TranslationServer.get_tool_locale()
 	var translations_path: String = "%s/l10n/%s.po" % [base_path, language]

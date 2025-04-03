@@ -2,11 +2,21 @@
 class_name DialogueLine extends RefCounted
 
 
+<<<<<<< HEAD
+=======
+const _DialogueConstants = preload("./constants.gd")
+
+
+>>>>>>> dev_branch
 ## The ID of this line
 var id: String
 
 ## The internal type of this dialogue object. One of [code]TYPE_DIALOGUE[/code] or [code]TYPE_MUTATION[/code]
+<<<<<<< HEAD
 var type: String = DMConstants.TYPE_DIALOGUE
+=======
+var type: String = _DialogueConstants.TYPE_DIALOGUE
+>>>>>>> dev_branch
 
 ## The next line ID after this line.
 var next_id: String = ""
@@ -38,9 +48,12 @@ var inline_mutations: Array[Array] = []
 ## A list of responses attached to this line of dialogue.
 var responses: Array = []
 
+<<<<<<< HEAD
 ## A list of lines that are spoken simultaneously with this one.
 var concurrent_lines: Array[DialogueLine] = []
 
+=======
+>>>>>>> dev_branch
 ## A list of any extra game states to check when resolving variables and mutations.
 var extra_game_states: Array = []
 
@@ -65,7 +78,11 @@ func _init(data: Dictionary = {}) -> void:
 		extra_game_states = data.get("extra_game_states", [])
 
 		match type:
+<<<<<<< HEAD
 			DMConstants.TYPE_DIALOGUE:
+=======
+			_DialogueConstants.TYPE_DIALOGUE:
+>>>>>>> dev_branch
 				character = data.character
 				character_replacements = data.get("character_replacements", [] as Array[Dictionary])
 				text = data.text
@@ -76,17 +93,28 @@ func _init(data: Dictionary = {}) -> void:
 				inline_mutations = data.get("inline_mutations", [] as Array[Array])
 				time = data.get("time", "")
 				tags = data.get("tags", [])
+<<<<<<< HEAD
 				concurrent_lines = data.get("concurrent_lines", [] as Array[DialogueLine])
 
 			DMConstants.TYPE_MUTATION:
+=======
+
+			_DialogueConstants.TYPE_MUTATION:
+>>>>>>> dev_branch
 				mutation = data.mutation
 
 
 func _to_string() -> String:
 	match type:
+<<<<<<< HEAD
 		DMConstants.TYPE_DIALOGUE:
 			return "<DialogueLine character=\"%s\" text=\"%s\">" % [character, text]
 		DMConstants.TYPE_MUTATION:
+=======
+		_DialogueConstants.TYPE_DIALOGUE:
+			return "<DialogueLine character=\"%s\" text=\"%s\">" % [character, text]
+		_DialogueConstants.TYPE_MUTATION:
+>>>>>>> dev_branch
 			return "<DialogueLine mutation>"
 	return ""
 

@@ -32,9 +32,12 @@ msgstr ""
 msgid "test_dialogue"
 msgstr ""
 
+<<<<<<< HEAD
 msgid "test_dialogue_from_line"
 msgstr ""
 
+=======
+>>>>>>> dev_branch
 msgid "search_for_text"
 msgstr ""
 
@@ -44,6 +47,12 @@ msgstr ""
 msgid "translations"
 msgstr ""
 
+<<<<<<< HEAD
+=======
+msgid "settings"
+msgstr ""
+
+>>>>>>> dev_branch
 msgid "sponsor"
 msgstr ""
 
@@ -134,6 +143,87 @@ msgstr ""
 msgid "buffer.show_in_filesystem"
 msgstr ""
 
+<<<<<<< HEAD
+=======
+msgid "settings.invalid_test_scene"
+msgstr ""
+
+msgid "settings.revert_to_default_test_scene"
+msgstr ""
+
+msgid "settings.default_balloon_hint"
+msgstr ""
+
+msgid "settings.revert_to_default_balloon"
+msgstr ""
+
+msgid "settings.default_balloon_path"
+msgstr ""
+
+msgid "settings.autoload"
+msgstr ""
+
+msgid "settings.path"
+msgstr ""
+
+msgid "settings.new_template"
+msgstr ""
+
+msgid "settings.missing_keys"
+msgstr ""
+
+msgid "settings.missing_keys_hint"
+msgstr ""
+
+msgid "settings.characters_translations"
+msgstr ""
+
+msgid "settings.wrap_long_lines"
+msgstr ""
+
+msgid "settings.include_failed_responses"
+msgstr ""
+
+msgid "settings.ignore_missing_state_values"
+msgstr ""
+
+msgid "settings.custom_test_scene"
+msgstr ""
+
+msgid "settings.default_csv_locale"
+msgstr ""
+
+msgid "settings.states_shortcuts"
+msgstr ""
+
+msgid "settings.states_message"
+msgstr ""
+
+msgid "settings.states_hint"
+msgstr ""
+
+msgid "settings.recompile_warning"
+msgstr ""
+
+msgid "settings.create_lines_for_responses_with_characters"
+msgstr ""
+
+msgid "settings.open_in_external_editor"
+msgstr ""
+
+msgid "settings.external_editor_warning"
+msgstr ""
+
+msgid "settings.include_characters_in_translations"
+msgstr ""
+
+msgid "settings.include_notes_in_translations"
+msgstr ""
+
+msgid "settings.check_for_updates"
+msgstr ""
+
+>>>>>>> dev_branch
 msgid "n_of_n"
 msgstr ""
 
@@ -296,6 +386,7 @@ msgstr ""
 msgid "errors.unexpected_assignment"
 msgstr ""
 
+<<<<<<< HEAD
 msgid "errors.expected_when_or_else"
 msgstr ""
 
@@ -311,6 +402,8 @@ msgstr ""
 msgid "errors.goto_not_allowed_on_concurrect_lines"
 msgstr ""
 
+=======
+>>>>>>> dev_branch
 msgid "errors.unknown"
 msgstr ""
 
@@ -405,10 +498,13 @@ msgid "runtime.unsupported_array_type"
 msgstr ""
 
 msgid "runtime.dialogue_balloon_missing_start_method"
+<<<<<<< HEAD
 msgstr ""
 
 msgid "runtime.top_level_states_share_name"
 msgstr ""
 
 msgid "translation_plugin.character_name"
+=======
+>>>>>>> dev_branch
 msgstr ""

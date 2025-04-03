@@ -1,0 +1,144 @@
+[gd_scene load_steps=20 format=3 uid="uid://3xreb84vainl"]
+
+[ext_resource type="Texture2D" uid="uid://mnhg0js6poso" path="res://Assets/APARTMENT/APT_GF_HALLWAY/APT_GF_HALLWAY_FLOOR.png" id="1_essvl"]
+[ext_resource type="Script" path="res://Scenes/Lobby_Hallway/lobby_hallway.gd" id="1_kihjy"]
+[ext_resource type="Texture2D" uid="uid://bllg51ura3fkv" path="res://Assets/APARTMENT/APT_GF_HALLWAY/APT_GF_HALLWAY_WALLS.png" id="2_hmkxf"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_blg1p"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="4_vwby0"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_2jr2f"]
+[ext_resource type="PackedScene" uid="uid://cfks6he7p50ls" path="res://SceneTrigger/scene_trigger.tscn" id="6_2pshm"]
+[ext_resource type="PackedScene" uid="uid://cfsoly6blnqso" path="res://Actionables/actionable.tscn" id="8_sckrj"]
+[ext_resource type="Resource" uid="uid://dh4jlkr5uwgxq" path="res://Dialogue/Dialogues/locked_door.dialogue" id="9_4wo6n"]
+[ext_resource type="PackedScene" uid="uid://d05tcir4ynhvp" path="res://Characters/Unknown/unknown.tscn" id="10_6toxr"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_licdi"]
+texture = ExtResource("1_essvl")
+7:17/size_in_atlas = Vector2i(32, 7)
+7:17/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_4lqbf"]
+sources/2 = SubResource("TileSetAtlasSource_licdi")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lmj8i"]
+texture = ExtResource("2_hmkxf")
+7:11/size_in_atlas = Vector2i(32, 12)
+7:11/0 = 0
+7:11/0/physics_layer_0/polygon_0/points = PackedVector2Array(-241.747, 0.629963, 73.5479, 0, 73.5479, -4.09474, 161.112, -4.40973, 162.057, 0.31498, 252.772, -0.314983, 253.402, -84.4147, -249.307, -84.7297, -248.677, 89.7694, 254.662, 87.5645, 254.032, 54.8066, 244.582, 54.4916, 244.267, 80.005, -240.487, 79.69)
+
+[sub_resource type="TileSet" id="TileSet_2o0ah"]
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_lmj8i")
+
+[sub_resource type="Resource" id="Resource_10fmc"]
+script = ExtResource("5_2jr2f")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uoghx"]
+size = Vector2(508, 179)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6yyyh"]
+size = Vector2(7, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nlbl"]
+size = Vector2(91, 75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjh33"]
+size = Vector2(43, 74)
+
+[node name="LobbyHallway" type="Node2D"]
+script = ExtResource("1_kihjy")
+
+[node name="Floor" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 2, 0, 7, 0, 17, 0, 0, 0)
+tile_set = SubResource("TileSet_4lqbf")
+
+[node name="Walls" type="TileMapLayer" parent="."]
+position = Vector2(0, 8)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 252, 255, 1, 0, 7, 0, 11, 0, 0, 0)
+tile_set = SubResource("TileSet_2o0ah")
+
+[node name="EntranceMarkers" type="Node2D" parent="."]
+
+[node name="lobby" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(244, -15)
+
+[node name="laundry_room" type="Marker2D" parent="EntranceMarkers"]
+position = Vector2(126, -34)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(30, -98)
+zoom = Vector2(4, 3.5)
+limit_left = -243
+limit_top = -137
+limit_right = 265
+limit_bottom = 42
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("3_blg1p")
+
+[node name="PhantomCamera2D" type="Node2D" parent="."]
+top_level = true
+position = Vector2(30, -98)
+script = ExtResource("4_vwby0")
+follow_mode = 5
+zoom = Vector2(4, 3.5)
+tween_resource = SubResource("Resource_10fmc")
+follow_damping = true
+limit_target = NodePath("../camera_bounds/collision")
+
+[node name="camera_bounds" type="Area2D" parent="."]
+visible = false
+
+[node name="collision" type="CollisionShape2D" parent="camera_bounds"]
+position = Vector2(11, -47.5)
+shape = SubResource("RectangleShape2D_uoghx")
+disabled = true
+
+[node name="Lobby Exit" parent="." instance=ExtResource("6_2pshm")]
+z_index = 2
+position = Vector2(262, -19)
+connected_scene = "Lobby/lobby"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lobby Exit"]
+z_index = 1
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_6yyyh")
+
+[node name="LaundryRoomDoor" parent="." instance=ExtResource("6_2pshm")]
+z_index = 2
+position = Vector2(126, -49)
+connected_scene = "Laundry_Room/laundry_room"
+is_interact = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LaundryRoomDoor"]
+z_index = 1
+position = Vector2(-0.5, -33.5)
+shape = SubResource("RectangleShape2D_8nlbl")
+
+[node name="Door" parent="." instance=ExtResource("8_sckrj")]
+position = Vector2(-45, -45)
+action_id = "Door"
+dialogue_resource = ExtResource("9_4wo6n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2(-0.5, -38)
+shape = SubResource("RectangleShape2D_sjh33")
+debug_color = Color(1, 0.6, 0.701961, 0.419608)
+
+[node name="Door2" parent="." instance=ExtResource("8_sckrj")]
+position = Vector2(-160, -44)
+action_id = "Door"
+dialogue_resource = ExtResource("9_4wo6n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door2"]
+position = Vector2(-0.5, -38)
+shape = SubResource("RectangleShape2D_sjh33")
+debug_color = Color(1, 0.6, 0.701961, 0.419608)
+
+[node name="Unknown" parent="." instance=ExtResource("10_6toxr")]
+position = Vector2(-222, 32)
+default_facing_anim = "Right"

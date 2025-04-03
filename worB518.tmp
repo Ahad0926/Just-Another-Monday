@@ -1,0 +1,110 @@
+[gd_scene load_steps=17 format=3 uid="uid://dn554dadqe6sn"]
+
+[ext_resource type="PackedScene" uid="uid://dc7pw8cqy44tt" path="res://Player/player.tscn" id="1_t74bx"]
+[ext_resource type="Texture2D" uid="uid://cdaykn6y7ag6" path="res://Assets/APT_BDR_ASSETS_20%/APT_FLOOR_20%.png" id="2_mwqc8"]
+[ext_resource type="Texture2D" uid="uid://bkakclq0t4b4m" path="res://Assets/APT_BDR_ASSETS_20%/APT_WALLS_20%.png" id="3_c6sma"]
+[ext_resource type="Texture2D" uid="uid://co78wbjhlkuk3" path="res://Assets/APT_BDR_ASSETS_20%/APT_FURNITURE_20%.png" id="4_7inpg"]
+[ext_resource type="Script" path="res://things.gd" id="4_8oe0f"]
+[ext_resource type="PackedScene" uid="uid://ts5r4y2v0lrh" path="res://Interactions/interactable.tscn" id="5_yno5c"]
+[ext_resource type="PackedScene" uid="uid://cfks6he7p50ls" path="res://LevelSwitch/level_switch.tscn" id="7_n7fnn"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1wi45"]
+texture = ExtResource("2_mwqc8")
+8:5/size_in_atlas = Vector2i(23, 17)
+8:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_8occs"]
+sources/0 = SubResource("TileSetAtlasSource_1wi45")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mlyc5"]
+texture = ExtResource("3_c6sma")
+texture_region_size = Vector2i(16, 18)
+8:0/size_in_atlas = Vector2i(23, 20)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-33.6739, -32.1305, -33.9545, -97.7945, 70.4345, -97.5139, 71.8376, -53.1766, 81.0979, -52.3348, 80.5366, -98.6363, 172.579, -96.9527, 173.982, 2.94646, 81.0979, 3.78831, 81.3785, -14.1711, 71.5569, -15.2935, 70.1539, 120.805, 78.853, 120.805, 81.3785, 106.774, 171.175, 105.09, 170.895, 169.351, 35.0769, 169.632, 35.9188, 177.209, 180.5, 178.75, 181.5, -180.25, -42, -177.25, -44.5, -115.75, -178.5, -113.75, -179, 178.75, -23.5, 177.25, -24.5, 111.25, -33.5, 111.25, -32, 169.25, -168.5, 169.25, -170, -31.75)
+
+[sub_resource type="TileSet" id="TileSet_xew80"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_mlyc5")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m0lov"]
+texture = ExtResource("4_7inpg")
+9:0/size_in_atlas = Vector2i(22, 22)
+9:0/0 = 0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(14.2544, -168.046, 64.5901, -167.823, 64.3674, -66.0379, 48.9994, -53.788, 45.8813, -55.3471, 46.5495, -65.5924, 14.2544, -65.5924)
+9:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(72.1305, -126.15, 165.365, -125.52, 165.05, 8.34698, 133.867, 7.08707, 134.497, -9.92188, 147.411, -12.1267, 147.096, -59.0588, 71.5005, -60.0037)
+9:0/0/physics_layer_0/polygon_2/points = PackedVector2Array(73.0754, 8.97694, 72.1305, -9.6069, 107.408, -8.66196, 106.463, 8.97694)
+9:0/0/physics_layer_0/polygon_3/points = PackedVector2Array(41.8924, 1.10243, 62.0511, 2.99231, 62.3661, 99.3763, 24.8834, 96.2265, 25.5134, 45.5146, 42.5223, 45.8296)
+9:0/0/physics_layer_0/polygon_4/points = PackedVector2Array(72.7604, 60.0037, 72.7604, 108.511, 143.001, 108.826, 143.316, 168.987, 164.735, 172.452, 165.995, 59.3738)
+9:0/0/physics_layer_0/polygon_5/points = PackedVector2Array(-51.0268, 171.822, -50.0819, 143.474, -58.2713, 146.938, -72.1305, 146.623, -74.6503, 141.269, -83.7848, 147.253, -85.3596, 139.694, -124.102, 140.009, -124.417, 171.507)
+9:0/0/physics_layer_0/polygon_6/points = PackedVector2Array(-139.536, 171.192, -139.536, 86.1471, -180.169, 86.4621, -179.854, 172.137)
+9:0/0/physics_layer_0/polygon_7/points = PackedVector2Array(-170.719, 80.4775, -99.2188, 81.1074, -94.4941, 71.028, -98.9038, 59.3738, -100.794, 39.845, -100.794, 27.5608, -106.148, 17.4814, -106.463, -37.9551, -111.503, -43.3098, -170.404, -42.3648, -174.184, -30.3956, -173.239, 14.6466, -177.019, 41.1049, -177.334, 60.6337)
+9:0/0/physics_layer_0/polygon_8/points = PackedVector2Array(-115.598, 104.731, -113.393, 85.2022, -102.369, 85.8321, -98.9038, 92.4467, -98.5888, 103.471, -98.9038, 113.235, -100.164, 119.22)
+9:0/0/physics_layer_0/polygon_9/points = PackedVector2Array(-103.629, -11.8118, -103.629, -48.0345, -57.9564, -46.7746, -58.9013, -12.1267)
+9:0/0/physics_layer_0/polygon_10/points = PackedVector2Array(-51.3418, -23.781, -51.3418, -19.0563, -47.247, -15.9065, -40.6325, -16.8514, -38.7426, -20.6312, -44.4122, -24.726, -46.3021, -35.4353, -48.192, -59.3738, -46.3021, -77.6426, -49.7669, -83.9422, -57.9564, -81.4224, -59.5313, -74.4928, -60.7912, -63.1535, -60.7912, -58.4288, -53.5466, -60.3187, -49.7669, -29.7656)
+
+[sub_resource type="TileSet" id="TileSet_on05s"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_m0lov")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hv5s5"]
+size = Vector2(66, 117)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sdf7p"]
+size = Vector2(71, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfjur"]
+size = Vector2(59, 20)
+
+[node name="world" type="Node2D"]
+
+[node name="Floor" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+tile_map_data = PackedByteArray(0, 0, 33, 0, 19, 0, 0, 0, 8, 0, 5, 0, 0, 0)
+tile_set = SubResource("TileSet_8occs")
+
+[node name="Walls" type="TileMapLayer" parent="."]
+y_sort_enabled = true
+position = Vector2(-1, -22)
+tile_map_data = PackedByteArray(0, 0, 33, 0, 18, 0, 0, 0, 8, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_xew80")
+
+[node name="Things" type="TileMapLayer" parent="."]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(6, 7)
+tile_map_data = PackedByteArray(0, 0, 33, 0, 16, 0, 0, 0, 9, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_on05s")
+script = ExtResource("4_8oe0f")
+
+[node name="Closet" parent="Things" instance=ExtResource("5_yno5c")]
+position = Vector2(574, 163)
+interact_name = "Check Closet"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Things/Closet"]
+position = Vector2(1, -16)
+shape = SubResource("RectangleShape2D_hv5s5")
+
+[node name="Sink" parent="Things" instance=ExtResource("5_yno5c")]
+position = Vector2(644, 336)
+interact_name = "Check Sink"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Things/Sink"]
+position = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_sdf7p")
+
+[node name="player" parent="." instance=ExtResource("1_t74bx")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(518, 376)
+speed = 80.0
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+zoom = Vector2(2, 2)
+
+[node name="LevelSwitch" parent="." instance=ExtResource("7_n7fnn")]
+position = Vector2(541, 447)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelSwitch"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_kfjur")

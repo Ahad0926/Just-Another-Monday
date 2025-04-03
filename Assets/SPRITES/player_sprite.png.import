@@ -2,7 +2,11 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://ivw4wllxqy45"
+=======
+uid="uid://cbiyur2exn5ae"
+>>>>>>> dev_branch
 path="res://.godot/imported/player_sprite.png-6e806b5174bbba565f645c7388152012.ctex"
 metadata={
 "vram_texture": false

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://wqinnonu1q2j"
+path="res://.godot/imported/washing_machine.dialogue-da10e33a640fb562d19bf675088f664a.tres"
+
+[deps]
+
+source_file="res://Dialogue/Dialogues/washing_machine.dialogue"
+dest_files=["res://.godot/imported/washing_machine.dialogue-da10e33a640fb562d19bf675088f664a.tres"]
+
+[params]
+
+defaults=true

@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://diuoup7lqqxlg"
+path="res://.godot/imported/fridge.dialogue-23bfea293345dbe4031e54848b2e5331.tres"
+
+[deps]
+
+source_file="res://Dialogue/Dialogues/fridge.dialogue"
+dest_files=["res://.godot/imported/fridge.dialogue-23bfea293345dbe4031e54848b2e5331.tres"]
+
+[params]
+
+defaults=true

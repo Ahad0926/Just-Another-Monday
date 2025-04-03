@@ -1,0 +1,9 @@
+~ start
+Have a smoke?
+- Yes
+	Player2: "Just what I needed"
+	set PlayerStats.stamina -= 10
+	set PlayerStats.stress -= 30
+- No
+
+=> END

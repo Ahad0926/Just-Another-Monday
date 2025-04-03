@@ -25,6 +25,13 @@ namespace DialogueManagerRuntime
       get => dialogueLine;
       set
       {
+<<<<<<< HEAD
+=======
+        isWaitingForInput = false;
+        balloon.FocusMode = Control.FocusModeEnum.All;
+        balloon.GrabFocus();
+
+>>>>>>> dev_branch
         if (value == null)
         {
           QueueFree();
@@ -32,12 +39,19 @@ namespace DialogueManagerRuntime
         }
 
         dialogueLine = value;
+<<<<<<< HEAD
         ApplyDialogueLine();
       }
     }
 
     Timer MutationCooldown = new Timer();
 
+=======
+        UpdateDialogue();
+      }
+    }
+
+>>>>>>> dev_branch
 
     public override void _Ready()
     {
@@ -86,6 +100,7 @@ namespace DialogueManagerRuntime
         Next(response.NextId);
       }));
 
+<<<<<<< HEAD
 
       // Hide the balloon when a mutation is running
       MutationCooldown.Timeout += () =>
@@ -98,6 +113,8 @@ namespace DialogueManagerRuntime
       };
       AddChild(MutationCooldown);
 
+=======
+>>>>>>> dev_branch
       DialogueManager.Mutated += OnMutated;
     }
 
@@ -132,7 +149,16 @@ namespace DialogueManagerRuntime
 
     public async void Start(Resource dialogueResource, string title, Array<Variant> extraGameStates = null)
     {
+<<<<<<< HEAD
       temporaryGameStates = new Array<Variant> { this } + (extraGameStates ?? new Array<Variant>());
+=======
+      if (!IsNodeReady())
+      {
+        await ToSignal(this, SignalName.Ready);
+      }
+
+      temporaryGameStates = extraGameStates ?? new Array<Variant>();
+>>>>>>> dev_branch
       isWaitingForInput = false;
       resource = dialogueResource;
 
@@ -149,6 +175,7 @@ namespace DialogueManagerRuntime
     #region Helpers
 
 
+<<<<<<< HEAD
     private async void ApplyDialogueLine()
     {
       MutationCooldown.Stop();
@@ -156,6 +183,14 @@ namespace DialogueManagerRuntime
       isWaitingForInput = false;
       balloon.FocusMode = Control.FocusModeEnum.All;
       balloon.GrabFocus();
+=======
+    private async void UpdateDialogue()
+    {
+      if (!IsNodeReady())
+      {
+        await ToSignal(this, SignalName.Ready);
+      }
+>>>>>>> dev_branch
 
       // Set up the character name
       characterLabel.Visible = !string.IsNullOrEmpty(dialogueLine.Character);
@@ -214,7 +249,18 @@ namespace DialogueManagerRuntime
     {
       isWaitingForInput = false;
       willHideBalloon = true;
+<<<<<<< HEAD
       MutationCooldown.Start(0.1f);
+=======
+      GetTree().CreateTimer(0.1f).Timeout += () =>
+      {
+        if (willHideBalloon)
+        {
+          willHideBalloon = false;
+          balloon.Hide();
+        }
+      };
+>>>>>>> dev_branch
     }
 
 

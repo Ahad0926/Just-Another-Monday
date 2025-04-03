@@ -1,0 +1,28 @@
+~ start
+if GameState.met_sus_guy == false:
+	set GameState.met_sus_guy = true
+	Unknown: [i][speed=0.7]You came. Good. That means you're still... aware.[/i]
+	Unknown: [i][wait=0.4]We don’t have much time, and they’re always watching. So listen closely.[/i]
+
+	Player2: Who are you?
+
+	Unknown: [i]Wrong question. The real question is: [wait=0.3]Who are you?[/i]
+	Unknown: [i][speed=0.6]You wake up, go to work, drain yourself dry for a system that doesn’t even know your name.[/i]
+	Unknown: [i]Sound familiar?[/i]
+
+	- Player2: "Are you the one who sent the email?"
+		Unknown: [i][wait=0.3]Yes. But that message wasn’t meant for who you are now[wait=0.3]—it was for who you used to be.[/i]
+		Unknown: [i]Before the rot set in. Before the routine caged you.[/i]
+		Unknown: [i][speed=0.9]You’ve felt it, haven’t you? The same day over and over again. Time losing all meaning as you stare at the same computer screen and flaking walls everyday.[/i]
+		Unknown: [i]The world bending at the edges—like it’s all just... poorly rendered.[/i]
+
+	- Player2: "Leave me alone, creep."
+		Unknown: [i]I know this must be alot to take in at once, but trust me.[/i]
+
+	Unknown: [i]There’s so much more I need to tell you. But if I stay, they'll trace me.[/i]
+	Unknown: [i]Please[wait=0.3], find me again...if you want to find yourself.[/i]
+
+	=> END
+else:
+	Unknown: [i]Now is not the time.[/i]
+	=> END

@@ -2,11 +2,21 @@
 class_name DialogueResponse extends RefCounted
 
 
+<<<<<<< HEAD
+=======
+const _DialogueConstants = preload("./constants.gd")
+
+
+>>>>>>> dev_branch
 ## The ID of this response
 var id: String
 
 ## The internal type of this dialogue object, always set to [code]TYPE_RESPONSE[/code].
+<<<<<<< HEAD
 var type: String = DMConstants.TYPE_RESPONSE
+=======
+var type: String = _DialogueConstants.TYPE_RESPONSE
+>>>>>>> dev_branch
 
 ## The next line ID to use if this response is selected by the player.
 var next_id: String = ""

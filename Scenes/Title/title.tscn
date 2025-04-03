@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://xt4u2uxbrl4u"]
+
+[ext_resource type="Script" path="res://Scenes/Title/title.gd" id="1_lxccj"]
+[ext_resource type="Texture2D" uid="uid://cu0uu07s461a2" path="res://Assets/Title_Screen/start_button_hover.png" id="4_nolvd"]
+[ext_resource type="FontFile" uid="uid://jnk3hrmjl2tl" path="res://Assets/PC/Font.tres" id="5_c7lyf"]
+[ext_resource type="Texture2D" uid="uid://d3fxhett1hmwt" path="res://Assets/Title_Screen/Title_Screen.png" id="7_s1208"]
+[ext_resource type="Texture2D" uid="uid://deyxxy6t7qc5g" path="res://Assets/Title_Screen/start_button.png" id="8_i1eyl"]
+
+[node name="Title" type="Node2D"]
+script = ExtResource("1_lxccj")
+
+[node name="TitleScreen" type="Sprite2D" parent="."]
+position = Vector2(574, 322)
+texture = ExtResource("7_s1208")
+
+[node name="StartButton" type="TextureButton" parent="."]
+texture_filter = 1
+offset_left = 422.0
+offset_top = 551.0
+offset_right = 634.0
+offset_bottom = 591.0
+scale = Vector2(1.64, 1.64)
+texture_normal = ExtResource("8_i1eyl")
+texture_pressed = ExtResource("4_nolvd")
+texture_hover = ExtResource("4_nolvd")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 821.0
+offset_top = 109.0
+offset_right = 946.0
+offset_bottom = 189.0
+theme_override_colors/default_color = Color(0.0117647, 0.172549, 0.470588, 1)
+theme_override_fonts/normal_font = ExtResource("5_c7lyf")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "JUST ANOTHER MONDAY"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 193.0
+offset_top = 519.0
+offset_right = 318.0
+offset_bottom = 599.0
+theme_override_colors/default_color = Color(0.0117647, 0.172549, 0.470588, 1)
+theme_override_fonts/normal_font = ExtResource("5_c7lyf")
+theme_override_font_sizes/normal_font_size = 23
+bbcode_enabled = true
+text = "Ahad & Nawal Abdul"
+
+[node name="EntranceMarkers" type="Node2D" parent="."]
+
+[node name="any" type="Marker2D" parent="EntranceMarkers"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 325)
