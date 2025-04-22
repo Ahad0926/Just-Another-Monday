@@ -19,7 +19,10 @@ func change_scene(from, to_scene_name: String, skip_transition: bool = false) ->
 	time_canvas_layer.get_parent().remove_child(time_canvas_layer)
 	
 	var full_path = scene_dir_path + to_scene_name + ".tscn"
-	print("changing scene from ", last_scene_name, " to ", to_scene_name)
+	var now = Time.get_datetime_dict_from_system()
+	var ms = Time.get_ticks_msec() % 1000
+	print("[%02d:%02d:%02d.%01d] Changing scene from %s to %s\n" % [now.hour, now.minute, now.second, ms / 100, last_scene_name, to_scene_name])
+
 	
 	if not skip_transition:
 		player.freeze()
@@ -28,4 +31,3 @@ func change_scene(from, to_scene_name: String, skip_transition: bool = false) ->
 		player.unfreeze()
 	
 	from.get_tree().call_deferred("change_scene_to_file", full_path)
-	

@@ -50,7 +50,6 @@ func _recalculate_time() -> void:
 func freeze() -> void:
 	frozen_time = time
 	frozen_gradient = self.color
-	print("Time frozen at: " + str(frozen_time))
 
 # Function to unfreeze time
 func unfreeze() -> void:
@@ -58,4 +57,3 @@ func unfreeze() -> void:
 		time = frozen_time
 		self.color = frozen_gradient
 		frozen_time = -1.0  # Reset the frozen time state
-		print("Time unfrozen, resumed from: " + str(time))

@@ -17,20 +17,20 @@ func _update_bars(stamina: float, stress: float) -> void:
 	stress_bar.value = stress
 
 func set_daytime(day: int, hour: int, minute: int) -> void:
-	var day_names = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-	var day_text = day_names[day % 7]  # Use modulo to cycle through days of the week
-	day_label.text = day_text + " " + str(day + 1)
-	day_label_background.text = day_label.text
-
-	
-	time_label.text = _amfm_hour(hour) + ":" + _minute(minute) + " " + _am_pm(hour)
-	time_label_background.text = time_label.text
-	
-	# Update GameState global vars
+	# Always update global time
 	GameState.current_day = day
 	GameState.current_hour = hour
 	GameState.current_minute = minute
 
+	# Only update visible labels every 10 minutes
+	if minute % 10 == 0:
+		var day_names = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+		var day_text = day_names[day % 7]
+		day_label.text = day_text + " " + str(day + 1)
+		day_label_background.text = day_label.text
+
+		time_label.text = _amfm_hour(hour) + ":" + _minute(minute) + " " + _am_pm(hour)
+		time_label_background.text = time_label.text
 
 func _amfm_hour(hour:int) -> String:
 	if hour == 0:

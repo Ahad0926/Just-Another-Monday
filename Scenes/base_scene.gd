@@ -10,7 +10,10 @@ class_name BaseScene extends Node
 @onready var time_canvas_layer = $Camera2D/CanvasLayer
 
 func _ready() -> void:
-	print("Scene: ", name)
+	var now = Time.get_datetime_dict_from_system()
+	var ms = Time.get_ticks_msec() % 1000
+	print("\n[%02d:%02d:%02d.%01d] Scene: %s" % [now.hour, now.minute, now.second, ms / 100, name])
+
 		
 	position_player()
 	position_camera()
@@ -22,12 +25,10 @@ func position_player() -> void:
 	if scene_manager.player:
 		if player:
 			player.queue_free()
-			print(player, " freed")
 		
 		player = scene_manager.player
 		add_child(player)
 		player.name = "player"
-		print(player, " added")
 		
 		
 	var last_scene = scene_manager.last_scene_name.to_lower().replace('_', '').replace(' ', '')
@@ -50,14 +51,11 @@ func position_camera() -> void:
 func sync_time() -> void:
 	if scene_manager.canvas_modulate:
 		if canvas_modulate:
-			print("Already have canvas!")
 			print(canvas_modulate)
 			canvas_modulate.queue_free()
-			print("removed canvas ", canvas_modulate)
 			
 		
 		canvas_modulate = scene_manager.canvas_modulate
-		print("Adding canvas")
 		add_child(canvas_modulate)
 	
 	if scene_manager.time_canvas_layer:

@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="test_project"
+config/name="Just Another Monday"
 run/main_scene="res://Scenes/Setup/setup.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 
@@ -32,6 +32,7 @@ general/balloon_path="res://Dialogue/Balloon/balloon.tscn"
 
 window/stretch/mode="viewport"
 mouse_cursor/custom_image="res://Assets/CURSOR_POINT.png"
+mouse_cursor/custom_image_hotspot=Vector2(19, 2)
 
 [editor_plugins]
 

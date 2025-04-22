@@ -4,12 +4,8 @@ extends BaseScene
 @onready var button = $StartButton
 
 func _ready() -> void:
-	print("\ntitle screen before super")
 	super()
-	print("\ntitle screen affter super")
-
 	if canvas_modulate:
-		print("Title Freezing!")
 		canvas_modulate.freeze()
 		if time_canvas_layer:
 			time_canvas_layer.visible = false

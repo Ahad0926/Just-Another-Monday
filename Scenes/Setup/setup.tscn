@@ -40,4 +40,4 @@ script = ExtResource("3_uvxby")
 script = ExtResource("5_ohjwk")
 gradient_texture = ExtResource("6_vgaed")
 INGAME_SPEED = 2.0
-INITIAL_HOUR = 7
+INITIAL_HOUR = 23

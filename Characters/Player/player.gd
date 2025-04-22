@@ -77,12 +77,10 @@ func _set_idle_animation() -> void:
 
 # Method to block input and set velocity to 0
 func freeze() -> void:
-	print("\nplayer frozen!")
 	can_input = false
 	input_vector = Vector2.ZERO
 
 func unfreeze() -> void:
-	print("\nplayer unfrozen!")
 	can_input = true
 
 func push(direction: Vector2, distance: float, duration: float) -> void:
