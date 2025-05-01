@@ -586,7 +586,7 @@ shape = SubResource("RectangleShape2D_ap4sn")
 [node name="PC" parent="." instance=ExtResource("8_p6y7h")]
 z_index = 2
 position = Vector2(-82, -112)
-connected_scene = "PC/test_desktop"
+connected_scene = "PC/desktop"
 is_interact = true
 metadata/_edit_group_ = true
 

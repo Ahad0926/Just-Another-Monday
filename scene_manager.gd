@@ -8,6 +8,14 @@ var time_canvas_layer: CanvasLayer
 var scene_dir_path = "res://Scenes/"
 
 func change_scene(from, to_scene_name: String, skip_transition: bool = false) -> void:
+	if not skip_transition:
+		if player:
+			player.freeze()
+		TransitionScreen.transition()
+		await TransitionScreen.on_transition_finished
+		if player:
+			player.unfreeze()
+		
 	last_scene_name = from.name
 	player = from.player
 	player.get_parent().remove_child(player)
@@ -22,12 +30,5 @@ func change_scene(from, to_scene_name: String, skip_transition: bool = false) ->
 	var now = Time.get_datetime_dict_from_system()
 	var ms = Time.get_ticks_msec() % 1000
 	print("[%02d:%02d:%02d.%01d] Changing scene from %s to %s\n" % [now.hour, now.minute, now.second, ms / 100, last_scene_name, to_scene_name])
-
-	
-	if not skip_transition:
-		player.freeze()
-		TransitionScreen.transition()
-		await TransitionScreen.on_transition_finished
-		player.unfreeze()
 	
 	from.get_tree().call_deferred("change_scene_to_file", full_path)
