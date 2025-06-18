@@ -79,6 +79,7 @@ This project is a work-in-progress prototype. Several systems are functional in 
 - Early versions of **glitch mechanics** and narrative branching
 
 However, much of the larger story structure, weekly progression, and visual/audio polish are **still in development**.
+
 ---
 
 ## Gallery
