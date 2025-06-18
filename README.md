@@ -79,3 +79,17 @@ This project is a work-in-progress prototype. Several systems are functional in 
 - Early versions of **glitch mechanics** and narrative branching
 
 However, much of the larger story structure, weekly progression, and visual/audio polish are **still in development**.
+---
+
+## Gallery
+
+<p align="center">
+  <img src="Assets/README/title.png" width="30%">
+  <img src="Assets/README/Apartment.png" width="30%">
+  <img src="Assets/README/PC.png" width="30%">
+</p>
+<p align="center">
+  <img src="Assets/README/Dialogue.png" width="30%">
+  <img src="Assets/README/Lobby.png" width="30%">
+  <img src="Assets/README/Character_Concept_Art.png" width="30%">
+</p>
