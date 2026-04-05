@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://ds32y2o3562sj"]
 
-[ext_resource type="Script" path="res://Scenes/Vending_Machine/vending_machine.gd" id="1_yldyy"]
+[ext_resource type="Script" uid="uid://dfmq0w53htj0r" path="res://Scenes/Vending_Machine/vending_machine.gd" id="1_yldyy"]
 [ext_resource type="Texture2D" uid="uid://cd6h2y756obc" path="res://Assets/Vending_Machine/vending_machine_bg.png" id="2_2lwmn"]
 [ext_resource type="Resource" uid="uid://b6aptsyeicf7k" path="res://Dialogue/Dialogues/vending_machine.dialogue" id="2_ty30u"]
 [ext_resource type="Texture2D" uid="uid://c2m2aad6e7xt0" path="res://Assets/Vending_Machine/vending_machine_1.png" id="3_n5sv6"]

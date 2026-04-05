@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://4y75bk8tal8k"]
 
-[ext_resource type="Script" path="res://Characters/NPC.gd" id="1_883da"]
+[ext_resource type="Script" uid="uid://bbt5aexmjxaf6" path="res://Characters/NPC.gd" id="1_883da"]
 [ext_resource type="Texture2D" uid="uid://d2deh8luavr3i" path="res://Assets/SPRITES/NPCs/landlord_sprite.png" id="2_rn6f3"]
 [ext_resource type="PackedScene" uid="uid://cfsoly6blnqso" path="res://Actionables/actionable.tscn" id="3_sbqda"]
 [ext_resource type="Resource" uid="uid://k2du3nyetf6i" path="res://Dialogue/Dialogues/land_lady.dialogue" id="4_e38nm"]
@@ -173,10 +173,10 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xvlr2"]
 _data = {
-"Idle Down": SubResource("Animation_i70dj"),
-"Idle Left": SubResource("Animation_n1vra"),
-"Idle Right": SubResource("Animation_nl70t"),
-"Idle Up": SubResource("Animation_0bfw7")
+&"Idle Down": SubResource("Animation_i70dj"),
+&"Idle Left": SubResource("Animation_n1vra"),
+&"Idle Right": SubResource("Animation_nl70t"),
+&"Idle Up": SubResource("Animation_0bfw7")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0x540"]

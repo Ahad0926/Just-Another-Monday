@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://ke108li6sig2"]
 
-[ext_resource type="Script" path="res://Characters/NPC.gd" id="1_6i6wc"]
+[ext_resource type="Script" uid="uid://bbt5aexmjxaf6" path="res://Characters/NPC.gd" id="1_6i6wc"]
 [ext_resource type="Texture2D" uid="uid://bolf2uv7d7hb6" path="res://Assets/SPRITES/NPCs/npc4_sprite.png" id="2_76jaw"]
 [ext_resource type="PackedScene" uid="uid://cfsoly6blnqso" path="res://Actionables/actionable.tscn" id="3_eqgwo"]
 [ext_resource type="Resource" uid="uid://7q23w4ejyqd2" path="res://Dialogue/Dialogues/girl.dialogue" id="4_3anxa"]
@@ -173,10 +173,10 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xvlr2"]
 _data = {
-"Idle Down": SubResource("Animation_i70dj"),
-"Idle Left": SubResource("Animation_n1vra"),
-"Idle Right": SubResource("Animation_nl70t"),
-"Idle Up": SubResource("Animation_0bfw7")
+&"Idle Down": SubResource("Animation_i70dj"),
+&"Idle Left": SubResource("Animation_n1vra"),
+&"Idle Right": SubResource("Animation_nl70t"),
+&"Idle Up": SubResource("Animation_0bfw7")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_caxfg"]

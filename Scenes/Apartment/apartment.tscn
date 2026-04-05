@@ -1,6 +1,6 @@
 [gd_scene load_steps=35 format=4 uid="uid://dn554dadqe6sn"]
 
-[ext_resource type="Script" path="res://Scenes/Apartment/apartment.gd" id="1_xv1jp"]
+[ext_resource type="Script" uid="uid://huxf3cwaiycs" path="res://Scenes/Apartment/apartment.gd" id="1_xv1jp"]
 [ext_resource type="PackedScene" uid="uid://cfsoly6blnqso" path="res://Actionables/actionable.tscn" id="5_hfx8c"]
 [ext_resource type="Texture2D" uid="uid://o61uk474sy1o" path="res://Assets/APARTMENT/APT_BDR/APT_BDR_FLOOR.png" id="7_ahd1j"]
 [ext_resource type="Resource" uid="uid://bf7oykmb0d5cq" path="res://Dialogue/Dialogues/bed.dialogue" id="7_bdg3v"]
@@ -8,10 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://cpknycn2kcn7k" path="res://Assets/APARTMENT/APT_BDR/APT_BDR_WALLS.png" id="8_jw0ct"]
 [ext_resource type="PackedScene" uid="uid://cfks6he7p50ls" path="res://SceneTrigger/scene_trigger.tscn" id="8_p6y7h"]
 [ext_resource type="Texture2D" uid="uid://dd5s21da06ffy" path="res://Assets/APARTMENT/APT_BDR/APT_BDR_FURNITURE.png" id="9_w2xev"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="11_lcpgr"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="12_bgyt0"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="13_ial47"]
-[ext_resource type="Script" path="res://Scenes/cutscene_trigger.gd" id="14_01a37"]
+[ext_resource type="Script" uid="uid://l1brb62y7f87" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="11_lcpgr"]
+[ext_resource type="Script" uid="uid://ccy0vh4ufgiv0" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="12_bgyt0"]
+[ext_resource type="Script" uid="uid://dt0qvd8yn45vi" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="13_ial47"]
+[ext_resource type="Script" uid="uid://cle26sygpngjt" path="res://Scenes/cutscene_trigger.gd" id="14_01a37"]
 [ext_resource type="PackedScene" uid="uid://jvx4ydu1vmbb" path="res://Characters/Altoid/altoid.tscn" id="17_3oe7x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qivdl"]

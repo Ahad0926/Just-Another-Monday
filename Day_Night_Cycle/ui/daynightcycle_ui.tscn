@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://ceolcwatpaicu"]
 
-[ext_resource type="Script" path="res://Day_Night_Cycle/ui/daynightcycle_ui.gd" id="1_altij"]
-[ext_resource type="Shader" path="res://Day_Night_Assets/pixelperfect.gdshader" id="1_x3jdy"]
+[ext_resource type="Script" uid="uid://ujuuk1pe11bh" path="res://Day_Night_Cycle/ui/daynightcycle_ui.gd" id="1_altij"]
+[ext_resource type="Shader" uid="uid://ssps6skcgw6k" path="res://Day_Night_Assets/pixelperfect.gdshader" id="1_x3jdy"]
 [ext_resource type="Texture2D" uid="uid://bmkc3a0jp7qsv" path="res://Assets/Phone_UI/phone_asset.png" id="3_1vqas"]
 [ext_resource type="FontFile" uid="uid://dt6jbuskqvs7g" path="res://Day_Night_Assets/fonts/pixelmix/pixelmix.ttf" id="3_6qa0r"]
 [ext_resource type="Texture2D" uid="uid://5r7q676yds3q" path="res://Assets/Phone_UI/heart.png" id="5_bxgdr"]

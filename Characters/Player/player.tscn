@@ -1,6 +1,6 @@
 [gd_scene load_steps=46 format=3 uid="uid://dc7pw8cqy44tt"]
 
-[ext_resource type="Script" path="res://Characters/Player/player.gd" id="1_06ny0"]
+[ext_resource type="Script" uid="uid://ctwl3ftxfovmd" path="res://Characters/Player/player.gd" id="1_06ny0"]
 [ext_resource type="Texture2D" uid="uid://cbiyur2exn5ae" path="res://Assets/SPRITES/player_sprite.png" id="2_a0o2x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y28nj"]
@@ -460,15 +460,15 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nhvjq"]
 _data = {
-"RESET": SubResource("Animation_vvron"),
-"idle_down": SubResource("Animation_e7mqr"),
-"idle_left": SubResource("Animation_eed0w"),
-"idle_right": SubResource("Animation_x17ol"),
-"idle_up": SubResource("Animation_naj7k"),
-"walk_down": SubResource("Animation_rp3lw"),
-"walk_left": SubResource("Animation_01ock"),
-"walk_right": SubResource("Animation_fdh4o"),
-"walk_up": SubResource("Animation_vpl3c")
+&"RESET": SubResource("Animation_vvron"),
+&"idle_down": SubResource("Animation_e7mqr"),
+&"idle_left": SubResource("Animation_eed0w"),
+&"idle_right": SubResource("Animation_x17ol"),
+&"idle_up": SubResource("Animation_naj7k"),
+&"walk_down": SubResource("Animation_rp3lw"),
+&"walk_left": SubResource("Animation_01ock"),
+&"walk_right": SubResource("Animation_fdh4o"),
+&"walk_up": SubResource("Animation_vpl3c")
 }
 
 [sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_sikfa"]

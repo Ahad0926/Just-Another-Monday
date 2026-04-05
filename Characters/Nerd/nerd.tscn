@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://dyk7o7lahg5ep"]
 
-[ext_resource type="Script" path="res://Characters/NPC.gd" id="1_kgjuy"]
+[ext_resource type="Script" uid="uid://bbt5aexmjxaf6" path="res://Characters/NPC.gd" id="1_kgjuy"]
 [ext_resource type="Texture2D" uid="uid://cpx4dkqogpmev" path="res://Assets/SPRITES/NPCs/npc3_sprite.png" id="2_njuld"]
 [ext_resource type="PackedScene" uid="uid://cfsoly6blnqso" path="res://Actionables/actionable.tscn" id="3_av3wu"]
 [ext_resource type="Resource" uid="uid://b24aed3u7yi64" path="res://Dialogue/Dialogues/nerd.dialogue" id="4_r1c00"]
@@ -173,10 +173,10 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xvlr2"]
 _data = {
-"Idle Down": SubResource("Animation_i70dj"),
-"Idle Left": SubResource("Animation_n1vra"),
-"Idle Right": SubResource("Animation_nl70t"),
-"Idle Up": SubResource("Animation_0bfw7")
+&"Idle Down": SubResource("Animation_i70dj"),
+&"Idle Left": SubResource("Animation_n1vra"),
+&"Idle Right": SubResource("Animation_nl70t"),
+&"Idle Up": SubResource("Animation_0bfw7")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_caxfg"]

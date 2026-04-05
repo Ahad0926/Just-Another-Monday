@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://by0n1lipoxrgg" path="res://Assets/PC_Icons/email_icon.png" id="5_odjev"]
 [ext_resource type="Texture2D" uid="uid://cukq4pbkpfaeu" path="res://Assets/PC_Icons/email_icon_hover.png" id="6_qh3gw"]
 [ext_resource type="Texture2D" uid="uid://dc1wtcunosk24" path="res://Assets/PC/Inbox/inbox_bg.png" id="7_msdid"]
-[ext_resource type="Script" path="res://Scenes/PC/email_window.gd" id="8_6df5n"]
+[ext_resource type="Script" uid="uid://c5kueytjbdhcf" path="res://Scenes/PC/email_window.gd" id="8_6df5n"]
 [ext_resource type="Texture2D" uid="uid://olhnssr8hema" path="res://Assets/PC/Inbox/inbox_spam_button.png" id="9_k0htv"]
 [ext_resource type="Texture2D" uid="uid://dsuttevjk16cv" path="res://Assets/PC/Inbox/inbox_safe_button.png" id="10_sot53"]
 [ext_resource type="Texture2D" uid="uid://bighjf2cmn5ni" path="res://Assets/PC/Inbox/CloseRegular.png" id="11_8e4x1"]

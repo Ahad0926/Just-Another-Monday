@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://fpd45endcam8"]
 
-[ext_resource type="Script" path="res://Scenes/PC/desktop.gd" id="1_fpvgn"]
+[ext_resource type="Script" uid="uid://cpvne7w6j5fja" path="res://Scenes/PC/desktop.gd" id="1_fpvgn"]
 [ext_resource type="Texture2D" uid="uid://dxlygue35lt7e" path="res://Assets/PC/Background.png" id="2_sjacn"]
 
 [sub_resource type="Gradient" id="Gradient_s8qm3"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=29 format=3 uid="uid://c3me0xbfeg6hl"]
 
-[ext_resource type="Script" path="res://Scenes/Fire_Escape/fire_escape.gd" id="1_ayjlh"]
+[ext_resource type="Script" uid="uid://bat3kaby76kn2" path="res://Scenes/Fire_Escape/fire_escape.gd" id="1_ayjlh"]
 [ext_resource type="Texture2D" uid="uid://cilyhna7c6bwt" path="res://Assets/APARTMENT/APT_BALCONY/APT_BALCONY_BACKGROUND.png" id="1_ylwyb"]
 [ext_resource type="Texture2D" uid="uid://ei83y5g4s8oe" path="res://Assets/APARTMENT/APT_BALCONY/APT_BALCONY_FLOOR.png" id="2_ncagp"]
 [ext_resource type="Texture2D" uid="uid://dudfr5v0r6i7w" path="res://Assets/APARTMENT/APT_BALCONY/APT_BALCONY_WALLS.png" id="3_8ftxb"]
@@ -9,9 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://cfsoly6blnqso" path="res://Actionables/actionable.tscn" id="6_alsie"]
 [ext_resource type="Texture2D" uid="uid://df0whybwipyy6" path="res://Assets/APARTMENT/APT_BALCONY/APT_BDR_ASHTRAY.png" id="6_e3t66"]
 [ext_resource type="Resource" uid="uid://d0fmsdjvt2i6e" path="res://Dialogue/Dialogues/ashtray.dialogue" id="7_3tlwt"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="7_b3gx0"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="9_3tup3"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="9_f0wsp"]
+[ext_resource type="Script" uid="uid://l1brb62y7f87" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="7_b3gx0"]
+[ext_resource type="Script" uid="uid://ccy0vh4ufgiv0" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="9_3tup3"]
+[ext_resource type="Script" uid="uid://dt0qvd8yn45vi" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="9_f0wsp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kv7qn"]
 texture = ExtResource("1_ylwyb")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=31 format=3 uid="uid://bg3e8fsfp2tsb"]
 
 [ext_resource type="Texture2D" uid="uid://br65723a42yrd" path="res://Assets/SPRITES/NPCs/npc1_sprite.png" id="1_og5td"]
-[ext_resource type="Script" path="res://Characters/NPC.gd" id="1_rrftd"]
+[ext_resource type="Script" uid="uid://bbt5aexmjxaf6" path="res://Characters/NPC.gd" id="1_rrftd"]
 [ext_resource type="PackedScene" uid="uid://cfsoly6blnqso" path="res://Actionables/actionable.tscn" id="2_bt47d"]
 [ext_resource type="Resource" uid="uid://b6pskg0wtls7y" path="res://Dialogue/Dialogues/wyatt.dialogue" id="3_vyl7f"]
 
@@ -173,10 +173,10 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xvlr2"]
 _data = {
-"Idle Down": SubResource("Animation_i70dj"),
-"Idle Left": SubResource("Animation_n1vra"),
-"Idle Right": SubResource("Animation_nl70t"),
-"Idle Up": SubResource("Animation_0bfw7")
+&"Idle Down": SubResource("Animation_i70dj"),
+&"Idle Left": SubResource("Animation_n1vra"),
+&"Idle Right": SubResource("Animation_nl70t"),
+&"Idle Up": SubResource("Animation_0bfw7")
 }
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_3y81s"]

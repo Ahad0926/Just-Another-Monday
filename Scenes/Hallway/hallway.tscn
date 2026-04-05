@@ -1,13 +1,13 @@
 [gd_scene load_steps=20 format=3 uid="uid://fqa8rteum67p"]
 
-[ext_resource type="Script" path="res://Scenes/Hallway/hallway.gd" id="1_16emh"]
+[ext_resource type="Script" uid="uid://dcx8i3fuvhai4" path="res://Scenes/Hallway/hallway.gd" id="1_16emh"]
 [ext_resource type="Texture2D" uid="uid://cyrn214d0bs2r" path="res://Assets/APARTMENT/APT_HALLWAY/APT_HALLWAY_FLOOR.png" id="2_x32dh"]
 [ext_resource type="Texture2D" uid="uid://1rqysymde8jm" path="res://Assets/APARTMENT/APT_HALLWAY/APT_HALLWAY_WALLS.png" id="3_kj3m4"]
 [ext_resource type="Texture2D" uid="uid://dqdxjuxqgt50u" path="res://Assets/APARTMENT/APT_HALLWAY/APT_HALLWAY_DOORS.png" id="4_2eqa2"]
 [ext_resource type="PackedScene" uid="uid://cfks6he7p50ls" path="res://SceneTrigger/scene_trigger.tscn" id="6_5jar8"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_loyws"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="8_86b6u"]
-[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="8_hplob"]
+[ext_resource type="Script" uid="uid://l1brb62y7f87" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_loyws"]
+[ext_resource type="Script" uid="uid://ccy0vh4ufgiv0" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="8_86b6u"]
+[ext_resource type="Script" uid="uid://dt0qvd8yn45vi" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="8_hplob"]
 [ext_resource type="PackedScene" uid="uid://bg3e8fsfp2tsb" path="res://Characters/Wyatt/wyatt.tscn" id="9_u6158"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_432ho"]

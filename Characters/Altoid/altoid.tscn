@@ -566,18 +566,18 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xvlr2"]
 _data = {
-"Idle Down": SubResource("Animation_i70dj"),
-"Idle Left": SubResource("Animation_n1vra"),
-"Idle Right": SubResource("Animation_nl70t"),
-"Idle Up": SubResource("Animation_0bfw7"),
-"Paw Lick": SubResource("Animation_3o7yb"),
-"RESET": SubResource("Animation_vq2im"),
-"Sleeping": SubResource("Animation_ib7mg"),
-"Tail Wag": SubResource("Animation_pwdat"),
-"Walk Down": SubResource("Animation_ioaxa"),
-"Walk Left": SubResource("Animation_wpwrr"),
-"Walk Right": SubResource("Animation_8fxhh"),
-"Walk Up": SubResource("Animation_qspgr")
+&"Idle Down": SubResource("Animation_i70dj"),
+&"Idle Left": SubResource("Animation_n1vra"),
+&"Idle Right": SubResource("Animation_nl70t"),
+&"Idle Up": SubResource("Animation_0bfw7"),
+&"Paw Lick": SubResource("Animation_3o7yb"),
+&"RESET": SubResource("Animation_vq2im"),
+&"Sleeping": SubResource("Animation_ib7mg"),
+&"Tail Wag": SubResource("Animation_pwdat"),
+&"Walk Down": SubResource("Animation_ioaxa"),
+&"Walk Left": SubResource("Animation_wpwrr"),
+&"Walk Right": SubResource("Animation_8fxhh"),
+&"Walk Up": SubResource("Animation_qspgr")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_31gei"]
